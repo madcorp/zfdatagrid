@@ -1122,7 +1122,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
                     } else {
                         
                         //[PT]Versão em estado incial de ajax. Não e¬¥para levar a sério por enquanto
-                        if ( @$this->info['ajax'] === true ) {
+                        if ( isset($this->info['ajax']) &&  $this->info['ajax'] === true ) {
                             $grid .= str_replace('{{value}}', "<a href=\"javascript:openAjax('grid','" . $title['url'] . "') \">" . $title['value'] . $imgFinal . "</a>", $this->temp['table']->titlesLoop());
                         
                         } else {
@@ -1598,6 +1598,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
             $aa = 0;
         }
         
+        $aa = 0;
         foreach ($grids as $value) {
             //Os decorators
             $search = $this->_fields;
@@ -1704,6 +1705,8 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
      * @return string
      */
     function pagination () {
+        
+        $f = '';
 
 
         $url = parent::getUrl(array('start'));
@@ -1726,7 +1729,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
         }
         
 
-        if ( @$this->info['ajax'] === true ) {
+        if ( isset($this->info['ajax']) &&  $this->info['ajax'] === true ) {
             $pag = ($actual == 1) ? '<strong>1</strong>' : "<a href=\"javascript:openAjax('grid','$url/start/0')\">1</a>";
         } else {
             $pag = ($actual == 1) ? '<strong>1</strong>' : "<a href=\"$url/start/0\">1</a>";
@@ -1739,7 +1742,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
             $fin = max(min($npaginas, $actual + 4), 6);
             
             for ( $i = $in + 1; $i < $fin; $i ++ ) {
-                if ( @$this->info['ajax'] === true ) {
+                if ( isset($this->info['ajax']) &&  $this->info['ajax'] === true ) {
                     $pag .= ($i == $actual) ? "<strong> $i </strong>" : " <a href=javascript:openAjax('grid','$url/start/" . (($i - 1) * $ppagina) . "')> $i </a>";
                 } else {
                     $pag .= ($i == $actual) ? "<strong> $i </strong>" : " <a href='$url/start/" . (($i - 1) * $ppagina) . "'> $i </a>";
@@ -1751,7 +1754,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
         } else {
             
             for ( $i = 2; $i < $npaginas; $i ++ ) {
-                if ( @$this->info['ajax'] === true ) {
+                if ( isset($this->info['ajax']) &&  $this->info['ajax'] === true ) {
                     
                     $pag .= ($i == $actual) ? "<strong> $i </strong>" : " <a href=\"javascript:openAjax('grid','" . $url . "/start/" . (($i - 1) * $ppagina) . "')\">$i</a> ";
                 
@@ -1764,7 +1767,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
             }
         }
         
-        if ( @$this->info['ajax'] === true ) {
+        if ( isset($this->info['ajax']) &&  $this->info['ajax'] === true ) {
             $pag .= ($actual == $npaginas) ? "<strong>" . $npaginas . "</strong>" : " <a href=\"javascript:openAjax('grid','$url/start/" . (($npaginas - 1) * $ppagina) . "')\">$npaginas</a> ";
         
         } else {
@@ -1774,7 +1777,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
         
         if ( $actual != 1 ) {
             
-            if ( @$this->info['ajax'] === true ) {
+            if ( isset($this->info['ajax']) &&  $this->info['ajax'] === true ) {
                 $pag = " <a href=\"javascript:openAjax('grid','$url/start/0')\">" . $this->__('First') . "</a>&nbsp;&nbsp;<a href=\"javascript:aopenAjax'grid','$url/start/" . (($actual - 2) * $ppagina) . "')\">" . $this->__('Previous') . "</a>&nbsp;&nbsp;" . $pag;
             
             } else {
@@ -1785,7 +1788,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
         }
         
         if ( $actual != $npaginas ) {
-            if ( @$this->info['ajax'] === true ) {
+            if ( isset($this->info['ajax']) &&  $this->info['ajax'] === true ) {
                 
                 $pag .= "&nbsp;&nbsp;<a href=\"javascript:openAjax('grid','$url/start/" . ($actual * $ppagina) . "')\">" . $this->__('Next') . "</a> <a href=\"javascript:openAjax('grid','$url/start/" . (($npaginas - 1) * $ppagina) . "')\">" . $this->__('Last') . "&nbsp;&nbsp;</a>";
             } else {
@@ -1795,13 +1798,13 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
         
         }
         
-        if ( $npaginas > 1 && (int) @$this->info['limit'] == 0 ) {
+        if ( $npaginas > 1 && isset($this->info['limit']) && (int) @$this->info['limit'] == 0 ) {
             
 
             if ( $npaginas < 100 ) {
                 //[PT] Construir o select
                 //[EN] Buil the select form element
-                if ( @$this->info['ajax'] === true ) {
+                if ( isset($this->info['ajax']) &&  $this->info['ajax'] === true ) {
                     $f = "<select id=\"idf\" onchange=\"javascript:openAjax('grid','{$url}/start/'+this.value)\">";
                 } else {
                     $f = "<select id=\"idf\" onchange=\"window.location='{$url}/start/'+this.value\">";
@@ -1850,7 +1853,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
                 $exp .= "<a target='_blank' href='$url/export/{$export}'>" . $images[$export] . "</a>";
             }
             
-            if ( (int) @$this->info['limit'] > 0 ) {
+            if ( isset($this->info['limit']) && (int) @$this->info['limit'] > 0 ) {
                 $result2 = str_replace(array('{{export}}' , '{{pagination}}' , '{{pageSelect}}' , '{{numberRecords}}'), array($exp , '' , '' , (int) $this->info['limit']), $this->temp['table']->pagination());
             
             } elseif ( $npaginas > 1 && count($this->export) > 0 ) {

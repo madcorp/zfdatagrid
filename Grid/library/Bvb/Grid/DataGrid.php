@@ -375,7 +375,7 @@ class Bvb_Grid_DataGrid {
         $this->_elements ['filter'] = new Zend_Loader_PluginLoader ( );
         $this->_elements ['validator'] = new Zend_Loader_PluginLoader ( );
         
-
+   
         if (is_array ( $this->export )) {
             foreach ( $this->export as $temp ) {
                 $this->_templates = new Zend_Loader_PluginLoader ( array (), $temp );
@@ -403,7 +403,7 @@ class Bvb_Grid_DataGrid {
         $this->addTemplateDir ( 'Bvb/Grid/Template/Xml', 'Bvb_Grid_Template_Xml', 'xml' );
         $this->addTemplateDir ( 'Bvb/Grid/Template/Ods', 'Bvb_Grid_Template_Ods', 'ods' );
         $this->addTemplateDir ( 'Bvb/Grid/Template/Odt', 'Bvb_Grid_Template_Odt', 'odt' );
-    
+  
     }
 
 
@@ -1000,12 +1000,12 @@ class Bvb_Grid_DataGrid {
      */
     function setGridFromXml($file) {
 
-        
+        $t2 = '';
         $file = rtrim ( $file, ".xml" ) . ".xml";
         $xml = $this->object2array ( simplexml_load_file ( $file ) );
         
 
-        if (strlen ( $xml ['data'] ['where'] ) > 0) {
+        if (isset ( $xml ['data'] ['where'] ) && strlen ( $xml ['data'] ['where'] ) > 0) {
             $final = $xml ['data'] ['where'];
             $final1 = preg_match_all ( "/{eval}(.*?){\/eval}/", $final, $t );
             $t2 = $t;
@@ -1019,13 +1019,12 @@ class Bvb_Grid_DataGrid {
         }
         
         foreach ( $xml ['data'] ['fields'] as $key => $final ) {
-            if (is_array ( $final ['@attributes'] )) {
+            if (isset ( $final ['@attributes'] ) && is_array ( $final ['@attributes'] )) {
                 unset ( $xml ['data'] ['fields'] [$key] );
                 $xml ['data'] ['fields'] [$key . " AS " . $final ['@attributes'] ['as']] = $final;
             }
         }
         
-
         self::setData ( $xml );
         $this->info = $xml ['info'];
     
@@ -1111,7 +1110,7 @@ class Bvb_Grid_DataGrid {
         }
         
         $totalFields = $totalFields - $i;
-        if (@$this->info ['delete'] ['allow'] == 1) {
+        if (isset ( $this->info ['delete'] ['allow'] ) && $this->info ['delete'] ['allow'] == 1) {
             $a ++;
         }
         
@@ -1407,7 +1406,7 @@ class Bvb_Grid_DataGrid {
         }
         
 
-        if (@strlen ( $this->info ['limit'] ) > 0 || @is_array ( $this->info ['limit'] )) {
+        if ( isset($this->info['limit']) && (strlen ( $this->info ['limit'] ) > 0 || @is_array ( $this->info ['limit'] )) ){
             if (is_array ( $this->info ['limit'] )) {
                 $limit = " LIMIT " . $this->info ['limit'] [0] . ',' . $this->info ['limit'] [1];
             } else {
@@ -1684,7 +1683,13 @@ class Bvb_Grid_DataGrid {
             }
             $fieldsToOrder = $this->reset_keys ( $this->data ['fields'] );
             
-            @$orderFinal = strlen ( $fieldsToOrder [$i] ['orderField'] ) > 0 ? $fieldsToOrder [$i] ['orderField'] : $titles [$i];
+            
+            if(isset($fieldsToOrder [$i] ['orderField']) && strlen ( $fieldsToOrder [$i] ['orderField'] ) > 0)
+            {
+                $orderFinal = $fieldsToOrder [$i] ['orderField'];
+            }else {
+                $orderFinal =  $titles [$i];
+            }
             
             $order = $orderFinal == @key ( $this->order ) ? $this->order [$orderFinal] : 'ASC';
             
@@ -2292,7 +2297,7 @@ class Bvb_Grid_DataGrid {
         
 
         foreach ( $naoMostrar as $key => $field ) {
-            if (@in_array ( $key, $this->data ['hide'] )) {
+            if ( isset( $this->data ['hide'] ) && in_array ( $key, $this->data ['hide'] )) {
                 unset ( $naoMostrar [$key] );
                 unset ( $orderFields [$key] );
                 unset ( $titulos [$key] );
@@ -2328,7 +2333,7 @@ class Bvb_Grid_DataGrid {
     function validateFilters($filters) {
 
         
-        if (@$this->info ['noFilters']) {
+        if (isset ( $this->info ['noFilters'] ) && $this->info ['noFilters']) {
             return false;
         }
         
@@ -2620,7 +2625,7 @@ class Bvb_Grid_DataGrid {
         
         $queryGroup = '';
         
-        if (@strlen ( $this->info ['groupby'] ) > 0) {
+        if (isset($this->info ['groupby'] ) && strlen ( $this->info ['groupby'] ) > 0) {
             $queryGroup = " GROUP BY " . $this->info ['groupby'];
         
         }
@@ -2999,7 +3004,6 @@ class Bvb_Grid_DataGrid {
      */
     function addTemplateDir($dir, $prefix, $type) {
 
-        
         $this->_templates->addPrefixPath ( trim ( $prefix, "_" ), trim ( $dir, "/" ) . '/', $type );
         return $this;
     }
@@ -3015,7 +3019,6 @@ class Bvb_Grid_DataGrid {
      */
     function setTemplate($template, $output = 'table', $options = array()) {
 
-        
         $class = $this->_templates->load ( $template, $output );
         
         $this->temp [$output] = new $class ( $options );

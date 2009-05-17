@@ -1,4 +1,6 @@
 <?php
+
+
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 ini_set('max_execution_time',0);
@@ -12,7 +14,7 @@ include "Zend/Loader/Autoloader.php";
 $autoloader = Zend_Loader_Autoloader::getInstance();
 $autoloader->registerNamespace('Bvb_');
 $autoloader->registerNamespace('My_');
-$autoloader->suppressNotFoundWarnings(true);
+$autoloader->suppressNotFoundWarnings(false);
 $autoloader->setFallbackAutoloader(true);
 
 
