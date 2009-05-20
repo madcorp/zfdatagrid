@@ -185,8 +185,10 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
 
 
         parent::__construct($db);
+       
         
         $this->setTemplate('table', 'table');
+      
     }
 
 
@@ -260,15 +262,15 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
 
 
 
-        if ( @$this->info['add']['allow'] == 1 ) {
+        if ( isset($this->info['add']['allow']) && $this->info['add']['allow'] == 1 ) {
             $this->allowAdd = 1;
         }
         
-        if ( @$this->info['delete']['allow'] == 1 ) {
+        if ( isset($this->info['delete']['allow']) && $this->info['delete']['allow'] == 1 ) {
             $this->allowDelete = 1;
         }
         
-        if ( @$this->info['edit']['allow'] == 1 ) {
+        if (  isset($this->info['edit']['allow']) && $this->info['edit']['allow'] == 1 ) {
             $this->allowEdit = 1;
         }
         
@@ -938,7 +940,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
         $final = '';
         
         if ( $this->_adapter == 'db' ) {
-            if ( (@$this->info['double_tables'] == 0 && @$this->ctrlParams['add'] != 1 && @$this->ctrlParams['edit'] != 1) && $this->getPrimaryKey() && @$this->info['add']['allow'] == 1 && @$this->info['add']['button'] == 1 && @$this->info['add']['no_button'] != 1 ) {
+            if ( ($this->getInfo('double_tables') == 0 && @$this->ctrlParams['add'] != 1 && @$this->ctrlParams['edit'] != 1) && $this->getPrimaryKey() && @$this->info['add']['allow'] == 1 && @$this->info['add']['button'] == 1 && @$this->info['add']['no_button'] != 1 ) {
                 
                 $final = "<div class=\"addRecord\" ><a href=\"$url/add/1\">" . $this->__('Add Record') . "</a></div>";
             }
@@ -2025,7 +2027,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
         
         parent::deploy();
         
-
+ 
         if ( ! $this->temp['table'] instanceof Bvb_Grid_Template_Table_Table ) {
             $this->setTemplate('table', 'table');
         }
@@ -2073,7 +2075,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
             $grid = str_replace("{{value}}", $this->message, $this->temp['table']->formMessage($this->messageOk));
         }
         
-        if ( (@$this->ctrlParams['edit'] == 1 || @$this->ctrlParams['add'] == 1 || @$this->info['double_tables'] == 1) || ($this->formPost == 1 && $this->formSuccess == 0) ) {
+        if ( ( (isset($this->ctrlParams['edit']) && $this->ctrlParams['edit'] == 1) || @$this->ctrlParams['add'] == 1 || @$this->info['double_tables'] == 1) || ($this->formPost == 1 && $this->formSuccess == 0) ) {
             
             if ( ($this->allowAdd == 1 && $this->_editNoForm != 1) || ($this->allowEdit == 1 && strlen($this->_comm) > 1) ) {
                 
@@ -2100,7 +2102,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
         
         $grid .= "<input type=\"hidden\" name=\"inputId\" id=\"inputId\">";
         
-        if ( @$this->info['double_tables'] == 1 || (@$this->ctrlParams['edit'] != 1 && @$this->ctrlParams['add'] != 1) ) {
+        if ( (isset($this->info['double_tables']) && $this->info['double_tables'] == 1) || (@$this->ctrlParams['edit'] != 1 && @$this->ctrlParams['add'] != 1) ) {
             
             if ( ($this->formPost == 1 && $this->formSuccess == 1) || $this->formPost == 0 ) {
                 

@@ -378,8 +378,9 @@ class Bvb_Grid_DataGrid {
    
         if (is_array ( $this->export )) {
             foreach ( $this->export as $temp ) {
-                $this->_templates = new Zend_Loader_PluginLoader ( array (), $temp );
+                $this->_templates[$temp] = new Zend_Loader_PluginLoader ( array (), $temp );
             }
+            
         }
         
 
@@ -799,7 +800,7 @@ class Bvb_Grid_DataGrid {
         
         }
         
-        if (! @is_array ( $this->_describeTables [$table] )) {
+        if (!isset($this->_describeTables [$table]) || ! @is_array ( $this->_describeTables [$table] )) {
             
             if ($this->cache ['use'] == 1) {
                 
@@ -1490,6 +1491,23 @@ class Bvb_Grid_DataGrid {
         }
     }
 
+    /**
+     * [PT] Como utilizamos o método mágico __set, temos que verificar se ele
+     * existe por causa de devolver uma notice...
+     *
+     * @param string $param
+     * @return bool | $param
+     */
+    function getInfo($param)
+    {
+        if(isset($this->info[$param]))
+        {
+            return $this->info[$param];
+        }else{
+            return false;
+        }
+        
+    }
 
     
     /**
@@ -1506,7 +1524,7 @@ class Bvb_Grid_DataGrid {
 
         
         $return = array ();
-        if (@$this->info ['noFilters']) {
+        if (isset($this->info ['noFilters'])) {
             return false;
         }
         
@@ -3004,7 +3022,13 @@ class Bvb_Grid_DataGrid {
      */
     function addTemplateDir($dir, $prefix, $type) {
 
-        $this->_templates->addPrefixPath ( trim ( $prefix, "_" ), trim ( $dir, "/" ) . '/', $type );
+        
+        if(!isset($this->_templates[$type]))
+        {
+            $this->_templates[$type] = new Zend_Loader_PluginLoader();
+        }
+        
+        $this->_templates[$type]->addPrefixPath ( trim ( $prefix, "_" ), trim ( $dir, "/" ) . '/', $type );
         return $this;
     }
 
@@ -3019,12 +3043,12 @@ class Bvb_Grid_DataGrid {
      */
     function setTemplate($template, $output = 'table', $options = array()) {
 
-        $class = $this->_templates->load ( $template, $output );
+        $class = $this->_templates[$output]->load ( $template, $output );
         
         $this->temp [$output] = new $class ( $options );
         $this->activeTemplates [] = $output;
         
-        $this->temp [$output]->templateInfo = array ('name' => $template, 'dir' => $this->_templates->getClassPath ( $template, $output ), 'class' => $this->_templates->getClassName ( $template, $output ), 'options' => $options );
+        $this->temp [$output]->templateInfo = array ('name' => $template, 'dir' => $this->_templates[$output]->getClassPath ( $template, $output ), 'class' => $this->_templates[$output]->getClassName ( $template, $output ), 'options' => $options );
         
         return $this->temp [$output];
     
