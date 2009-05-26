@@ -378,7 +378,7 @@ class Bvb_Grid_DataGrid {
    
         if (is_array ( $this->export )) {
             foreach ( $this->export as $temp ) {
-                $this->_templates[$temp] = new Zend_Loader_PluginLoader ( array (), $temp );
+                $this->_templates[$temp] = new Zend_Loader_PluginLoader ( array ());
             }
             
         }
@@ -559,6 +559,19 @@ class Bvb_Grid_DataGrid {
             }
         }
         
+    
+        //Remove possible arrays
+        for ($i=0;$i<count($xml);$i++)
+        {
+            foreach ($xml[$i] as $key=>$final)
+            {
+                if(!is_string($final))
+                {
+                    unset($xml[$i][$key]);
+                }
+            }
+        }
+        
 
         if (is_array ( $columns )) {
             foreach ( $columns as $value ) {
@@ -613,7 +626,7 @@ class Bvb_Grid_DataGrid {
         
 
 
-        $xml = Zend_Json::decode ( $result );
+        $xml = Zend_Json::decode ( $result ,true);
         
 
 
@@ -624,16 +637,29 @@ class Bvb_Grid_DataGrid {
             }
         }
         
+        
+        //Remove possible arrays
+        for ($i=0;$i<count($xml);$i++)
+        {
+            foreach ($xml[$i] as $key=>$final)
+            {
+                if(!is_string($final))
+                {
+                    unset($xml[$i][$key]);
+                }
+            }
+        }
 
         if (is_array ( $columns )) {
             foreach ( $columns as $value ) {
+                if(is_string($value))
                 $columns = $columns [$value];
             }
         } else {
             $columns = array_keys ( $xml [0] );
         }
         
-
+        
         $this->addArrayColumns ( $columns );
         $this->addArrayData ( $xml );
         
@@ -2886,8 +2912,9 @@ class Bvb_Grid_DataGrid {
      */
     function applySearchTypeToArray($final, $search, $key) {
 
+    
         
-        $enc = stripos ( $final, $search );
+        $enc = stripos ( (string)$final, $search );
         
         if (@$this->data ['fields'] [$key] ['searchType'] != "") {
             $filtro = $this->data ['fields'] [$key] ['searchType'];
@@ -2931,7 +2958,7 @@ class Bvb_Grid_DataGrid {
                     return true;
                 break;
             default :
-                $enc = stripos ( $final, $search );
+                $enc = stripos ( (string)$final, $search );
                 if ($enc !== false) {
                     return true;
                 }
