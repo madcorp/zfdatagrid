@@ -2844,11 +2844,11 @@ class Bvb_Grid_DataGrid {
             
             } else {
                 $this->_totalRecords = count ( $this->_result );
-                $result = array_slice ( $this->_result, ( int ) @$this->ctrlParams ['start'] < $this->_totalRecords ? ( int ) @$this->ctrlParams ['start'] : 0, 15 );
+                $result = array_slice ( $this->_result, ( int ) @$this->ctrlParams ['start'] < $this->_totalRecords ? ( int ) @$this->ctrlParams ['start'] : 0, $this->pagination );
             
             }
             
-
+            
             $this->_result = $result;
         }
         
