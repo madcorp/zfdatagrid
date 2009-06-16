@@ -495,7 +495,28 @@ class SiteController extends Zend_Controller_Action
         
         $grid->setPrimaryGrid(false);
         
+        
+        $data=array(
+			array('firstname'=>'foo', 'lastname'=>'foobar','email'=>'email','password'=>'asdf','field'=>'field'),
+			array('firstname'=>'foo', 'lastname'=>'foobar','email'=>'email','password'=>'asdf','field'=>'field'),
+			array('firstname'=>'foo', 'lastname'=>'foobar','email'=>'email','password'=>'asdf','field'=>'field'),
+			array('firstname'=>'foo', 'lastname'=>'foobar','email'=>'email','password'=>'asdf','field'=>'field')
+		);
+		
+		$grid = $this->grid('friends'); //global setup
+		
+		$grid->setDataFromArray($data);
+				
+		foreach($data[0] as $key=>$val){
+			$grid->removeColumn($key);
+		}
+		
+			
+		$grid->addColumn('firstname',array('title'=>'Firstname'));
+        $grid->addColumn('lastname',array('title'=>'Lastname'));
+        $grid->addColumn('password',array('title'=>'password','decorator'=>'----{{password}}----'));
 
+		
         $this->view->pages = $grid->deploy ();
         $this->render ( 'index' );
     }
