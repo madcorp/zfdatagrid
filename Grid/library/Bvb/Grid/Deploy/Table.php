@@ -255,13 +255,6 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
     protected function processForm () {
 
 
-        $pk = parent::getPrimaryKey();
-        
-        #if (@$this->info ['add'] ['allow'] == 1 && $pk)
-        
-
-
-
         if ( isset($this->info['add']['allow']) && $this->info['add']['allow'] == 1 ) {
             $this->allowAdd = 1;
         }
@@ -319,7 +312,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
 
 
 
-            //[EN] We mst know what fields to get with getPost(). We only gonna get the fieds
+            //[EN] We must know what fields to get with getPost(). We only gonna get the fieds
             //[EN] That belong to the database table. We must ensure we process the right data.
             //[EN] So we also must verify if have been defined the fields to process
             if ( is_array($this->info[$mode]['fields']) ) {
@@ -361,6 +354,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
             }
             
 
+            $queryUrl = $this->getPkFromUrl();
 
             //[PT] APlicar os filtros e a validação. Primeiro são aplicados os filtros
             //[EN] Apply filter and validators. Firtst we apply the filters
@@ -423,9 +417,12 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
                     $final_values = $final;
                 }
                 
-                unset($final_values[parent::getPrimaryKey()]);
+                $pk2 = parent::getPrimaryKey();
                 
-
+                foreach ($pk2 as $value) {
+                	 unset($final_values[$value]);
+                }
+                
                 //Deal with readonly and disabled attributes. 
                 //Also check for security issues
                 foreach (array_keys($final_values) as $key) {
@@ -494,7 +491,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
                         if ( $this->_crudJoin ) {
                             
 
-                            $tableAbv = substr($pk, 0, strpos($pk, '.'));
+                            $tableAbv = substr($pk2[0], 0, strpos($pk2[0], '.'));
                             
                             $valuesForUpdate = array();
                             
@@ -508,14 +505,15 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
                             
                             }
                             
-                            $pk = substr($pk, strpos($pk, '.') + 1);
+                            $pk = substr($pk2[0], strpos($pk2[0], '.') + 1);
+                            
                             
                             $this->_db->update($this->data['table'][$tableAbv], $valuesForUpdate, " $pk=" . $this->_db->quote($op_query['id']) . " $where ");
                         
 
-
                         } else {
-                            $this->_db->update($this->data['table'], $final_values, " $pk=" . $this->_db->quote($op_query['id']) . " $where ");
+                            
+                            $this->_db->update($this->data['table'], $final_values, $queryUrl . $where );
                         
                         }
                         
@@ -731,7 +729,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
     function deleteRecord ($sql) {
 
 
-        $param = explode(";", $sql);
+        @$param = explode(";", $sql);
         
         foreach ($param as $value) {
             $dec = explode(":", $value);
@@ -742,8 +740,12 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
             return 0;
         }
         
-
-        $id = $this->_db->quoteIdentifier(parent::getPrimaryKey());
+        
+        $urlQuery = $this->getPkFromUrl();
+        
+        $pkArray = parent::getPrimaryKey();
+         $id = $this->_db->quoteIdentifier($pkArray[0]);
+        
         
         if ( isset($this->info['delete']['where']) ) {
             
@@ -755,14 +757,17 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
 
         try {
             
+            $pkParentArray = $this->getPrimaryKey();
+            $pkParent = $pkParentArray[0];
+            
             if ( is_array($this->info['delete']['cascadeDelete']) ) {
                 foreach ($this->info['delete']['cascadeDelete'] as $value) {
                     
                     $operand = isset($value['operand']) ? $value['operand'] : '=';
-                    $parentField = isset($value['parentField']) ? $value['parentField'] : $this->getPrimaryKey();
+                    $parentField = isset($value['parentField']) ? $value['parentField'] : $pkParent;
                     
-                    if ( $parentField != $this->getPrimaryKey() ) {
-                        $finalValue = $this->_db->fetchOne("SELECT " . $this->_db->quoteIdentifier($parentField) . " FROM  " . $this->_db->quoteIdentifier($this->data['table']) . " WHERE id=" . $this->_db->quote($final['id']));
+                    if ( $parentField != $pkParent && !is_array($pkParentArray)) {
+                        $finalValue = $this->_db->fetchOne("SELECT " . $this->_db->quoteIdentifier($parentField) . " FROM  " . $this->_db->quoteIdentifier($this->data['table']) . " WHERE ". $urlQuery);
                     } else {
                         $finalValue = $final['id'];
                     }
@@ -776,7 +781,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
                 $id = substr($id, strpos($id, '.') + 1);
             }
             
-            $this->_db->delete($this->getMainTableName(), "  $id =" . $this->_db->quote($final['id']) . " $where ");
+            $this->_db->delete($this->getMainTableName(), $urlQuery . $where );
             
 
             $this->messageOk = true;
@@ -787,6 +792,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
             $this->message = $this->__('Error deleting record =>') . $e->getMessage();
         }
         
+        unset($this->ctrlParams['comm']);
 
         if ( $this->cache['use'] == 1 ) {
             $this->cache['instance']->clean(Zend_Cache::CLEANING_MODE_MATCHING_TAG, array($this->cache['tag']));
@@ -1421,6 +1427,27 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
     }
 
 
+    function getPkFromUrl()
+    {
+        
+        $param = $this->ctrlParams['comm'];
+        $param = end(explode(';',$param));
+        $param  =substr($param,1,-1);
+        
+        $paramF = explode('-',$param);
+        $param = '';
+        foreach ($paramF as $value)
+        {
+            $f = explode(':',$value);
+            
+            $param .= " AND  ".$this->_db->quoteIdentifier($f[0]).'='.$this->_db->quote($f[1]);
+        }
+        
+        $param = substr($param,4);
+        
+        return $param;
+        
+    }
 
     /**
      * [PT] A tabela a meostrar quando queremos adicionar ou editar registos
@@ -1443,9 +1470,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
         //[EN] Get the comm param, and "decode" it
         $final = self::convertComm();
         
-        $pk = $this->_db->quoteIdentifier(parent::getPrimaryKey());
-        
-
+        $urlQuery = $this->getPkFromUrl();
 
         $select_fields = $this->buildSelectFieldsForUpdate();
         
@@ -1483,7 +1508,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
 
             if ( $final['mode'] == 'edit' && ! $this->_editNoForm ) {
                 
-                $fields = $this->_db->fetchRow(" SELECT $select_fields FROM " . $this->data['from'] . " WHERE $pk = " . $this->_db->quote($final['id']) . " ");
+                $fields = $this->_db->fetchRow(" SELECT $select_fields FROM " . $this->data['from'] . " WHERE $urlQuery ");
                 
                 if ( $this->_crudJoin ) {
                     $fields = $this->convertOutputNamesFromSqlToUserDefined($fields);
@@ -1517,7 +1542,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
         $grid .= $this->temp['table']->formHeader();
         
         $i = 0;
-        
+      
         foreach ($fields as $key => $value) {
             
             $grid .= $this->temp['table']->formStart();
@@ -2059,7 +2084,17 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
             }
             $url = parent::getUrl($removeParams);
             
-            array_unshift($this->extra_fields, array('position' => 'left' , 'name' => 'E' , 'decorator' => "<a href=\"$url/edit/1/comm/" . "mode:edit;id:{{" . $this->getPrimaryKey() . "}}\" > " . $images['edit'] . "</a>" , 'edit' => true));
+            $pkUrl = $this->getPrimaryKey();
+            $urlFinal = '';
+            foreach ($pkUrl as $value)
+            {
+                $urlFinal .= $value.':{{'.$value.'}}-';
+            }
+            
+            $urlFinal = trim($urlFinal,'-');
+            
+            
+            array_unshift($this->extra_fields, array('position' => 'left' , 'name' => 'E' , 'decorator' => "<a href=\"$url/edit/1/comm/" . "mode:edit;[" . $urlFinal . "]\" > " . $images['edit'] . "</a>" , 'edit' => true));
         
         }
         
@@ -2068,7 +2103,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
                 $this->extra_fields = array();
             }
             
-            array_unshift($this->extra_fields, array('position' => 'left' , 'name' => 'D' , 'decorator' => "<a href=\"#\" onclick=\"confirmDel('" . $this->__('Are you sure?') . "','$url/comm/" . "mode:delete;id:{{" . $this->getPrimaryKey() . "}}');\" > " . $images['delete'] . "</a>" , 'delete' => true));
+            array_unshift($this->extra_fields, array('position' => 'left' , 'name' => 'D' , 'decorator' => "<a href=\"#\" onclick=\"confirmDel('" . $this->__('Are you sure?') . "','$url/comm/" . "mode:delete;[" . $urlFinal . "]');\" > " . $images['delete'] . "</a>" , 'delete' => true));
         }
         
         if ( strlen($this->message) > 0 ) {
@@ -2084,9 +2119,6 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
                 //[EN] Remove the unnecessary URL params
                 //Vamos remover os elementos em caso de falha de validação
                 
-
-
-
                 $removeParams = array('filters' , 'add');
                 
                 foreach (array_keys($this->info['add']['fields']) as $key) {
@@ -2095,7 +2127,7 @@ class Bvb_Grid_Deploy_Table extends Bvb_Grid_DataGrid {
                 
                 $url = parent::getUrl($removeParams);
                 
-                $grid .= "<form method=\"post\" action=\"$url\">" . $this->temp['table']->formGlobal() . self::gridForm() . "</table></form><br><br>";
+                $grid .= "<form method=\"post\" action=\"$url\">" . $this->temp['table']->formGlobal() . self::gridForm() . "</form><br><br>";
             
             }
         }

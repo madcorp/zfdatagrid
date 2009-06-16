@@ -459,7 +459,8 @@ class SiteController extends Zend_Controller_Action
         #$grid->setDataFromXml ( $url, 'channel,item' );
         #$grid->removeColumns ( array ('guid', 'pubDate', 'link', 'author', 'category', 'title' ) );
         $grid->setDataFromJson('http://services.sapo.pt/JobOffers/JSON',true,'rss,channel,item');
-       
+       $grid->setPagination(10);
+        
         $this->view->pages = $grid->deploy ();
         
         $this->render ( 'index' );
@@ -491,6 +492,8 @@ class SiteController extends Zend_Controller_Action
         $grid->setTemplate ( 'word', 'word', $pdf );
         $grid->setTemplate ( 'wordx', 'wordx', $pdf );
         $grid->setTemplate ( 'ods', 'ods', $pdf );
+        
+        $grid->setPrimaryGrid(false);
         
 
         $this->view->pages = $grid->deploy ();

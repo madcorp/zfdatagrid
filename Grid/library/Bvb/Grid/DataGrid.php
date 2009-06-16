@@ -344,6 +344,19 @@ class Bvb_Grid_DataGrid {
      * @var unknown_type
      */
     private $_resultRaw;
+    
+    
+    /**
+     * When using multiple grids in the same page we can only
+     * use url params for one grid.
+     * 
+     *  
+     * This should be fixed for v 1.0
+     *
+     * @var bool
+     */
+    protected $_isPrimaryGrid  = true;
+    
 
 
     
@@ -407,6 +420,11 @@ class Bvb_Grid_DataGrid {
   
     }
 
+    
+    public function setPrimaryGrid( $value )
+    {
+        $this->_isPrimaryGrid = $value;
+    }
 
     
     /**
@@ -1492,6 +1510,9 @@ class Bvb_Grid_DataGrid {
         unset ( $params_clean ['controller'] );
         unset ( $params_clean ['module'] );
         unset ( $params_clean ['action'] );
+       
+        
+        
         foreach ( $params_clean as $key => $param ) {
             //[PT] Se estivermos a falar dos filtros, temos que fazer o urldecode por causa
             //[PT] dos caracteres especiais que tem a url ( JSON )
@@ -2440,7 +2461,6 @@ class Bvb_Grid_DataGrid {
     function getPrimaryKey($newTable = null) {
 
         
-
         $table = $this->data ['table'];
         
         if ($this->_crudJoin) {
@@ -2471,8 +2491,8 @@ class Bvb_Grid_DataGrid {
 
         $param = $this->getDescribeTable ( $table );
         foreach ( $param as $value ) {
-            if ($value ['PRIMARY'] == 1) {
-                $primary_key [] = $value ['PRIMARY'];
+            if ($value ['PRIMARY'] === true) {
+                $primary_key [] = $value ['COLUMN_NAME'];
                 $field = $value ['COLUMN_NAME'];
             }
         }
@@ -2481,12 +2501,7 @@ class Bvb_Grid_DataGrid {
             $field = reset ( explode ( '.', $this->info ['crud'] ['primaryKey'] ) ) . '.' . $field;
         }
         
-        if (@count ( $primary_key ) != 1) {
-            return false;
-            #throw new Exception('Incaple to get the table primary key. The system can only perform adicional actions on tables with ONE primary key');
-        }
-        
-        $this->_getPrimaryKey [$table] = $field;
+        $this->_getPrimaryKey [$table] = $primary_key;
         
         return $this->_getPrimaryKey [$table];
     }
@@ -2719,6 +2734,17 @@ class Bvb_Grid_DataGrid {
      */
     function deploy() {
 
+     
+        if(FALSE === $this->_isPrimaryGrid)
+        {
+            $myParams = array ('comm', 'order', 'filters', 'add', 'edit' );
+            
+            foreach ($myParams as $key) {
+            	unset($this->ctrlParams[$key]);
+            }
+            
+        }
+        
         
         if ($this->consolidated == 0) {
             $this->consolidateQuery ();
