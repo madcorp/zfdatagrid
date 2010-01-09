@@ -2,8 +2,7 @@
 
 = Introduction =
 
-Add your content here.
-
+This is documentation for [http://www.trirand.com/blog/jqgrid/jqgrid.html jqGrid] frontend implementation for ZFDatgrid library. Look at this *[http://www.k2s.sk/grid/jqgrid example]* to see it in action.
 
 = Details =
 
