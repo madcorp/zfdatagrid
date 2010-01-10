@@ -8,14 +8,14 @@ This is documentation for *[http://www.trirand.com/blog/jqgrid/jqgrid.html jqGri
 
 The actual class implementation is developed under own [http://code.google.com/p/zfdatagrid/source/browse/#svn/branches/jqGrid ZFDatagrid branch]. It will be merged into trunk when completed and accepted by [http://code.google.com/u/pao.fresco/ project owner].
 
-*Current plans:*
+== Current plans==
   * keep jqGrid front-end as much as possible compatible with HTML Table front-end
   * allow to pass all configuration options of jqGrid from PHP
   * add PHP functions which will provide easy way to complex jqGrid functionality
   * evaluate what parts of Bvb should be improved to use full power of booth libraries
   * provide documentation and examples
 
-*Future plans:*
+== Future plans ==
   * support for `Bvb_Grid_Filters` definition (actual implementation is not usign the Bvb interpretation)
   * user settings persistence - saving of the state (ordering, current page, filters, etc.) in cookie
   * support [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:advanced_searching Advanced searching]
@@ -89,14 +89,14 @@ You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid exampl
 || *Option/Function* || *Explanation* ||
 || title || translated to `jqGrid.colModel.name` property ||
 || hide || Bvb implementation is removing the field also from result set so this is not the same as `jqGrid.colModel.hidden`, see [http://code.google.com/p/zfdatagrid/issues/detail?id=109 #109] ||
-|| decorator ||  ||
-|| <strike>hRow</strike> || ||
-|| callback || ||
-|| eval || ||
-|| order || ||
+|| decorator || normal behavior ||
+|| <strike>hRow</strike> || not supported, see [#Future-plans] ||
+|| callback || normal behavior ||
+|| eval || normal behavior ||
+|| order || normal behavior ||
 || class || ||
 || searchType || ||
-|| format || ||
+|| format || normal behavior, but formatter have no way to configure jqGrid properies, see FUTURE  ||
 || Extra Fields || ||
 || SQL Expressions || ||
 || Ajax || mandatory to call `ajax()` method ||
