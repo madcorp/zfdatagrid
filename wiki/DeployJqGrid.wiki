@@ -18,8 +18,17 @@ The actual class implementation is developed under own [http://code.google.com/p
 *Future plans:*
   * support [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:advanced_searching Advanced searching]
   * allow formatters to change jqGrid settings and work with different deploy classes (need Bvb redesign)
+  * CRUD operations
   * evaluate possibility and usefulness to support:
     * (jqgrid) subforms
+    * (jqgrid) tree
+    * (jqgrid) autoloading when scrolling
+    * (jqgrid) Adjacency List Model
+    * (jqgrid) summary footer row
+    * (jqgrid) column chooser
+    * (jqgrid) column reorder
+    * (Bvb) extra fields
+    * (Bvb) horizontal row
 
 == Installation ==
 In general the project which wants to use Bvb_Grid_Deploy_JqGrid class has to accomplish:
