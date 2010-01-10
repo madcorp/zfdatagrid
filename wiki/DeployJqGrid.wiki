@@ -63,6 +63,16 @@ chapter about === Install Sample Project ===
 
 = Usage =
 
+== Steps to configure jqGrid ==
+You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid example] (*[http://www.k2s.sk/grid/jqgrid/code view code]*).
+
+  # define Zend_Db_Select object and pass it to grid
+  # update column options
+  # configure Bvb grid behaviour (available in {{{Bvb_Grid_DataGrid}}})
+  # configure jqGrid options {{{Bvb_Grid_Deploy_JqGrid}}}
+  # set ajax ID
+  # deploy and display in view
+
 = Licence =
 Development of this class is sponsored by [http://www.xtmotion.co.uk/ XTMotion] and the code is released under the [http://code.google.com/p/zfdatagrid/ same licence] as ZFDatagrid. 
 
