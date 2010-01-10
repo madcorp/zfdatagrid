@@ -87,9 +87,9 @@ You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid exampl
 
 === Common column options ===
 || *Option/Function* || *Explanation* ||
-|| title || ||
-|| hide || ||
-|| decorator || ||
+|| title || translated to `jqGrid.colModel.name` property ||
+|| hide || Bvb implementation is removing the field also from result set so this is not the same as `jqGrid.colModel.hidden`, see [http://code.google.com/p/zfdatagrid/issues/detail?id=109 #109] ||
+|| decorator ||  ||
 || <strike>hRow</strike> || ||
 || callback || ||
 || eval || ||
