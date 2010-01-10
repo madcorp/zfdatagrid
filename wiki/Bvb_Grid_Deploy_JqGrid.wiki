@@ -86,25 +86,27 @@ You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid exampl
 
 === Common column options ===
 
-<sup>check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]*</sup>
+<sup>`*` check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]* and [http://www.k2s.sk/gridapi/ API documentation]</sup>
+
 === jqGrid column options ===
 
-<sup>check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]*</sup>
+<sup>`*` check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]* and [http://www.k2s.sk/gridapi/ API documentation]</sup>
+
 === Common grid options ===
 || *Option/Function* || *Explanation* ||
 || noFilters() || [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:toolbar_searching toolbar searching] functionality will not be initialized ||
 || noOrder() || [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:options viewsortcols] will be configured not to allow sorting of columns ||
 || setPrimary() || has not meaning ||
 
-<sup>check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]*</sup>
+<sup>`*` check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]* and [http://www.k2s.sk/gridapi/ API documentation]</sup>
 
 === jqGrid grid options ===
 || *Option/Function* || *Explanation* ||
-|| setJqgOptions() || pass array with any [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:options options] ||
+|| setJqgOptions() || pass array with any [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:options jqGrid options] ||
 || setJqgOnInit() || adds javascript code to be executed after jqGrid will be initiated in web browser ||
 || clearJqgOnInit() || removes all javascript code added by setJqgOnInit() ||
 
-<sup>check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]*</sup> and [http://www.k2s.sk/gridapi/ API documentation]
+<sup>`*` check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]* and [http://www.k2s.sk/gridapi/ API documentation]</sup>
 
 == Publishing results ==
 Results from {{{Bvb_Grid_Deploy_JqGrid}}} object are sent to web browser in situations to display the grid and to provide data to grid.
