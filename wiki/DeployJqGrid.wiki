@@ -22,14 +22,14 @@ The actual class implementation is developed under own [http://code.google.com/p
     * create set of useful formatters
   * CRUD operations
   * evaluate possibility and usefulness to support:
-    * (jqgrid) subforms
-    * (jqgrid) tree
-    * (jqgrid) autoloading when scrolling
-    * (jqgrid) Adjacency List Model
-    * (jqgrid) summary footer row
+    * (jqgrid) filter input controls (text and select is supported, but date, date range, etc. should be added)
     * (jqgrid) column chooser
     * (jqgrid) column reorder
-    * (Bvb) extra fields
+    * (jqgrid) summary footer row
+    * (jqgrid) autoloading when scrolling
+    * (jqgrid) Adjacency List Model
+    * (jqgrid) subforms
+    * (jqgrid) tree
     * (Bvb) horizontal row
 
 == Installation ==
