@@ -63,6 +63,8 @@ chapter about === Install Sample Project ===
 
 = Usage =
 
+I assume that you read actual [http://code.google.com/p/zfdatagrid/downloads/list ZFDatagrid manual].
+
 == Steps to configure jqGrid ==
 You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid example] (*[http://www.k2s.sk/grid/jqgrid/code view code]*).
 
