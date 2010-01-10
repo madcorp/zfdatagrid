@@ -73,6 +73,13 @@ You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid exampl
   # set ajax ID
   # deploy and display in view
 
+== Column options ==
+=== Common column options ===
+=== jqGrid column options ===
+== ZFDatagrid options ==
+=== Common grid options ===
+=== jqGrid grid options ===
+
 = Licence =
 Development of this class is sponsored by [http://www.xtmotion.co.uk/ XTMotion] and the code is released under the [http://code.google.com/p/zfdatagrid/ same licence] as ZFDatagrid. 
 
