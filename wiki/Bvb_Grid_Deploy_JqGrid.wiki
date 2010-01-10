@@ -114,7 +114,7 @@ You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid exampl
 || setDefaultFilters() || normal behavior ||
 || setPrimary() || ignored ||
 
-<sup>`*` check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]* and [http://www.k2s.sk/gridapi/ API documentation]</sup>
+<sup>`*` check [http://www.k2s.sk/grid/jqgrid example] [http://www.k2s.sk/grid/jqgrid/code code] and [http://www.k2s.sk/gridapi/ API documentation]</sup>
 
 === jqGrid grid options ===
 || *Option/Function* || *Explanation* ||
