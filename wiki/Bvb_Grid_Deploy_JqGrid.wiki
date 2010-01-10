@@ -85,14 +85,26 @@ You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid exampl
 
 
 === Common column options ===
+
+<sup>check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]*</sup>
 === jqGrid column options ===
+
+<sup>check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]*</sup>
 === Common grid options ===
 || *Option/Function* || *Explanation* ||
-|| noFilters() || filter functionality will not be initialized ||
+|| noFilters() || [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:toolbar_searching toolbar searching] functionality will not be initialized ||
 || noOrder() || [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:options viewsortcols] will be configured not to allow sorting of columns ||
 || setPrimary() || has not meaning ||
 
+<sup>check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]*</sup>
+
 === jqGrid grid options ===
+|| *Option/Function* || *Explanation* ||
+|| setJqgOptions() || pass array with any [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:options options] ||
+|| setJqgOnInit() || adds javascript code to be executed after jqGrid will be initiated in web browser ||
+|| clearJqgOnInit() || removes all javascript code added by setJqgOnInit() ||
+
+<sup>check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]*</sup> and [http://www.k2s.sk/gridapi/ API documentation]
 
 == Publishing results ==
 Results from {{{Bvb_Grid_Deploy_JqGrid}}} object are sent to web browser in situations to display the grid and to provide data to grid.
@@ -119,6 +131,8 @@ You could do following in your view script:
 If you are using [http://framework.zend.com/manual/en/zend.layout.html Zend_Layout] put the jQuery part into your layout script.
 
 The other situation when results of `Bvb_Grid_Deploy_JqGrid` are sent to web browser is when the *front-end requests data through ajax*. This requests is recognized in `ajax()` function which will send requested data and stop Zend Application. The `ajax()` function should to be called before `deploy()` function.
+
+= FAQ =
 
 = Licence =
 Development of this class is sponsored by [http://www.xtmotion.co.uk/ XTMotion] and the code is released under the [http://code.google.com/p/zfdatagrid/ same licence] as ZFDatagrid. 
