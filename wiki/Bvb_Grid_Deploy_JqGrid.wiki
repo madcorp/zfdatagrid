@@ -31,12 +31,13 @@ The actual class implementation is developed under own [http://code.google.com/p
     * (jqgrid) subforms
     * (jqgrid) tree
     * (Bvb) horizontal row
+    * not to use ZendX_JQuery
 
 == Installation ==
 In general the project which wants to use {{{Bvb_Grid_Deploy_JqGrid}}} class has to accomplish:
   * include path set to directories where following libraries are located:
     * Zend
-    * ZendX
+    * ZendX (it is possible to change the class not to use ZendX)
     * Bvb (ZFDataGrid) - *you have to use the jqGrid branch*
 {{{
 svn checkout http://zfdatagrid.googlecode.com/svn/branches/jqGrid/trunk/library/Bvb Bvb
@@ -51,6 +52,7 @@ Bvb_Grid_Deploy_JqGrid::$jqgridLibPath = $myurl;
   * use {{{Bvb_Grid_Deploy_JqGrid}}} instead of {{{Bvb_Grid_Deploy_Table class}}}
   * if you already used ZFDatagrid in your project and simple replace of {{{Bvb_Grid_Deploy_Table}}} with {{{Bvb_Grid_Deploy_JqGrid}}} should work
   * *you have to call function {{{Bvb_Grid_Deploy_Table::ajax()}}} before {{{deploy()}}}*
+  * add output from [http://framework.zend.com/manual/en/zendx.jquery.html ZendX_JQuery_View_Helper_JQuery] into your HTML header
 
 <wiki:comment>
 chapter about === Install Sample Project ===
@@ -81,6 +83,31 @@ You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid exampl
 == ZFDatagrid options ==
 === Common grid options ===
 === jqGrid grid options ===
+== Publishing results ==
+Results from {{{Bvb_Grid_Deploy_JqGrid}}} object are sent to web browser in situations to display the grid and to provide data to grid.
+
+You need to call `deploy()` function to render the grid on your HTML page. This function returns HTML part of the grid and that needs to be added you your controller response. This function also adds javascript code to ZendX jQuery view helper and that need also to be added to controller response.
+
+You could do following in your view script:
+{{{
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+...
+  <!-- next line will add all necessery JavaScript and CSS includes -->
+  <?php echo $this->jQuery();?>
+...
+</head>
+<body>
+...
+<!-- next line will output HTML part of grid -->
+<?=$this->grid->deploy();?>
+...
+</body></html>
+}}}
+
+If you are using [http://framework.zend.com/manual/en/zend.layout.html Zend_Layout] put the jQuery part into your layout script.
+
+The other situation when results of `Bvb_Grid_Deploy_JqGrid` are sent to web browser is when the grid requests data through ajax. This requests is recognized in `ajax()` function which will send requested data and stop Zend Application. The `ajax()` function should to be called before `deploy()` function.
 
 = Licence =
 Development of this class is sponsored by [http://www.xtmotion.co.uk/ XTMotion] and the code is released under the [http://code.google.com/p/zfdatagrid/ same licence] as ZFDatagrid. 
