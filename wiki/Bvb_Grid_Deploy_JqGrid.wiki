@@ -16,6 +16,7 @@ The actual class implementation is developed under own [http://code.google.com/p
   * provide documentation and examples
 
 *Future plans:*
+  * support for `Bvb_Grid_Filters` definition (actual implementation is not usign the Bvb interpretation)
   * user settings persistence - saving of the state (ordering, current page, filters, etc.) in cookie
   * support [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:advanced_searching Advanced searching]
   * allow formatters to change jqGrid settings and work with different deploy classes (need Bvb redesign)
@@ -25,7 +26,7 @@ The actual class implementation is developed under own [http://code.google.com/p
     * (jqgrid) filter input controls (text and select is supported, but date, date range, etc. should be added)
     * (jqgrid) column chooser
     * (jqgrid) column reorder
-    * (jqgrid) summary footer row
+    * (jqgrid) summary footer row, (Bvb) SQL Expressions
     * (jqgrid) autoloading when scrolling
     * (jqgrid) Adjacency List Model
     * (jqgrid) subforms
@@ -85,6 +86,20 @@ You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid exampl
 
 
 === Common column options ===
+|| *Option/Function* || *Explanation* ||
+|| title || ||
+|| hide || ||
+|| decorator || ||
+|| <strike>hRow</strike> || ||
+|| callback || ||
+|| eval || ||
+|| order || ||
+|| class || ||
+|| searchType || ||
+|| format || ||
+|| Extra Fields || ||
+|| SQL Expressions || ||
+|| Ajax || mandatory to call `ajax()` method ||
 
 <sup>`*` check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]* and [http://www.k2s.sk/gridapi/ API documentation]</sup>
 
@@ -96,7 +111,7 @@ You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid exampl
 || *Option/Function* || *Explanation* ||
 || noFilters() || [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:toolbar_searching toolbar searching] functionality will not be initialized ||
 || noOrder() || [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:options viewsortcols] will be configured not to allow sorting of columns ||
-|| setPrimary() || has not meaning ||
+|| setPrimary() || ignored ||
 
 <sup>`*` check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]* and [http://www.k2s.sk/gridapi/ API documentation]</sup>
 
