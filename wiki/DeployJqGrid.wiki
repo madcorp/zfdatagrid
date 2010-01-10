@@ -52,8 +52,9 @@ Bvb_Grid_Deploy_JqGrid::$jqgridLibPath = $myurl;
   * if you already used ZFDatagrid in your project and simple replace of {{{Bvb_Grid_Deploy_Table}}} with {{{Bvb_Grid_Deploy_JqGrid}}} should work
   * *you have to call function {{{Bvb_Grid_Deploy_Table::ajax()}}} before {{{deploy()}}}*
 
+<wiki:comment>
 === Install Sample Project ===
-
+</wiki:comment>
 
 == Code ==
   * at this moment you need to use [http://code.google.com/p/zfdatagrid/source/browse/#svn/branches/jqGrid jqGrid branch] from repository to use this class
