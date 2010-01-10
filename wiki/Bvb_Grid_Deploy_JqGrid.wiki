@@ -105,7 +105,7 @@ You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid exampl
 
 === jqGrid column options ===
 || *Option/Function* || *Explanation* ||
-|| jqg{Property name} ||  ||
+|| jqg*{Property name}* ||  ||
 || bvbSetNavButtons ||  ||
 || bvbAddNavButton ||  ||
 || bvbClearNavButtons ||  ||
