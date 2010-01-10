@@ -4,7 +4,7 @@
 
 = Introduction =
 
-This is documentation for [http://www.trirand.com/blog/jqgrid/jqgrid.html jqGrid] frontend implementation for ZFDatgrid library. Look at this *[http://www.k2s.sk/grid/jqgrid example]* to see it in action.
+This is documentation for *[http://www.trirand.com/blog/jqgrid/jqgrid.html jqGrid]* frontend implementation for *ZFDatgrid library*. Look at this *[http://www.k2s.sk/grid/jqgrid example]* to see it in action.
 
 The actual class implementation is developed under own [http://code.google.com/p/zfdatagrid/source/browse/#svn/branches/jqGrid ZFDatagrid branch]. It will be merged into trunk when completed and accepted by [http://code.google.com/u/pao.fresco/ project owner].
 
@@ -20,6 +20,14 @@ The actual class implementation is developed under own [http://code.google.com/p
   * allow formatters to change jqGrid settings and work with different deploy classes (need Bvb redesign)
 
 == Installation ==
+In general the project which wants to use Bvb_Grid_Deploy_JqGrid class has to accomplish:
+  * Zend, ZendX, Bvb library needs to be in directory which is in include path
+  * full jqGrid library accessible from URL
+
+=== Add Bvb JqGrid to Existing Project ===
+
+
+=== Install Sample Project ===
 
 
 == Code ==
