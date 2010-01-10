@@ -4,12 +4,12 @@
 
 = Introduction =
 
-This is documentation for *[http://www.trirand.com/blog/jqgrid/jqgrid.html jqGrid]* frontend implementation for *ZFDatgrid library*. Look at this *[http://www.k2s.sk/grid/jqgrid example]* to see it in action.
+This is documentation for *[http://www.trirand.com/blog/jqgrid/jqgrid.html jqGrid]* front-end implementation for *ZFDatgrid library*. Look at this *[http://www.k2s.sk/grid/jqgrid example]* to see it in action.
 
 The actual class implementation is developed under own [http://code.google.com/p/zfdatagrid/source/browse/#svn/branches/jqGrid ZFDatagrid branch]. It will be merged into trunk when completed and accepted by [http://code.google.com/u/pao.fresco/ project owner].
 
 *Current plans:*
-  * keep jqGrid frontend as much as possible compatible with HTML Table frontend
+  * keep jqGrid front-end as much as possible compatible with HTML Table front-end
   * allow to pass all configuration options of jqGrid from PHP
   * add PHP functions which will provide easy way to complex jqGrid functionality
   * evaluate what parts of Bvb should be improved to use full power of booth libraries
@@ -86,7 +86,7 @@ You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid exampl
 == Publishing results ==
 Results from {{{Bvb_Grid_Deploy_JqGrid}}} object are sent to web browser in situations to display the grid and to provide data to grid.
 
-You need to call `deploy()` function to render the grid on your HTML page. This function returns HTML part of the grid and that needs to be added you your controller response. This function also adds javascript code to ZendX jQuery view helper and that need also to be added to controller response.
+You need to call `deploy()` function *to render the grid on your HTML page*. This function returns HTML part of the grid and that needs to be added you your controller response. This function also adds javascript code to ZendX jQuery view helper and that need also to be added to controller response.
 
 You could do following in your view script:
 {{{
@@ -107,7 +107,7 @@ You could do following in your view script:
 
 If you are using [http://framework.zend.com/manual/en/zend.layout.html Zend_Layout] put the jQuery part into your layout script.
 
-The other situation when results of `Bvb_Grid_Deploy_JqGrid` are sent to web browser is when the grid requests data through ajax. This requests is recognized in `ajax()` function which will send requested data and stop Zend Application. The `ajax()` function should to be called before `deploy()` function.
+The other situation when results of `Bvb_Grid_Deploy_JqGrid` are sent to web browser is when the *front-end requests data through ajax*. This requests is recognized in `ajax()` function which will send requested data and stop Zend Application. The `ajax()` function should to be called before `deploy()` function.
 
 = Licence =
 Development of this class is sponsored by [http://www.xtmotion.co.uk/ XTMotion] and the code is released under the [http://code.google.com/p/zfdatagrid/ same licence] as ZFDatagrid. 
