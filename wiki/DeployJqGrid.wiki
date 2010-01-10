@@ -53,7 +53,7 @@ Bvb_Grid_Deploy_JqGrid::$jqgridLibPath = $myurl;
   * *you have to call function {{{Bvb_Grid_Deploy_Table::ajax()}}} before {{{deploy()}}}*
 
 <wiki:comment>
-=== Install Sample Project ===
+chapter about === Install Sample Project ===
 </wiki:comment>
 
 == Code ==
