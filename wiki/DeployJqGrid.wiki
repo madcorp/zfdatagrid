@@ -16,6 +16,7 @@ The actual class implementation is developed under own [http://code.google.com/p
   * provide documentation and examples
 
 *Future plans:*
+  * user settings persistence - saving of the state (ordering, current page, filters, etc.) in cookie
   * support [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:advanced_searching Advanced searching]
   * allow formatters to change jqGrid settings and work with different deploy classes (need Bvb redesign)
     * create set of useful formatters
