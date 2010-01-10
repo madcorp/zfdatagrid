@@ -66,7 +66,7 @@ chapter about === Install Sample Project ===
 == Steps to configure jqGrid ==
 You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid example] (*[http://www.k2s.sk/grid/jqgrid/code view code]*).
 
-  # define Zend_Db_Select object and pass it to grid
+  # define {{{Zend_Db_Select}}} object and pass it to grid
   # update column options
   # configure Bvb grid behaviour (available in {{{Bvb_Grid_DataGrid}}})
   # configure jqGrid options {{{Bvb_Grid_Deploy_JqGrid}}}
