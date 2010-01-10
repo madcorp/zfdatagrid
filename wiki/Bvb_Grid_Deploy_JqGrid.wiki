@@ -94,7 +94,7 @@ You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid exampl
 || callback || normal behavior ||
 || eval || normal behavior ||
 || order || normal behavior ||
-|| class || ||
+|| class || normal behavior ||
 || searchType || ||
 || format || normal behavior, but formatter have no way to configure jqGrid properies, see see [#Future_plans] ||
 || Extra Fields || normal behavior ||
@@ -111,6 +111,7 @@ You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid exampl
 || *Option/Function* || *Explanation* ||
 || noFilters() || [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:toolbar_searching toolbar searching] functionality will not be initialized ||
 || noOrder() || [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:options viewsortcols] will be configured not to allow sorting of columns ||
+|| setDefaultFilters() || normal behavior ||
 || setPrimary() || ignored ||
 
 <sup>`*` check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]* and [http://www.k2s.sk/gridapi/ API documentation]</sup>
