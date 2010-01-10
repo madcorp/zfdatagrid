@@ -1,6 +1,6 @@
 #summary Documentation for Bvb_Grid_Deploy_JqGrid class
 
-<wiki:toc max_depth="2" />
+<wiki:toc max_depth="3" />
 
 = Introduction =
 
@@ -16,7 +16,7 @@ The actual class implementation is developed under own [http://code.google.com/p
   * provide documentation and examples
 
 *Future plans:*
-  * support [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:advanced_searching&s[]=multiplesearch advanced filtering]
+  * support [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:advanced_searching Advanced searching]
   * allow formatters to change jqGrid settings and work with different deploy classes (need Bvb redesign)
 
 == Installation ==
