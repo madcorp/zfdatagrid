@@ -96,9 +96,9 @@ You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid exampl
 || order || normal behavior ||
 || class || ||
 || searchType || ||
-|| format || normal behavior, but formatter have no way to configure jqGrid properies, see FUTURE  ||
-|| Extra Fields || ||
-|| SQL Expressions || ||
+|| format || normal behavior, but formatter have no way to configure jqGrid properies, see see [#Future_plans] ||
+|| Extra Fields || normal behavior ||
+|| <strike>SQL Expressions</strike> || see [#Future_plans] ||
 || Ajax || mandatory to call `ajax()` method ||
 
 <sup>`*` check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]* and [http://www.k2s.sk/gridapi/ API documentation]</sup>
