@@ -32,6 +32,7 @@ The actual class implementation is developed under own [http://code.google.com/p
     * (jqgrid) tree
     * (Bvb) horizontal row
     * not to use ZendX_JQuery
+    * don't need to provide data via Ajax (means always to render the page)
 
 == Installation ==
 In general the project which wants to use {{{Bvb_Grid_Deploy_JqGrid}}} class has to accomplish:
@@ -65,7 +66,10 @@ chapter about === Install Sample Project ===
 
 = Usage =
 
-I assume that you read actual [http://code.google.com/p/zfdatagrid/downloads/list ZFDatagrid manual].
+Before you continue you should:
+  * read actual [http://code.google.com/p/zfdatagrid/downloads/list ZFDatagrid manual]
+  * check [http://www.trirand.com/blog/jqgrid/jqgrid.html examples of jqGrid]
+  * read [http://www.trirand.com/jqgridwiki jqGrid wiki]
 
 == Steps to configure jqGrid ==
 You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid example] (*[http://www.k2s.sk/grid/jqgrid/code view code]*).
@@ -77,12 +81,19 @@ You will find all necessarily steps in our [http://www.k2s.sk/grid/jqgrid exampl
   # set ajax ID
   # deploy and display in view
 
-== Column options ==
+== Object configuration options ==
+
+
 === Common column options ===
 === jqGrid column options ===
-== ZFDatagrid options ==
 === Common grid options ===
+|| *Option/Function* || *Explanation* ||
+|| noFilters() || filter functionality will not be initialized ||
+|| noOrder() || [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:options viewsortcols] will be configured not to allow sorting of columns ||
+|| setPrimary() || has not meaning ||
+
 === jqGrid grid options ===
+
 == Publishing results ==
 Results from {{{Bvb_Grid_Deploy_JqGrid}}} object are sent to web browser in situations to display the grid and to provide data to grid.
 
