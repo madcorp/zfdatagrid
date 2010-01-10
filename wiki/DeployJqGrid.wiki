@@ -18,6 +18,7 @@ The actual class implementation is developed under own [http://code.google.com/p
 *Future plans:*
   * support [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:advanced_searching Advanced searching]
   * allow formatters to change jqGrid settings and work with different deploy classes (need Bvb redesign)
+    * create set of useful formatters
   * CRUD operations
   * evaluate possibility and usefulness to support:
     * (jqgrid) subforms
