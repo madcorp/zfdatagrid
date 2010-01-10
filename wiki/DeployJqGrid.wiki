@@ -6,6 +6,19 @@
 
 This is documentation for [http://www.trirand.com/blog/jqgrid/jqgrid.html jqGrid] frontend implementation for ZFDatgrid library. Look at this *[http://www.k2s.sk/grid/jqgrid example]* to see it in action.
 
+The actual class implementation is developed under own [http://code.google.com/p/zfdatagrid/source/browse/#svn/branches/jqGrid ZFDatagrid branch]. It will be merged into trunk when completed and accepted by [http://code.google.com/u/pao.fresco/ project owner].
+
+*Current plans:*
+  * keep jqGrid frontend as much as possible compatible with HTML Table frontend
+  * allow to pass all configuration options of jqGrid from PHP
+  * add PHP functions which will provide easy way to complex jqGrid functionality
+  * evaluate what parts of Bvb should be improved to use full power of booth libraries
+  * provide documentation and examples
+
+*Future plans:*
+  * support [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:advanced_searching&s[]=multiplesearch advanced filtering]
+  * allow formatters to change jqGrid settings and work with different deploy classes (need Bvb redesign)
+
 == Installation ==
 
 
