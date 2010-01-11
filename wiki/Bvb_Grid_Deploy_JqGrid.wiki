@@ -94,7 +94,7 @@ There are 3 categories of options which could be configured in `Bvb_Grid_Deploy_
 || `Bvb_Grid_Deploy_JqGrid` own options || bvb ||
 || jqGrid native options || jqg ||
 
-=== Common column options ===
+=== ZFDatagrid native column options ===
 || *Option/Function* || *Explanation* ||
 || title || translated to `jqGrid.colModel.name` property ||
 || hide || Bvb implementation is removing the field also from result set so this is not the same as `jqGrid.colModel.hidden`, see [http://code.google.com/p/zfdatagrid/issues/detail?id=109 #109] ||
@@ -122,7 +122,7 @@ There are 3 categories of options which could be configured in `Bvb_Grid_Deploy_
 
 <sup>`*` check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]* and [http://www.k2s.sk/gridapi/ API documentation]</sup>
 
-=== Common grid options ===
+=== ZFDatagrid native options ===
 || *Option/Function* || *Explanation* ||
 || noFilters() || [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:toolbar_searching toolbar searching] functionality will not be initialized ||
 || noOrder() || [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:options viewsortcols] will be configured not to allow sorting of columns ||
