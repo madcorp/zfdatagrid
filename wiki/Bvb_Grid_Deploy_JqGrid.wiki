@@ -115,9 +115,11 @@ There are 3 categories of options which could be configured in `Bvb_Grid_Deploy_
 === jqGrid column options ===
 || *Option/Function* || *Explanation* ||
 || jqg*{jqGrid Property name}* || prefix any [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:colmodel_options jqGrid colModel property] with jqg ||
+|| bvbSetNavGrid ||  ||
 || bvbSetNavButtons ||  ||
 || bvbAddNavButton ||  ||
 || bvbClearNavButtons ||  ||
+|| bvbSetIdname || value of defined column will be set as HTML ID attribute for each row, the value should be unique, see [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:retrieving_data jqGrid data manupulation manual] ||
 
 
 <sup>`*` check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]* and [http://www.k2s.sk/gridapi/ API documentation]</sup>
