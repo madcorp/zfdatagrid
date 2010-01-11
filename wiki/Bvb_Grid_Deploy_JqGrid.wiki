@@ -14,6 +14,7 @@ The actual class implementation is developed under own [http://code.google.com/p
   * add PHP functions which will provide easy way to complex jqGrid functionality
   * evaluate what parts of Bvb should be improved to use full power of booth libraries
   * provide documentation and examples
+  * methods should support chaining
 
 == Future plans ==
   * support for `Bvb_Grid_Filters` definition (actual implementation is not usign the Bvb interpretation)
