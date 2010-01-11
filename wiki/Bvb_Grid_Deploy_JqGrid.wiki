@@ -142,7 +142,6 @@ $grid->updateColumn('IsBig', array(
 || noOrder() || [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:options viewsortcols] will be configured not to allow sorting of columns ||
 || setDefaultFilters() || normal behavior ||
 || setPagination() ||  ||
-|| setBvbFirstDataAsLocal() || ||
 || setPrimary() || ignored ||
 
 <sup>`*` check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]* and [http://www.k2s.sk/gridapi/ API documentation]</sup>
@@ -154,6 +153,7 @@ $grid->updateColumn('IsBig', array(
 || setBvbParams() || pass array with own `Bvb_Grid_Deploy_JqGrid` options] ||
 || setBvbParam() || set value for param from `Bvb_Grid_Deploy_JqGrid` domain ||
 || bvbId || value of defined column will be set as HTML ID attribute for each row, the value should be unique, see [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:retrieving_data jqGrid data manupulation manual] ||
+|| bvbFirstDataAsLocal || if TRUE we will initialize grid with data passed to web page as javascript variable, next data request from grid will be Ajax request, otherwise grid will request first data with Ajax request also ||
 || bvbSetOnInit() || adds javascript code to be executed after jqGrid will be initiated in web browser ||
 || bvbClearOnInit() || removes all javascript code added by setJqgOnInit() ||
 
