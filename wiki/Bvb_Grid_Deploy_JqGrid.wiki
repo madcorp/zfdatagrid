@@ -187,6 +187,17 @@ The other situation when results of `Bvb_Grid_Deploy_JqGrid` are sent to web bro
 
 = FAQ =
 
+== Development ==
+
+=== How to  ===
+* install [http://www.firephp.org/ FirePHP].
+* enable `Zend_Db_Profiler_Firebug` in your application, for example in application.ini
+{{{
+resources.db.params.profiler.enabled = true
+resources.db.params.profiler.class = Zend_Db_Profiler_Firebug
+}}}
+
+How you should see `Zend_Db_Profiler_Firebug` message and if you click on it all executed queries. If you don't see the selects for first request, click on *Reload Grid* (you have set `bvbFirstDataAsLocal=false`).
 = Licence =
 Development of this class is sponsored by [http://www.xtmotion.co.uk/ XTMotion] and the code is released under the [http://code.google.com/p/zfdatagrid/ same licence] as ZFDatagrid. 
 
