@@ -4,6 +4,8 @@
 
 = FAQ =
 == How use callbacks ==
+Eval functionality was removed in 0.6, use callback instead.
+
 {{{
 public function g1ActionBar($id) {
     $helper = new Zend_View_Helper_Url();
