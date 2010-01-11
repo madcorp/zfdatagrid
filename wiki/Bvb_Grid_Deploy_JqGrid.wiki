@@ -108,6 +108,7 @@ There are 3 categories of options which could be configured in `Bvb_Grid_Deploy_
 || order || normal behavior ||
 || class || normal behavior ||
 || searchType || normal behavior ||
+|| searchTypeFixed || normal behavior ||
 || format || normal behavior, but formatter have no way to configure jqGrid properies, see see [#Future_plans] ||
 || Extra Fields || normal behavior ||
 || <strike>SQL Expressions</strike> || see [#Future_plans] ||
