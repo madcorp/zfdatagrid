@@ -116,10 +116,23 @@ There are 3 categories of options which could be configured in `Bvb_Grid_Deploy_
 === jqGrid column options ===
 || *Option/Function()* || *Explanation* ||
 || jqg*{jqGrid Property name}*() || set parameter from jqGrid domain [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:colmodel_options jqGrid colModel property] with jqg ||
-|| bvbNavGrid ||  ||
-|| bvbNavButtons ||  ||
-|| bvbAddNavButton() ||  ||
-|| bvbClearNavButtons() ||  ||
+|| <strike>bvbNavGrid</strike> || not implemented now ||
+|| <strike>bvbNavButtons</strike> || not implemented now ||
+|| <strike>bvbAddNavButton()</strike> || not implemented now ||
+|| <strike>bvbClearNavButtons()</strike> || not implemented now ||
+
+{{{
+$grid->updateColumn('IsBig', array(
+    'width'=>40,
+    'title' => 'Is Big City', 
+    'jqg' => array(
+        'formatter'=>'checkbox', 
+        'align'=>'center',
+        'stype'=>'select',
+        'searchoptions'=>array(/*'defaultValue'=>'1', */'value'=>array(null=>'All', 0=>'No', 1=>'Yes'))
+    )
+));
+}}}
 
 <sup>`*` check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]* and [http://www.k2s.sk/gridapi/ API documentation]</sup>
 
