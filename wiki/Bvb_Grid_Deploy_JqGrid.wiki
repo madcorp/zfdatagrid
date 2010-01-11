@@ -189,7 +189,7 @@ The other situation when results of `Bvb_Grid_Deploy_JqGrid` are sent to web bro
 
 == Development ==
 
-=== How to  ===
+=== How to see executed DB queries ===
 * install [http://www.firephp.org/ FirePHP].
 * enable `Zend_Db_Profiler_Firebug` in your application, for example in application.ini
 {{{
