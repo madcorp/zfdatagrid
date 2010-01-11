@@ -1,0 +1,50 @@
+#summary FAQ on usage of ZFDatagrid
+
+<wiki:toc max_depth="3" />
+
+= FAQ =
+== How use callbacks ==
+{{{
+public function g1ActionBar($id) {
+    $helper = new Zend_View_Helper_Url();
+    $actions = array(
+        array('href'=>$helper->url(array('action'=>'do', 'what'=>'view', 'id'=>$id)), 'caption'=>'View', 'class'=>'{view}'),
+        array('href'=>$helper->url(array('action'=>'do', 'what'=>'edit', 'id'=>$id)), 'caption'=>'Edit', 'class'=>'{edit} fixedClass'),
+        array('href'=>$helper->url(array('action'=>'do', 'what'=>'delete', 'id'=>$id)), 'caption'=>'Delete', 'class'=>'{delete}'),
+        array('onclick'=>new Zend_Json_Expr('alert("this is js alert");'), 'caption'=>'Alert Me')
+    );
+    return Bvb_Grid_Deploy_JqGrid::formatterActionBar($actions);
+}
+
+...
+// use callback
+$grid->updateColumn('_action', array(
+    //'order'=>1,
+    'title'=>'Action',
+    'width'=>100,
+    'class'=>'bvb_action bvb_first',
+    'callback'=>array(
+        'function'=>array($this,'g1ActionBar'),
+        'params'=>array('{{ID}}')
+    ),
+    'jqg'=>array('fixed'=>true)
+));
+// use anonymouse function 
+$grid->updateColumn('District', array(
+    'title'=>'District (ucase)',
+    'callback'=>array(
+        'function'=>create_function('$text', 'return strtoupper($text);'),
+        'params'=>array('{{District}}')
+    ),
+));
+}}}
+
+== How to see executed DB queries ==
+  * install [http://www.firephp.org/ FirePHP]
+  * enable `Zend_Db_Profiler_Firebug` in your application, for example in application.ini
+{{{
+resources.db.params.profiler.enabled = true
+resources.db.params.profiler.class = Zend_Db_Profiler_Firebug
+}}}
+
+How you should see `Zend_Db_Profiler_Firebug` message and if you click on it all executed queries. If you don't see the selects for first request, click on *Reload Grid* (you have set `bvbFirstDataAsLocal=false`).
