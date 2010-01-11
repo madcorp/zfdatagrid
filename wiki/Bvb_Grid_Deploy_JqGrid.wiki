@@ -115,7 +115,7 @@ There are 3 categories of options which could be configured in `Bvb_Grid_Deploy_
 
 === jqGrid column options ===
 || *Option/Function()* || *Explanation* ||
-|| jqg*{jqGrid Property name}*() || set parameter from jqGrid domain [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:colmodel_options jqGrid colModel property] with jqg ||
+|| jqg*{jqGrid Property name}* || set parameter from jqGrid domain [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:colmodel_options jqGrid colModel property] with jqg ||
 || <strike>bvbNavGrid</strike> || not implemented now ||
 || <strike>bvbNavButtons</strike> || not implemented now ||
 || <strike>bvbAddNavButton()</strike> || not implemented now ||
