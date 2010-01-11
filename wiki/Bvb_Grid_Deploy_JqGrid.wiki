@@ -114,8 +114,7 @@ There are 3 categories of options which could be configured in `Bvb_Grid_Deploy_
 
 === jqGrid column options ===
 || *Option/Function()* || *Explanation* ||
-|| jqgSet*{jqGrid Property name}*() || set parameter from jqGrid domain [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:colmodel_options jqGrid colModel property] with jqg ||
-|| bvbSet*{jqGrid Property name}*() || set parameter from `Bvb_Grid_Deploy_JqGrid` domain ||
+|| jqg*{jqGrid Property name}*() || set parameter from jqGrid domain [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:colmodel_options jqGrid colModel property] with jqg ||
 || bvbNavGrid ||  ||
 || bvbNavButtons ||  ||
 || bvbAddNavButton() ||  ||
@@ -139,7 +138,9 @@ There are 3 categories of options which could be configured in `Bvb_Grid_Deploy_
 === jqGrid grid options ===
 || *Option/Function()* || *Explanation* ||
 || setJqgParams() || pass array with any [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:options jqGrid options] ||
+|| setJqgParam() || set value for param from jqGrid domain, see [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:options jqGrid options] ||
 || setBvbParams() || pass array with own `Bvb_Grid_Deploy_JqGrid` options] ||
+|| setBvbParam() || set value for param from `Bvb_Grid_Deploy_JqGrid` domain ||
 || bvbSetOnInit() || adds javascript code to be executed after jqGrid will be initiated in web browser ||
 || bvbClearOnInit() || removes all javascript code added by setJqgOnInit() ||
 
