@@ -104,7 +104,7 @@ There are 3 categories of options which could be configured in `Bvb_Grid_Deploy_
 || decorator || normal behavior ||
 || <strike>hRow</strike> || not supported, see [#Future_plans] ||
 || callback || normal behavior ||
-|| eval || normal behavior ||
+|| <strike>eval</strike> || was removed from ZFDatagrid, use callback instead ||
 || order || normal behavior ||
 || class || normal behavior ||
 || searchType || normal behavior ||
@@ -189,10 +189,43 @@ If you are using [http://framework.zend.com/manual/en/zend.layout.html Zend_Layo
 The other situation when results of `Bvb_Grid_Deploy_JqGrid` are sent to web browser is when the *front-end requests data through ajax*. This requests is recognized in `ajax()` function which will send requested data and stop Zend Application. The `ajax()` function should to be called before `deploy()` function.
 
 = FAQ =
+== How use callbacks ==
+{{{
+public function g1ActionBar($id) {
+    $helper = new Zend_View_Helper_Url();
+    $actions = array(
+        array('href'=>$helper->url(array('action'=>'do', 'what'=>'view', 'id'=>$id)), 'caption'=>'View', 'class'=>'{view}'),
+        array('href'=>$helper->url(array('action'=>'do', 'what'=>'edit', 'id'=>$id)), 'caption'=>'Edit', 'class'=>'{edit} fixedClass'),
+        array('href'=>$helper->url(array('action'=>'do', 'what'=>'delete', 'id'=>$id)), 'caption'=>'Delete', 'class'=>'{delete}'),
+        array('onclick'=>new Zend_Json_Expr('alert("this is js alert");'), 'caption'=>'Alert Me')
+    );
+    return Bvb_Grid_Deploy_JqGrid::formatterActionBar($actions);
+}
 
-== Development ==
+...
+// use callback
+$grid->updateColumn('_action', array(
+    //'order'=>1,
+    'title'=>'Action',
+    'width'=>100,
+    'class'=>'bvb_action bvb_first',
+    'callback'=>array(
+        'function'=>array($this,'g1ActionBar'),
+        'params'=>array('{{ID}}')
+    ),
+    'jqg'=>array('fixed'=>true)
+));
+// use anonymouse function 
+$grid->updateColumn('District', array(
+    'title'=>'District (ucase)',
+    'callback'=>array(
+        'function'=>create_function('$text', 'return strtoupper($text);'),
+        'params'=>array('{{District}}')
+    ),
+));
+}}}
 
-=== How to see executed DB queries ===
+== How to see executed DB queries ==
   * install [http://www.firephp.org/ FirePHP]
   * enable `Zend_Db_Profiler_Firebug` in your application, for example in application.ini
 {{{
