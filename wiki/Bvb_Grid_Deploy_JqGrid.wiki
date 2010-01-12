@@ -200,7 +200,7 @@ Example how to use it in view script:
 <?php $this->jQuery()->onLoadCaptureStart(); ?>
 $('#filterShowAllCheckbox').bind('change', function() {
     <?=$this->grid        
-        ->Cmd('setPostDataItem', 'includeAll', true)
+        ->Cmd('setPostDataItem', 'includeAll', new Zend_Json_Expr('$(this).is(":checked")'))
         ->Cmd('trigger', 'reloadGrid');
     ?>
 });
