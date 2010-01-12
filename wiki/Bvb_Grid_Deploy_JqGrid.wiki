@@ -188,6 +188,9 @@ If you are using [http://framework.zend.com/manual/en/zend.layout.html Zend_Layo
 
 The other situation when results of `Bvb_Grid_Deploy_JqGrid` are sent to web browser is when the *front-end requests data through ajax*. This requests is recognized in `ajax()` function which will send requested data and stop Zend Application. The `ajax()` function should to be called before `deploy()` function.
 
+== Chaining commands ==
+
+
 = Licence =
 Development of this class is sponsored by [http://www.xtmotion.co.uk/ XTMotion] and the code is released under the [http://code.google.com/p/zfdatagrid/ same licence] as ZFDatagrid. 
 
