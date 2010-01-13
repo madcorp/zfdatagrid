@@ -189,9 +189,9 @@ If you are using [http://framework.zend.com/manual/en/zend.layout.html Zend_Layo
 The other situation when results of `Bvb_Grid_Deploy_JqGrid` are sent to web browser is when the *front-end requests data through ajax*. This requests is recognized in `ajax()` function which will send requested data and stop Zend Application. The `ajax()` function should to be called before `deploy()` function.
 
 == Chaining jqGrid methods ==
-You may use `Bvb_Grid_Deploy_JqGrid::Cmd()` method to call [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:methods jqGrid methods]. The methods are generated to Javascript as chain of commands in jqGrid [ new API format].
+You may use `Bvb_Grid_Deploy_JqGrid::cmd()` method to call [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:methods jqGrid methods]. The methods are generated to Javascript as chain of commands in jqGrid [ new API format].
 
-`Bvb_Grid_Deploy_JqGrid::Cmd()` fixes also some non-consistency in jqGrid API:
+`Bvb_Grid_Deploy_JqGrid::cmd()` fixes also some non-consistency in jqGrid API:
   * allows to chain jqGrid [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:post_data_module post data module] methods (setPostData(), appendPostData(), setPostDataItem(), removePostDataItem())
   * it is not possible to call `.trigger()` in the new API style
 
@@ -200,8 +200,8 @@ Example how to use it in view script:
 <?php $this->jQuery()->onLoadCaptureStart(); ?>
 $('#filterShowAllCheckbox').bind('change', function() {
     <?=$this->grid        
-        ->Cmd('setPostDataItem', 'includeAll', new Zend_Json_Expr('$(this).is(":checked")'))
-        ->Cmd('trigger', 'reloadGrid');
+        ->cmd('setPostDataItem', 'includeAll', new Zend_Json_Expr('$(this).is(":checked")'))
+        ->cmd('trigger', 'reloadGrid');
     ?>
 });
 <?php $this->jQuery()->onLoadCaptureEnd(); ?>
