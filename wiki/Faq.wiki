@@ -3,6 +3,23 @@
 <wiki:toc max_depth="3" />
 
 = FAQ =
+
+== How to disable search on particular field ==
+At this moment it is working only with the Bvb_Grid_Deploy_JqGrid class.
+{{{
+$grid->updateColumn('_action', array(
+    'search'=>false, // this will disable search
+    'title'=>'Action',
+    'width'=>100,
+    'class'=>'bvb_action bvb_first',
+    'callback'=>array(
+        'function'=>array($this,'g1ActionBar'),
+        'params'=>array('{{ID}}')
+    ),
+    'jqg'=>array('fixed'=>true)
+));
+}}}
+
 == How use callbacks ==
 Eval functionality was removed in 0.6, use callback instead.
 
