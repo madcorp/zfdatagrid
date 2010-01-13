@@ -209,6 +209,8 @@ $('#filterShowAllCheckbox').bind('change', function() {
 <?php echo $this->grid->deploy(); ?>
 }}}
 
+Value from jQuery command `$(this).is(":checked")` will be set in `$_POST['includeAll']`. *Take care, that it will be string not boolean.*
+
 = Licence =
 Development of this class is sponsored by [http://www.xtmotion.co.uk/ XTMotion] and the code is released under the [http://code.google.com/p/zfdatagrid/ same licence] as ZFDatagrid. 
 
