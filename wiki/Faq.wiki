@@ -72,7 +72,7 @@ You may handle export in a way that you handle the request. See [http://code.goo
 
 In [http://code.google.com/p/zfdatagrid/source/browse/#svn/branches/jqGrid/trunk jqGrid branch] there is another way to deal with exports. The main idea is to use *object factory pattern*. The factory will intercept exports and handle them. 
 
-Sometimes there is a need to customize columns based on export class (f ) that is achieved by callback functions. This functionality should not be used to customize the SQL select based on export classes although it is possible.
+Sometimes there is a need to customize columns based on export class (e.g. boolean formated to Yes/No) that is achieved by callback functions. This functionality should not be used to customize the SQL select based on export classes although it is possible.
 
 The full example is in [http://code.google.com/p/zfdatagrid/source/browse/branches/jqGrid/trunk/application/controllers/JqgridController.php JqgridController.php].
 
