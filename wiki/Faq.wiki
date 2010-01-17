@@ -4,7 +4,22 @@
 
 = FAQ =
 
-== How to disable search on particular field ==
+== Search ==
+
+=== ===
+|| Search field || SQL expression ||
+|| (default) stars `like` || `LIKE '%value%'` ||
+|| starts `rlike` || `LIKE 'value%'` ||
+|| starts llike || `LIKE '%value'` ||
+|| starts `equal`, `=` || `= value` ||
+|| starts `>=` || `>= value` ||
+|| starts `>` || `>` value ||
+|| starts `!=`, `<>` || `!=value` ||
+|| starts `<=` || `<=value` ||
+|| starts `<` || `<value` ||
+|| contains `<>` || `BETWEEN value_left AND value_rigt` ||
+
+=== How to disable search on particular field ===
 {{{
 $grid->updateColumn('_action', array(
     'search'=>false, // this will disable search
@@ -19,7 +34,8 @@ $grid->updateColumn('_action', array(
 ));
 }}}
 
-== How use callbacks ==
+== General ==
+=== How use callbacks ===
 Eval functionality was removed in 0.6, use callback instead.
 
 {{{
@@ -57,7 +73,7 @@ $grid->updateColumn('District', array(
 ));
 }}}
 
-== How to see executed DB queries ==
+=== How to see executed DB queries ===
   * install [http://www.firephp.org/ FirePHP]
   * enable `Zend_Db_Profiler_Firebug` in your application, for example in application.ini
 {{{
@@ -67,7 +83,7 @@ resources.db.params.profiler.class = Zend_Db_Profiler_Firebug
 
 How you should see `Zend_Db_Profiler_Firebug` message and if you click on it all executed queries. If you don't see the selects for first request, click on *Reload Grid* (you have set `bvbFirstDataAsLocal=false`).
 
-== How to support export ==
+=== How to support export ===
 You may handle export in a way that you handle the request. See [http://code.google.com/p/zfdatagrid/source/browse/trunk/application/controllers/SiteController.php SiteController.php] example.
 
 There is also another way to deal with exports. The main idea is to use *object factory pattern*. The factory will intercept exports and handle them. 
