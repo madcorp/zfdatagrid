@@ -87,6 +87,11 @@ function listAction()
         )
     );
     $this->configG1($grid1, $this->_getParam('onlyFromPolynesia', 'false')==='true');
+    // make sure that export to CSV is enabled
+    $grid1->export = array(
+        // define parameters for csv export, see Bvb_Grid_DataGrid::getExports
+        'csv'=>array('caption'=>'Csv')
+    );
     // pass grids to view and deploy() them there
     $this->view->g1 = $grid1->deploy();
 
