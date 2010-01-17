@@ -6,7 +6,7 @@
 
 == Search ==
 
-=== ===
+=== Supported search operators ===
 || Search field || SQL expression ||
 || (default) stars `like` || `LIKE '%value%'` ||
 || starts `rlike` || `LIKE 'value%'` ||
