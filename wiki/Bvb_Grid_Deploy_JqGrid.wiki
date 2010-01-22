@@ -97,7 +97,8 @@ There are 3 categories of options which could be configured in `Bvb_Grid_Deploy_
 || title || translated to `jqGrid.colModel.name` property ||
 || width || translated to `jqGrid.colModel.width` property ||
 || align || translated to `jqGrid.colModel.align` property ||
-|| hide || Bvb implementation is removing the field also from result set so this is not the same as `jqGrid.colModel.hidden`, see [http://code.google.com/p/zfdatagrid/issues/detail?id=109 #109] ||
+|| remove || Bvb implementation is removing the field also from result set so this is not the same as `hidden`
+|| hidden || field will not be visible, but will be loaded from DB ||
 || decorator || normal behavior ||
 || <strike>hRow</strike> || not supported, see [#Future_plans] ||
 || callback || normal behavior ||
