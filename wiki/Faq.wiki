@@ -131,3 +131,11 @@ public function configG1($grid)
 ...
 }
 }}}
+
+=== Adding Javascript event does not work ===
+Make sure you are using Zend_Json_Expr:
+
+{{{
+...
+    'onclick'=>new Zend_Json_Expr('alert("you clicked on ID: "+jQuery(this).closest("tr").attr("id"));')
+}}}
