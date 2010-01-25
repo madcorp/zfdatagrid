@@ -120,6 +120,8 @@ public function configG1PostCsv($grid)
 {
     // we don't want this column in export
     $grid->updateColumn('_action', array('hide'=>true));
+    // define output file name if needed
+    $grid->setTitle('myExport');
 }
 /**
  * Main grid configuration function
