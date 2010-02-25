@@ -7,7 +7,7 @@ we can't even imagine the things we want to display or how do we want to display
 Fortunately there is a way to help you.
 
 Below are a list of options that can be applied to any !Bvb_Grid_Source`_``*`
-==Available Options==
+=Available Options=
 
  * helper
  * order
@@ -27,9 +27,7 @@ Below are a list of options that can be applied to any !Bvb_Grid_Source`_``*`
  * callback
  * escape
   
-===Option By Option===
-
-====helper====
+==helper==
 This is a View Helper.
 
 Like formText, FormRadio, Url, etc, etc.
@@ -41,7 +39,7 @@ $grid->updateColumn('field',array('helper'=>array('name'=>'formInput','params'=>
 }}}
 
 
-====Order====
+==Order==
 *Possible Values*: true|false
 Use this option if you don't want to give the user the possibility to order this field. One reason may be the use of an expression the build field
 
@@ -51,7 +49,7 @@ $grid->updatColumn('field',array('order'=>true));
 }}}
 
 
-====Title====
+==Title==
 This is the title for the column the user will see.
 
 Usage:
@@ -60,7 +58,7 @@ $grid->updatColumn('user_email',array('title'=>'Email Address'));
 }}}
 
 
-====Remove====
+==Remove==
 This option is used to remove the field from the grid, but not from the query. You may want to use the value of the _id_ field in a decorator, but not to show the id in the grid.
 
 *Possible values*: true|false
@@ -71,7 +69,7 @@ $grid->updatColumn('field',array('remove'=>true));
 
 
 
-====Hidden====
+==Hidden==
 This option is similar to the _remove_ option. But while the _remove_ option the made by the Bvb_Grid_Data class, the class responsible for hidding the column is the deploy class.
 
 *Possible values*: true|false
@@ -81,7 +79,7 @@ $grid->updatColumn('field',array('hidden'=>true));
 }}}
 
 
-====Decorator====
+==Decorator==
 Use this options to add you own text or html to the field. As the name indicates, it decorates the field.
 
 Usage:
@@ -92,7 +90,7 @@ $grid->updatColumn('field',array('decorator'=>'This field value is: {{field}}'))
 Please that you can use {{FIELD_NAME}} to insert the expected field value
 
 
-====hRow====
+==hRow==
 This is vary useful for you to group results. Imagine you have a list of countries and want to group them by continent like here: http://zfdatagrid.com/grid/default/site/hrow 
 
 _Notice_: You can only use this option once per grid. The last defined will prevail over the others.  
@@ -103,7 +101,7 @@ $grid->updatColumn('field',array('hRow'=>true));
 }}}
 
 
-====Position====
+==Position==
 Use this option to specify the position where a column will appear
 
 *Possible Values:* first, last, next, number (not the word. 1, 2,3 ,4 )
@@ -118,7 +116,7 @@ $grid->updatColumn('field',array('position'=>'3'));
 
 
 
-====orderField====
+==orderField==
 This is useful if you are using decorators or any other custom content. Instead ordering by the field that corresponds to that column, the order will be made by other specified. 
 
 
@@ -130,7 +128,7 @@ $grid->updatColumn('field',array('orderField'=>'field2'));
 
 
 
-====class====
+==class==
 A CSS class to be used
 
 
@@ -141,7 +139,7 @@ $grid->updatColumn('field',array('class'=>'my_css_class'));
 
 
 
-====style====
+==style==
 A CSS style to be used
 
 
@@ -152,7 +150,7 @@ $grid->updatColumn('field',array('style'=>'text-decoration:underline'));
 
 
 
-====search====
+==search==
 How the search will be performed, or if it will be perfomed.
 
 To not allow search on a particularly field:
@@ -177,7 +175,7 @@ Specify in boolean mode (default):
 $grid->updatColumn('field',array('search'=>array('fulltext'=>true,'extra'=>'boolean')));
 }}}
 
-Specifywith query expansion:
+Specify with query expansion:
 {{{
 $grid->updatColumn('field',array('search'=>array('fulltext'=>true,'extra'=>'queryExpansion')));
 }}}
