@@ -1,0 +1,5 @@
+#summary How to use formatters
+
+= Introduction =
+
+How to use formatters
