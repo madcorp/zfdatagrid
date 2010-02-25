@@ -1,0 +1,32 @@
+#summary All the options available for fields customization
+
+<wiki:toc max_depth="3" />
+
+= Introduction =
+we can't even imagine the things we want to display or how do we want to display. 
+Fortunately there is a way to help you.
+
+Below are a list of options that can be applied to any Bvb_Grid_Source_*
+==Available Options==
+
+ * helper
+ * order
+ * tooltipFilter
+ * tooltipTitle
+ * title
+ * remove
+ * escape
+ * hidden
+ * decorator
+ * hRow
+ * position
+ * orderField
+ * class
+ * searchType
+ * searchTypeFixed
+ * search
+ * format
+ * callback
+ * style
+  
+===Option By Option===
