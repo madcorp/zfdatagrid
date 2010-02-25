@@ -6,6 +6,20 @@
 
 == Search ==
 
+=== Supported search operators ===
+|| Search field || SQL expression || Example || Match ||
+|| (default) stars `like` || `LIKE '%value%'` || `*`art`*` || art, star, start||
+|| starts `llike` || `LIKE '%value'` || `*`art || art, smart, start||
+|| starts rlike || `LIKE 'value%'` || art`*` || artifact, art||
+|| starts `equal`, `=` || `= value` || =art|| art||
+|| starts `>=` || `>= value` || >=12|| 12, 45, 57675||
+|| starts `>` || `>` value || >12 || 13, 235,456||
+|| starts `!=`, `<>` || `!=value` || <>12|| 11, 13, 345||
+|| starts `<=` || `<=value` ||<=12|| 1, 2,7,12||
+|| starts `<` || `<value` || <12 || 1, 4, 7, 11||
+|| contains `<>` || `BETWEEN value_left AND value_rigt` || 12<>25 || 13, 17, 19|| 
+|| contains `,` || `IN (value1,value2,value3)` || 1,45,67|| 1, 45, 67||
+
 === How to disable search on particular field ===
 {{{
 $grid->updateColumn('_action', array(
