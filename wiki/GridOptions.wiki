@@ -1,6 +1,6 @@
 #summary All the options available for fields customization
 
-<wiki:toc max_depth="3" />
+<wiki:toc max_depth="4" />
 
 = Introduction =
 we can't even imagine the things we want to display or how do we want to display. 
@@ -11,11 +11,8 @@ Below are a list of options that can be applied to any !Bvb_Grid_Source`_``*`
 
  * helper
  * order
- * tooltipFilter
- * tooltipTitle
  * title
  * remove
- * escape
  * hidden
  * decorator
  * hRow
@@ -28,5 +25,79 @@ Below are a list of options that can be applied to any !Bvb_Grid_Source`_``*`
  * format
  * callback
  * style
+ * escape
   
 ===Option By Option===
+
+====helper====
+This is a View Helper.
+
+Like formText, FormRadio, Url, etc, etc.
+
+Usage:
+{{{
+$grid->updateColumn('field',array('helper'=>array('name'=>'formInput','params'=>array('name','value'))));
+//Please refer to the view helper you want to use for possible params
+}}}
+
+
+====Order====
+*Possible Values*: true|false
+Use this option if you don't want to give the user the possibility to order this field. One reason may be the use of an expression the build field
+
+Usage:
+{{{
+$grid->updatColumn('field',array('order'=>true));
+}}}
+
+
+====Title====
+This is the title for the column the user will see.
+
+Usage:
+{{{
+$grid->updatColumn('user_email',array('title'=>'Email Address'));
+}}}
+
+
+====Remove====
+This option is used to remove the field from the grid, but not from the query. You may want to use the value of the _id_ field in a decorator, but not to show the id in the grid.
+
+*Possible values*: true|false
+Usage:
+{{{
+$grid->updatColumn('field',array('remove'=>true));
+}}}
+
+
+
+====Hidden====
+This option is similar to the _remove_ option. But while the _remove_ option the made by the Bvb_Grid_Data class, the class responsible for hidding the column is the deploy class.
+
+*Possible values*: true|false
+Usage:
+{{{
+$grid->updatColumn('field',array('hidden'=>true));
+}}}
+
+
+====Decorator====
+Use this options to add you own text or html to the field. As the name indicates, it decorates the field.
+
+Usage:
+{{{
+$grid->updatColumn('field',array('decorator'=>'This field value is: {{field}}'));
+}}}
+
+Please that you can use {{FIELD_NAME}} to insert the expected field value
+
+
+====hRow====
+This is vary useful for you to group results. Imagine you have a list of countries and want to group them by continent like here: http://zfdatagrid.com/grid/default/site/hrow 
+
+_Notice_: You can only use this option once per grid. The last defined will prevail over the others.  
+
+Usage (this is case sensitive. hrow != hRow):
+{{{
+$grid->updatColumn('field',array('hRow'=>true));
+}}}
