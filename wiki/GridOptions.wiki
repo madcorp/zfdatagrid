@@ -45,7 +45,7 @@ Use this option if you don't want to give the user the possibility to order this
 
 Usage:
 {{{
-$grid->updatColumn('field',array('order'=>true));
+$grid->updateColumn('field',array('order'=>true));
 }}}
 
 
@@ -54,7 +54,7 @@ This is the title for the column the user will see.
 
 Usage:
 {{{
-$grid->updatColumn('user_email',array('title'=>'Email Address'));
+$grid->updateColumn('user_email',array('title'=>'Email Address'));
 }}}
 
 
@@ -64,7 +64,7 @@ This option is used to remove the field from the grid, but not from the query. Y
 *Possible values*: true|false
 Usage:
 {{{
-$grid->updatColumn('field',array('remove'=>true));
+$grid->updateColumn('field',array('remove'=>true));
 }}}
 
 
@@ -75,7 +75,7 @@ This option is similar to the _remove_ option. But while the _remove_ option the
 *Possible values*: true|false
 Usage:
 {{{
-$grid->updatColumn('field',array('hidden'=>true));
+$grid->updateColumn('field',array('hidden'=>true));
 }}}
 
 
@@ -84,7 +84,7 @@ Use this options to add you own text or html to the field. As the name indicates
 
 Usage:
 {{{
-$grid->updatColumn('field',array('decorator'=>'This field value is: {{field}}'));
+$grid->updateColumn('field',array('decorator'=>'This field value is: {{field}}'));
 }}}
 
 Please that you can use {{FIELD_NAME}} to insert the expected field value
@@ -97,7 +97,7 @@ _Notice_: You can only use this option once per grid. The last defined will prev
 
 Usage (this is case sensitive. hrow != hRow):
 {{{
-$grid->updatColumn('field',array('hRow'=>true));
+$grid->updateColumn('field',array('hRow'=>true));
 }}}
 
 
@@ -108,10 +108,10 @@ Use this option to specify the position where a column will appear
 
 Usage:
 {{{
-$grid->updatColumn('field',array('position'=>'last'));
-$grid->updatColumn('field',array('position'=>'first'));
-$grid->updatColumn('field',array('position'=>'2'));
-$grid->updatColumn('field',array('position'=>'3'));
+$grid->updateColumn('field',array('position'=>'last'));
+$grid->updateColumn('field',array('position'=>'first'));
+$grid->updateColumn('field',array('position'=>'2'));
+$grid->updateColumn('field',array('position'=>'3'));
 }}}
 
 
@@ -122,7 +122,7 @@ This is useful if you are using decorators or any other custom content. Instead 
 
 Usage:
 {{{
-$grid->updatColumn('field',array('orderField'=>'field2'));
+$grid->updateColumn('field',array('orderField'=>'field2'));
 }}}
 
 
@@ -134,7 +134,7 @@ A CSS class to be used
 
 Usage:
 {{{
-$grid->updatColumn('field',array('class'=>'my_css_class'));
+$grid->updateColumn('field',array('class'=>'my_css_class'));
 }}}
 
 
@@ -145,7 +145,7 @@ A CSS style to be used
 
 Usage:
 {{{
-$grid->updatColumn('field',array('style'=>'text-decoration:underline'));
+$grid->updateColumn('field',array('style'=>'text-decoration:underline'));
 }}}
 
 
@@ -156,28 +156,28 @@ How the search will be performed, or if it will be perfomed.
 To not allow search on a particularly field:
 Usage:
 {{{
-$grid->updatColumn('field',array('search'=>false));
+$grid->updateColumn('field',array('search'=>false));
 }}}
 
 To use full-text search:
 Simple usage:
 {{{
-$grid->updatColumn('field',array('search'=>array('fulltext'=>true)));
+$grid->updateColumn('field',array('search'=>array('fulltext'=>true)));
 }}}
 
 Specify indexes (if no index is specified the field name will be used):
 {{{
-$grid->updatColumn('field',array('search'=>array('fulltext'=>true,'indexes'=>'field,field2')));
+$grid->updateColumn('field',array('search'=>array('fulltext'=>true,'indexes'=>'field,field2')));
 }}}
 
 Specify in boolean mode (default):
 {{{
-$grid->updatColumn('field',array('search'=>array('fulltext'=>true,'extra'=>'boolean')));
+$grid->updateColumn('field',array('search'=>array('fulltext'=>true,'extra'=>'boolean')));
 }}}
 
 Specify with query expansion:
 {{{
-$grid->updatColumn('field',array('search'=>array('fulltext'=>true,'extra'=>'queryExpansion')));
+$grid->updateColumn('field',array('search'=>array('fulltext'=>true,'extra'=>'queryExpansion')));
 }}}
 
 
@@ -201,9 +201,9 @@ Available operators:
 
 Usage:
 {{{
-$grid->updatColumn('field',array('searchType'=>'='));
-$grid->updatColumn('field',array('searchType'=>'>='));
-$grid->updatColumn('field',array('searchType'=>'llike'));
+$grid->updateColumn('field',array('searchType'=>'='));
+$grid->updateColumn('field',array('searchType'=>'>='));
+$grid->updateColumn('field',array('searchType'=>'llike'));
 }}}
 
 
@@ -215,7 +215,7 @@ If you don't want to give the user this option, set searchTypeFixed to false.
 *Possible values*: true|false
 Usage:
 {{{
-$grid->updatColumn('field',array('searchTypeFixed'=>true));
+$grid->updateColumn('field',array('searchTypeFixed'=>true));
 }}}
 
 
@@ -225,6 +225,31 @@ Check this page for more info on [Formatters]
 
 Usage:
 {{{
-$grid->updatColumn('field',array('format'=>'number'));
-$grid->updatColumn('field',array('format'=>array('number',array('param1','param2'))));
+$grid->updateColumn('field',array('format'=>'number'));
+$grid->updateColumn('field',array('format'=>array('number',array('param1','param2'))));
+}}}
+
+
+==callback==
+A callback to be applied to the field
+
+Usage:
+{{{
+$grid->updateColumn('field',array('callback'=>array('function'=>'my_function','params'=>array('param1','{{field}}'))));
+}}}
+
+
+==escape==
+Escape the field or not, and how...
+
+Usage:
+{{{
+//Won't escape the field
+$grid->updateColumn('field',array('escape'=>false));
+
+//Will escape the field based on default escape
+$grid->updateColumn('field',array('escape'=>true));
+
+//Will escape the field based on default escape
+$grid->updateColumn('field',array('escape'=>'my_callback_function'));
 }}}
