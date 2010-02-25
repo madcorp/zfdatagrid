@@ -179,3 +179,52 @@ Specify with query expansion:
 {{{
 $grid->updatColumn('field',array('search'=>array('fulltext'=>true,'extra'=>'queryExpansion')));
 }}}
+
+
+
+==searchType==
+The search operand that will be used.
+
+Available operators:
+|| `like` || 
+|| `llike` || 
+|| rlike || 
+|| `equal`, `=` ||
+|| `>=` ||
+|| `>` || 
+|| `!=`, `<>` ||
+|| `<=` || 
+|| `<` || 
+|| `r:` (will apply a regexp) || 
+
+
+
+Usage:
+{{{
+$grid->updatColumn('field',array('searchType'=>'='));
+$grid->updatColumn('field',array('searchType'=>'>='));
+$grid->updatColumn('field',array('searchType'=>'llike'));
+}}}
+
+
+==searchType==
+The user has the ability to alter the search operand by using one of the available options check: [http://code.google.com/p/zfdatagrid/wiki/Faq#Supported_search_operators Faq#Supported_search_operators]
+
+If you don't want to give the user this option, set searchTypeFixed to false.
+
+*Possible values*: true|false
+Usage:
+{{{
+$grid->updatColumn('field',array('searchTypeFixed'=>true));
+}}}
+
+
+==format==
+Format is a simple way for you to format content (date, time, currency, bool, etc).
+Check this page for more info on [Formatters]
+
+Usage:
+{{{
+$grid->updatColumn('field',array('format'=>'number'));
+$grid->updatColumn('field',array('format'=>array('number',array('param1','param2'))));
+}}}
