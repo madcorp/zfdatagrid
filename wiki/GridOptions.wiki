@@ -207,7 +207,7 @@ $grid->updateColumn('field',array('searchType'=>'llike'));
 }}}
 
 
-==searchType==
+==searchTypeFixed==
 The user has the ability to alter the search operand by using one of the available options check: [http://code.google.com/p/zfdatagrid/wiki/Faq#Supported_search_operators Faq#Supported_search_operators]
 
 If you don't want to give the user this option, set searchTypeFixed to false.
