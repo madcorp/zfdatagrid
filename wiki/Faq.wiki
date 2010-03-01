@@ -35,6 +35,11 @@ $grid->updateColumn('_action', array(
 ));
 }}}
 
+===How to disable search?===
+{{{
+$grid->setNoFilters(true);
+}}}
+
 == General ==
 === How use callbacks ===
 Eval functionality was removed in 0.6, use callback instead.
