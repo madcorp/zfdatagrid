@@ -48,7 +48,7 @@ Along with the params you defined, 3 more ill be merged.
 
  * field => The field name
  * value => The field value
- * select => The select Object (Zend_Db_Select or other)
+ * select => The select Object (!Zend_Db_Select or other)
 
 <font color="red">*ATTENTION: *</font> Is YOUR responsibility to apply any condition to the select object
 
