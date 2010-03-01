@@ -6,7 +6,7 @@ If you have a lot of fields to show, they probably will take more space than the
 
 You can set the fields that appear on the grid list and fields that appear on a detailed view.
 
-<font color="red">*Attention:*</font> This is optional. If you don't set nothing, all fields will be showed on the grid page. 
+||<font color="red">*Attention:*</font> This is optional. If you don't set nothing, all fields will be showed on the grid page. ||
 
 To define the fields that appear in the grid view:
 
