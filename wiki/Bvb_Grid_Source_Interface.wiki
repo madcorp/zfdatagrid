@@ -1,5 +1,7 @@
 #summary The data source interface
 
+= Use this interface to build your own data source =
+
 {{{
 
 interface Bvb_Grid_Source_Interface
