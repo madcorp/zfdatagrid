@@ -8,14 +8,14 @@ Setting the number of records per page is one simple and easy task. You can make
 
 No matter what choice you made, it's done with the same method.
 
-After your grid is instantiated just use the SetPagination() method
+After your grid is instantiated just use the !SetPagination() method
 
 {{{
 $grid->setPatination(10)//Will show 10 records per page
 $grid->setPagination(0)//Will show all records in one page
 }}}
 
-<font color="red">*Attention:*</font> Pagination won't take any effect when you explicity set a limit in your query clause
+<font color="red">*Attention:*</font> Pagination won't take any effect when you explicitly set a limit in your query clause
 
 Examle:
 {{{
