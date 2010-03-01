@@ -1,13 +1,14 @@
-#summary One-sentence summary of this page.
+#summary Sort fields by order, asc or desc
 
 = Introduction =
 
-Add your content here.
+This is a very useful feature. Before and after the field titles will appear to arrows showing the possibility to sort the fields order 'up' or 'down'
 
+You can also disable field sorting by doing this:
 
-= Details =
+{{{
+$grid->updateColumn('field',array('order'=>true));
+$grid->updateColumn('field',array('order'=>false));
+}}}
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+More information about fields options [GridOptions here]
