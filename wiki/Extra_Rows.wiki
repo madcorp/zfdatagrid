@@ -2,9 +2,9 @@
 
 = Introduction =
 
-You may need to add info in some part o the grid.
+You may need to add info in some part of the grid.
 
-This can be achieved by using the Bvb_Grid_ExtraRows class
+This can be achieved by using the !Bvb_Grid_ExtraRows class
 
  = Example =
 
