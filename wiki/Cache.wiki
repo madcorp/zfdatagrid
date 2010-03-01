@@ -1,13 +1,19 @@
-#summary One-sentence summary of this page.
-
+#summary Using cache
+<wiki:toc max_depth="3" />
 = Introduction =
 
-Add your content here.
+When performing intensive queries or using sources as files, is a good idea to use cache for performance improvement.
 
+==How?==
 
-= Details =
+It's really easy.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+{{{
+$grid->cache = array('use'=>(0|1),'instance'=>Zend_Cache $cache,'tag'=>'my_tag');
+}}}
+
+==And affects==
+
+When using cache all of your queries will be put on cache and they will use the tag provided.
+
+After performing CRUD operations all the cache based on the tag will be erased.
