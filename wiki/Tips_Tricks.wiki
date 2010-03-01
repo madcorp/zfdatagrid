@@ -1,0 +1,14 @@
+#summary Some methods to facilitate your life
+
+
+= Disable Filters =
+
+{{{
+$grid->setNoFilters(true);
+}}}
+
+= Disable Order =
+
+{{{
+$grid->setNoOrder(true);
+}}}
