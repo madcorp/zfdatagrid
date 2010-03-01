@@ -6,7 +6,7 @@ The expression result will be presented before the pagination as a new table row
 
 {{{
 $grid->sqlexp = array(
-            'field’ =>array(
+            'field' =>array(
                 'functions' => array('SUM'),
                 'value' => 'price*number',
                 'format'=>'number' //Format is optional
