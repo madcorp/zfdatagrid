@@ -12,12 +12,9 @@ This can be achieved by using the !Bvb_Grid_ExtraRows class
 $rows = new Bvb_Grid_ExtraRows();
 $rows->addRow('beforeHeader',array(
                 '', // empty field
-                array( 'colspan' => 1, 'class' => 'myclass', 'content'=>'my
-content'),
-                array('colspan' => 2, 'class' => 'myotherclass',
-'content'=>'some '),
-                array('colspan' => 1, 'class' => 'myclass', 'content'=>'flowers
-:) '),
+                array( 'colspan' => 1, 'class' => 'myclass', 'content'=>'my content'),
+                array('colspan' => 2, 'class' => 'myotherclass','content'=>'some '),
+                array('colspan' => 1, 'class' => 'myclass', 'content'=>'flowers:) '),
             ));
 $grid->addExtraRows($rows);
 }}}
