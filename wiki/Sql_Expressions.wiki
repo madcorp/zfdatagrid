@@ -5,13 +5,13 @@
 The expression result will be presented before the pagination as a new table row (tr) and bellow to matching field. Using SQL expressions is as easy as:
 
 {{{
-$grid->sqlexp (array(
+$grid->sqlexp = array(
             'field’ =>array(
                 'functions' => array('SUM'),
                 'value' => 'price*number',
                 'format'=>'number' //Format is optional
             )
-        ));
+        );
 
 }}}
 
