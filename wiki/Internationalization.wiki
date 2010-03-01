@@ -1,4 +1,4 @@
-#summary Multiple-languages
+#summary Multiple languages
 
 = Introduction =
 
