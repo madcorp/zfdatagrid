@@ -91,7 +91,7 @@ Please that you can use {{FIELD_NAME}} to insert the expected field value
 
 
 ==hRow==
-This is vary useful for you to group results. Imagine you have a list of countries and want to group them by continent like here: http://zfdatagrid.com/grid/default/site/hrow 
+This is very useful for you to group results. Imagine you have a list of countries and want to group them by continent like here: http://zfdatagrid.com/grid/default/site/hrow 
 
 _Notice_: You can only use this option once per grid. The last defined will prevail over the others.  
 
