@@ -1,13 +1,21 @@
-#summary One-sentence summary of this page.
+#summary Multiple-languages
 
 = Introduction =
 
-Add your content here.
+Internationalization is almost a must have feature.
 
+ZFDatagrid makes this incredible easy.
 
-= Details =
+You just need to register your Zend_Translator instance in the Registry like this:
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+{{{
+Zend_Registry::set('Zend_Translate',Zend_Translate_Instance $translate);
+}}}
+
+==What is translated?==
+
+ * Pagination
+ * Fields Titles
+ * Strings like: remove order, remove filters,
+ * PDF supporting text: (title, page, subtitle, etc, )
+ * Results form CRUD operations (Please note that validation messages are from Zend_Form)
