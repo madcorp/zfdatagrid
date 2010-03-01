@@ -41,3 +41,6 @@ As expected, you can also add a third argument in case the condition is not true
 {{{
 $grid->addClassCellCondition('Population',"{{Population}} > 200000","red","green");
 }}}
+
+
+<font color="red">*ATTENTION*</font> This only applies to Tables.
