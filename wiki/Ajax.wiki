@@ -1,13 +1,20 @@
-#summary One-sentence summary of this page.
+#summary Using ajax to navigate trough your grid
 
 = Introduction =
 
-Add your content here.
+Most of the so called "web 2.0"websites make use of ajax so speed things up and to add fancy flowers.
 
+ZFDatagrid also supports ajax for the most common actions (pagina, sorting, filtering)
 
-= Details =
+All you need to do is:
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+{{{
+$this->setAjax('someId');
+}}}
+
+That's it. A <div> will be created with the 'someId' id.
+
+You can disable ajax using
+{{{
+$this->setAjax(false);
+}}}
