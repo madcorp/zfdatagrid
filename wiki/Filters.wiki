@@ -1,13 +1,55 @@
-#summary One-sentence summary of this page.
+#summary Manipulate how filters works...
 
 = Introduction =
 
-Add your content here.
+By default ZFDatagrid will try to provide the user the best way to filter results. Per example, if you have a _enum_ field in your database, instead a text input, a select menu will be presented to the user. 
+
+= Do more = 
+
+You can enhance filters by specifying them "manually":
 
 
-= Details =
+//Create a dropdown for user selection
+{{{
+$filters = new Bvb_Grid_Filters();        
+$filters->addFilter('username',array('values'=>array('key'=>'pairs','another'=>'value')));
+$grid->addFilters($filters);   
+}}}
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+The field will be searched by the key and the user will see the value.
+
+
+== Auto Filters==
+
+One useful feature can be the distinct fields. Once specified the system will select all distinct values for a given field and then present them to the users as a dropdown menu. Making their life much more easy.
+
+{{{
+$grid->addFilter('username'=> array('distinct'=>array( 'field'=>'id' ,  'name'=>'username')));    
+}}}
+
+That will result in a SQL query like this:
+
+{{{
+SELECT id as key, name as value FROM <table> WHERE <previous conditions>
+}}}
+
+
+==Callback==
+Using a callback will greatly improve you ability to enhance your filtering system
+
+
+{{{
+$filters->addFilter('lastname',array('callback'=>array('function'=>array($this,
+'customFilter'),'params'=>array('XXX','YYY'))));
+}}}
+
+Along with the params you defined, 3 more ill be merged.
+
+ * field => The field name
+ * value => The field value
+ * select => The select Object (Zend_Db_Select or other)
+
+<font color="red">*ATTENTION: *</font> Is YOUR responsibility to apply any condition to the select object
+
+
+Also check [Faq#Supported_search_operators Supported search operators] and [GridOptions#search Search], [GridOptions#searchType searchType] and [GridOptions#searchTypeFixed] options.
