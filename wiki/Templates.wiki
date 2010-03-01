@@ -75,7 +75,7 @@ $grid->addTemplateParams(array);
 $grid->setTemplateParams(array);
 }}}
 
-*<font color="red">Attention</font>:* Using the set method, all previous params will be unset.
+*<font color="red">Attention</font>:* Using the set method, all previous params will be removed.
 
 ===Getting Params from the Template===
 After setting the params you can access them within your template in the options property.
