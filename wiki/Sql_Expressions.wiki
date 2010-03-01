@@ -2,12 +2,18 @@
 
 = Introduction =
 
-Add your content here.
+The expression result will be presented before the pagination as a new table row (tr) and bellow to matching field. Using SQL expressions is as easy as:
+
+{{{
+$grid->sqlexp (array(
+            'field’ =>array(
+                'functions' => array('SUM'),
+                'value' => 'price*number',
+                'format'=>'number' //Format is optional
+            )
+        ));
+
+}}}
 
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+*Note:* You can also have the ‘sqlexp’ when using the array adapter. At this moment only six functions are supported (min, max, avg, sum, product, count)
