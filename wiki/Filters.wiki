@@ -1,5 +1,7 @@
 #summary Manipulate how filters works...
 
+<wiki:toc max_depth="3" />
+
 = Introduction =
 
 By default ZFDatagrid will try to provide the user the best way to filter results. Per example, if you have a _enum_ field in your database, instead a text input, a select menu will be presented to the user. 
@@ -19,7 +21,7 @@ $grid->addFilters($filters);
 The field will be searched by the key and the user will see the value.
 
 
-== Auto Filters==
+= Auto Filters=
 
 One useful feature can be the distinct fields. Once specified the system will select all distinct values for a given field and then present them to the users as a dropdown menu. Making their life much more easy.
 
@@ -33,8 +35,7 @@ That will result in a SQL query like this:
 SELECT id as key, name as value FROM <table> WHERE <previous conditions>
 }}}
 
-
-==Callback==
+=Callback=
 Using a callback will greatly improve you ability to enhance your filtering system
 
 
@@ -51,5 +52,5 @@ Along with the params you defined, 3 more ill be merged.
 
 <font color="red">*ATTENTION: *</font> Is YOUR responsibility to apply any condition to the select object
 
-
+==Please also check==
 Also check [Faq#Supported_search_operators Supported search operators] and [GridOptions#search Search], [GridOptions#searchType searchType] and [GridOptions#searchTypeFixed] options.
