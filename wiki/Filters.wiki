@@ -52,5 +52,7 @@ Along with the params you defined, 3 more ill be merged.
 
 <font color="red">*ATTENTION: *</font> Is YOUR responsibility to apply any condition to the select object
 
+<font color="red">*ATTENTION2: *</font> Any field not specified when adding filters will have search disabled.
+
 ==Please also check==
 Also check [Faq#Supported_search_operators Supported search operators] and [GridOptions#search Search], [GridOptions#searchType searchType] and [GridOptions#searchTypeFixed] options.
