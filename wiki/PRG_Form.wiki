@@ -1,13 +1,5 @@
-#summary One-sentence summary of this page.
+#summary Form submission
 
-= Introduction =
+PRG is a method used to avoid forms being submitted more than once.
 
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+For more info about PRG check this wikipediapage [http://en.wikipedia.org/wiki/Post/Redirect/Get PRG]
