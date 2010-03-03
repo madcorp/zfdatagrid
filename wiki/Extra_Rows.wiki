@@ -1,12 +1,12 @@
 #summary How to add extra Rows
-
+<wiki:toc max_depth="3" />
 = Introduction =
 
 You may need to add info in some part of the grid.
 
 This can be achieved by using the !Bvb_Grid_ExtraRows class
 
- = Example =
+== Example ==
 
 {{{
 $rows = new Bvb_Grid_ExtraRows();
