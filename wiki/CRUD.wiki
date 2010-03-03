@@ -1,3 +1,27 @@
 #summary How CRUD operations works
 
 = Introduction =
+
+{{{
+$form = new Bvb_Grid_Form();
+$form->setAdd(true|false);
+$form->setEdit(true|false);
+$form->setDelete(true|false);
+$form->setAddButton(true|false);
+
+$form->setIsPerformCrudAllowed(false);
+$form->setIsPerformCrudAllowedForAddition(true|false);
+$form->setIsPerformCrudAllowedForEdition(true|false);
+$form->setIsPerformCrudAllowedForDeletion(false);
+
+
+$form->setCallbackBeforeDelete ($callback)
+$form->setCallbackBeforeUpdate ($callback)
+$form->setCallbackBeforeInsert ($callback)
+$form->setCallbackAfterDelete ($callback)
+$form->setCallbackAfterUpdate ($callback)
+$form->setCallbackAfterInsert ($callback)
+
+$grid->setForm($form);
+
+}}}
