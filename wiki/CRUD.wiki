@@ -15,13 +15,40 @@ $form->setIsPerformCrudAllowedForEdition(true|false);
 $form->setIsPerformCrudAllowedForDeletion(false);
 
 
+$grid->setForm($form);
+
+}}}
+
+=Default Decorators=
+{{{
+groupDecorator = array('FormElements', array('HtmlTag', array('tag' => 'td', 'colspan' => '2', 'class' => 'buttons')), array(array('row' => 'HtmlTag'), array('tag' => 'tr')));
+
+elementDecorator = array('ViewHelper', 'Description', 'Errors', array(array('data' => 'HtmlTag'), array('tag' => 'td', 'class' => 'element')), array(array('label' => 'Label'), array('tag' => 'td')), array(array('row' => 'HtmlTag'), array('tag' => 'tr')));
+
+buttonHiddenDecorator = array('ViewHelper');
+
+formDecorator = array('FormElements', array('HtmlTag', array('tag' => 'table', 'style' => 'width:99%', 'class' => 'borders')), 'Form');
+
+}}}
+
+==Change Decorators==
+{{{
+
+$form->(set|get)groupDecorator();
+$form->(set|get)elementDecorator();
+$form->(set|get)buttonHiddenDecorator();
+$form->(set|get)formDecorator();
+}}}
+
+
+=Callbacks=
+{{{
+
+
 $form->setCallbackBeforeDelete ($callback)
 $form->setCallbackBeforeUpdate ($callback)
 $form->setCallbackBeforeInsert ($callback)
 $form->setCallbackAfterDelete ($callback)
 $form->setCallbackAfterUpdate ($callback)
 $form->setCallbackAfterInsert ($callback)
-
-$grid->setForm($form);
-
 }}}
