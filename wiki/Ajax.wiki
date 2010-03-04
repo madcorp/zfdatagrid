@@ -4,7 +4,7 @@
 
 Most of the so called "web 2.0"websites make use of ajax so speed things up and to add fancy flowers.
 
-ZFDatagrid also supports ajax for the most common actions (pagina, sorting, filtering)
+ZFDatagrid also supports ajax for the most common actions (pagination, sorting, filtering)
 
 All you need to do is:
 
