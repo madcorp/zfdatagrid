@@ -12,7 +12,7 @@ All you need to do is:
 $this->setAjax('someId');
 }}}
 
-That's it. A <div> will be created with the 'someId' id.
+That's it. A `<div>` will be created with the 'someId' id.
 
 You can disable ajax using
 {{{
