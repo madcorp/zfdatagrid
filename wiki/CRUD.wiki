@@ -14,6 +14,10 @@ $form->setIsPerformCrudAllowedForAddition(true|false);
 $form->setIsPerformCrudAllowedForEdition(true|false);
 $form->setIsPerformCrudAllowedForDeletion(false);
 
+$form->setAllowedFields(array('times','nexst'));
+$form->setDisallowedFields(array('time','next'));
+$form->setFieldsBasedOnQuery(false);
+
 
 $grid->setForm($form);
 
