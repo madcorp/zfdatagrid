@@ -16,7 +16,7 @@ $form->setIsPerformCrudAllowedForDeletion(false);
 
 $form->setAllowedFields(array('times','nexst'));
 $form->setDisallowedFields(array('time','next'));
-$form->setFieldsBasedOnQuery(false);
+$form->setFieldsBasedOnQuery(true|false);
 
 
 $grid->setForm($form);
