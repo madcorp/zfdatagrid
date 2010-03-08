@@ -1,0 +1,25 @@
+#summary Export your data to several formats
+
+=Introduction=
+
+This pages will only guide you trough the process of configuring all options need for exporting you grid data.
+
+
+<font color="red">*IMPORTANT*: </font> 
+
+You have two ways of configuring your output format. 
+
+ # - When creating the grid instance 
+{{{
+$grid = Bvb_Grid_Data::factory('Bvb_Grid_Deploy_*',array());
+}}}
+ # - Automatically done after receiving a GET param _`_exportTo`_ with the last part of deploy class (json, print, excel, word, etc, etc) 
+
+==JSON==
+
+The JSON output format takes no arguments, so all you need to do is:
+
+{{{
+$grid = Bvb_Grid_Data::factory('Bvb_Grid_Deploy_Json',array());
+$grid->setSource()..//
+}}}
