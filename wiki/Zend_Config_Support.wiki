@@ -89,8 +89,6 @@ deploy.pdf.colors.text = #000000
 
 
 
-fields.Name.tooltipFilter = "Tooltip Filter" ;Title to display
-fields.Name.tooltipTitle = "Tooltip Title" ;Title to display
 ;fields.Name.title = "Field Title" ;Title to display
 fields.Name.remove = false ;Defaults 0 
 fields.Name.style = "" ;Defaults "" 
@@ -107,7 +105,7 @@ fields.Name.class = "width_150"  ;Defaults null
 ;fields.Name.searchTypeFixed = (0|1) ;Defaults 0 
 ;fields.Name.search.fulltext = true
 ;fields.Name.search.indexes = Name
-;fields.Name.search.extra = queryExpansion
+;fields.Name.search.extra = queryExpansion|boolean
 
 ;fields.Name.format.function = date
 ;fields.Name.format.params.locale = "fr_FR"
