@@ -99,16 +99,6 @@ deploy.excel.download = 1;
 
 The JSON output format takes no arguments.
 
-The output is similar to this:
-
-{{{
-{"titles":["Name","Continent","Population","LocalName","GovernmentForm","Code","Region","SurfaceArea","IndepYear","LifeExpectancy","GNP","GNPOld","HeadOfState","Capital","Code2"],
-"rows":[["Albania","Europe","3401200",null,"Republic","ALB","Southern Europe","28748.00","1912","71.6","3205.00","2500.00","Rexhep Mejdani","34","AL"],
-["Andorra","Europe","78000","Andorra","Parliamentary Coprincipality","AND","Southern Europe","468.00","1278","83.5","1630.00","","","55","AD"],
-["Austria","Europe","8091800",null,"Federal Republic","AUT","Western Europe","83859.00","1918","77.7","211860.00","206025.00","Thomas Klestil","1523","AT"]],
-"sqlexp":["","","11571000","","","","","","","","","","","",""]}
-}}}
-
 
 ==WORD==
 
