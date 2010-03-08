@@ -40,6 +40,7 @@ text-decoration:none;
         <option value="<?php echo $this->url ?>default/site/feed" <?php if($this->action=='feed'){echo " selected ";}?>>Feed - Using RSS as datasource</option>
         <option value="<?php echo $this->url ?>default/site/csv" <?php if($this->action=='csv'){echo " selected ";}?>>CSV - Using CSV file as datasource</option>
         <option value="<?php echo $this->url ?>default/site/excel" <?php if($this->action=='excel'){echo " selected ";}?>>Excel file - An adapter for the PHPExcel project</option>
+        <option value="<?php echo $this->url ?>default/site/doctrine" <?php if($this->action=='doctrine'){echo " selected ";}?>>Using Doctrine ORM</option>
 </select>
 <a target="_blank" href="<?php echo $this->url ?>default/site/code">Source code for this controller</a> |
 <a href="http://www.zfdatagrid.com/">Back to blog</a>
@@ -90,14 +91,14 @@ text-decoration:none;
 <?php if(stripos($_SERVER['HTTP_HOST'],'zfdatagrid')!==false):?>
 <!-- Piwik -->
 <script type="text/javascript">
-var pkBaseURL = (("https:" == document.location.protocol) ? "https://petala-azul.com/piwik/" : "http://petala-azul.com/piwik/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+//var pkBaseURL = (("https:" == document.location.protocol) ? "https://petala-azul.com/piwik/" : "http://petala-azul.com/piwik/");
+//document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
 </script><script type="text/javascript">
-try {
-var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
-piwikTracker.trackPageView();
-piwikTracker.enableLinkTracking();
-} catch( err ) {}
+//try {
+//var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+//piwikTracker.trackPageView();
+//piwikTracker.enableLinkTracking();
+//} catch( err ) {}
 </script><noscript><p><img src="http://petala-azul.com/piwik/piwik.php?idsite=1" style="border:0" alt=""/></p></noscript>
 
 <!-- End Piwik Tag -->

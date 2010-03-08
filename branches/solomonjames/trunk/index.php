@@ -10,11 +10,12 @@ set_include_path ( '.' . PATH_SEPARATOR . './library/'
 . PATH_SEPARATOR . get_include_path () );
 
 
-include "Zend/Loader/Autoloader.php";
+require_once "Zend/Loader/Autoloader.php";
 
 $autoloader = Zend_Loader_Autoloader::getInstance();
 $autoloader->registerNamespace('Bvb_');
 $autoloader->registerNamespace('My_');
+$autoloader->registerNamespace('Doctrine_');
 $autoloader->suppressNotFoundWarnings(false);
 $autoloader->setFallbackAutoloader(true);
 

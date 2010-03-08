@@ -449,5 +449,13 @@ class SiteController extends Zend_Controller_Action
         $this->view->pages = $grid->deploy();
         $this->render('index');
     }
+    
+    public function doctrineAction()
+    {
+        $table = Doctrine::getTable('Model_Country');
+        
+        $this->view->pages = 'poooop';
+        $this->render('index');
+    }
 
 }
