@@ -138,10 +138,10 @@ deploy.odt.dir = "media/temp"; dir to save documents
 deploy.odt.name = "my_name"; Document Name
 deploy.odt.save = 1;
 deploy.odt.download = 1;
-deploy.ods.title = "Document title"
-deploy.ods.subtitle = "Document subtitle"
-deploy.ods.logo = "PATH_TO_LOGO"
-deploy.ods.footer = "Footer message"
+deploy.odt.title = "Document title"
+deploy.odt.subtitle = "Document subtitle"
+deploy.odt.logo = "PATH_TO_LOGO"
+deploy.odt.footer = "Footer message"
 }}}
 
 ==ODS==
@@ -151,8 +151,4 @@ deploy.ods.dir = "media/temp"; dir to save documents
 deploy.ods.name = "my_name"; Document Name
 deploy.ods.save = 1;
 deploy.ods.download = 1;
-deploy.ods.title = "Document title"
-deploy.ods.subtitle = "Document subtitle"
-deploy.ods.logo = "PATH_TO_LOGO"
-deploy.ods.footer = "Footer message"
 }}}
