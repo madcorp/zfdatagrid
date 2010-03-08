@@ -2,6 +2,12 @@
 
 <wiki:toc max_depth="5" />
 
+=Introduction=
+This page has all options that the deploy class accepts. 
+
+Whether they are in the config file or passed within a array in the __construct()
+
+
 =Export Formats=
 
 This pages will only guide you trough the process of configuring all options need for exporting you grid data.
@@ -16,6 +22,16 @@ You have two ways of configuring your output format.
 $grid = Bvb_Grid_Data::factory('Bvb_Grid_Deploy_*',array());
 }}}
  # - Automatically done after receiving a GET param _`_exportTo`_ with the last part of deploy class (json, print, excel, word, etc, etc) 
+
+==TABLE==
+
+{{{
+deploy.table.imagesUrl = "/grid/public/images/"; The url for images 
+deploy.table.template = "outside"; The template to be used
+deploy.table.templateDir = "My_Template_Table"; Other dir with templates
+
+}}}
+
 
 ==PDF==
 
