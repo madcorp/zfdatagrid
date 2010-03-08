@@ -1,6 +1,6 @@
 <?php
 
-require 'application/setup.php';
+require '../application/setup.php';
 
 $application->getBootstrap()->bootstrap('view');
 $application->getBootstrap()->run();
