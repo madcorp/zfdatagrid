@@ -139,7 +139,7 @@ deploy.word.download = 1; Download file
 }}}
 
 
-==WORDX==
+==Word (.docx)==
 {{{
 deploy.wordx.dir = "media/temp"; dir to save documents
 deploy.wordx.name = "my_name"; Document Name
