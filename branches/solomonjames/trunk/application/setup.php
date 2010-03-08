@@ -4,7 +4,7 @@
 defined('AP') || define('AP', realpath(dirname(__FILE__)));
 
 // Define application environment
-defined('AE') || define('AE', (getenv('AE') ? getenv('AE') : 'general'));
+defined('AE') || define('AE', (getenv('AE') ? getenv('AE') : 'development'));
 
 // Ensure library/ is on include_path
 set_include_path(implode(PATH_SEPARATOR, array(
@@ -25,3 +25,6 @@ if (file_exists(AP . '/configs/local.ini')) {
 
 // Create application, bootstrap, and run
 $application = new Zend_Application(AE, $config);
+Zend_Registry::set('application', $application);
+
+//die(Zend_Debug::dump($config->toArray()));
