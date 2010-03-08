@@ -26,7 +26,7 @@ The field will be searched by the key and the user will see the value.
 One useful feature can be the distinct fields. Once specified the system will select all distinct values for a given field and then present them to the users as a dropdown menu. Making their life much more easy.
 
 {{{
-$grid->addFilter('username'=> array('distinct'=>array( 'field'=>'id' ,  'name'=>'username')));    
+$filters->addFilter('username'=> array('distinct'=>array( 'field'=>'id' ,  'name'=>'username')));    
 }}}
 
 That will result in a SQL query like this:
