@@ -1,4 +1,4 @@
-#summary Export your data to several formats
+#summary Config options available for each render class
 
 <wiki:toc max_depth="5" />
 
