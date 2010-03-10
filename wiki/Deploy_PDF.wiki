@@ -1,2 +1,0 @@
-#summary Options that can be used when exporting to PDF
-= Introduction =
