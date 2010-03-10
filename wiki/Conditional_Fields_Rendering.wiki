@@ -24,7 +24,7 @@ You can do this to every deploy format. You only need to use this method
 
 {{{
 $grid->set[Deploy]GridColumns(array());
-}}
+}}}
 
 Examples:
 {{{
@@ -32,6 +32,4 @@ $grid->setTableGridColumns(array());
 $grid->setJsonGridColumns(array());
 $grid->setCsvGridColumns(array());
 $grid->setXmlGridColumns(array());
-}}
-
-
+}}}
