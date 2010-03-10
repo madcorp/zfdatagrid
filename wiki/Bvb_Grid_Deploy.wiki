@@ -12,7 +12,7 @@ $grid->setClassCellCondition();
 $grid->addClassCellCondition();
 $grid->setClassRowCondition();
 $grid->setAjax();
-}}
+}}}
 
 
 ==Print==
@@ -23,5 +23,59 @@ $grid->setAjax();
 ==Json==
 ==XML==
 ==Open Flash Chart==
+
+===Setting Chart Type===
+{{{
+$grid->setChartType('pie');
+}}}
+
+====Char Types====
+ * Pie
+ * Line  
+ * Bar  
+ * !Bar_Glass  
+ * !Bar_3d  
+ * !Bar_Filled 
+
+===Setting Column Labels===
+{{{
+$grid->setXLabels('column');//Any column from the query
+}}}
+
+
+===Setting Script Location===
+{{{
+$grid->setFilesLocation(array('js'=>'URL','json'=>'URL','flash'=>'URL'))
+}}}
+
+===Setting Script Dimensions===
+{{{
+$grid->setChartDimensions(X,Y);
+}}}
+
+===Setting Title===
+{{{
+$grid->setTitle('My Title');
+}}}
+
+===Setting Chart Options===
+{{{
+$grid->setChartOptions(array()); //Just a wrapper for original OFC methods.
+}}}
+
+===Setting Values===
+{{{
+$grid->addValues('column',array('options'));
+}}}
+
+<font color="red">*NOTE: *</font>The array options is just a wrapper for the available methods from the Open Flash Chart Class. The only custom value it accepts is
+{{{
+chartType
+}}}
+to define a cart type different from the previous defined 
+
+===Config Options===
+For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
+
 ==Open Document Format Text==
 ==Open Document Format Spreadsheet==
