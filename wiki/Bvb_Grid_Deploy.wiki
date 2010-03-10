@@ -6,7 +6,6 @@
 
 ==Table==
 ==Print==
-==jqGrid==
 ==PDF==
 ==Word==
 ==Word 2007==
