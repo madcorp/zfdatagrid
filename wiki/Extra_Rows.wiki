@@ -22,7 +22,7 @@ $grid->addExtraRows($rows);
 
 The first argument is the position in the grid.
 
-==Available placements==
+==Available positions==
 
  * beforeHeader
  * afterHeader
