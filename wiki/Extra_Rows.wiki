@@ -9,7 +9,7 @@ This can be achieved by using the !Bvb_Grid_ExtraRows class
 == Example ==
 
 {{{
-$rows = new Bvb_Grid_ExtraRows();
+$rows = new Bvb_Grid_Extra_Rows();
 $rows->addRow('beforeHeader',array(
                 '', // empty field
                 array( 'colspan' => 1, 'class' => 'myclass', 'content'=>'my content'),
