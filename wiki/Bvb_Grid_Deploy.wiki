@@ -34,7 +34,7 @@ $grid->setChartType('pie');
  * Line  
  * Bar  
  * !Bar_Glass  
- * !Bar_3d  
+ * Bar_3d  
  * !Bar_Filled 
 
 ===Column Labels===
