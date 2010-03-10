@@ -17,4 +17,4 @@
 ||Decorators|| X || `*` || `*` || `*` || `*` || `*` || `*` || X || `*` || `*` || `*` ||
 
 
-`*`: strip_tags() applied before rendering 
+`*` strip_tags() applied before rendering 
