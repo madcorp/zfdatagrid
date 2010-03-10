@@ -1,4 +1,4 @@
-#summary Commons commands to all deploy classes
+#summary Commands to all deploy classes
 
 <wiki:toc max_depth="5" />
 
