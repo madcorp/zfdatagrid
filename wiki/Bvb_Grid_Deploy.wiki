@@ -2,79 +2,78 @@
 
 <wiki:toc max_depth="5" />
 
-=Introduction=
 
 This page lists some methods that only apply to each render class
 
-==Table==
+=Table=
 {{{
 $grid->setClassCellCondition();
 $grid->addClassCellCondition();
 $grid->setClassRowCondition();
 $grid->setAjax();
 }}}
-===Config Options===
+==Config Options==
 For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
 
-==Print==
+=Print=
 
 No special methods for this class
 
-===Config Options===
+==Config Options==
 For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
 
-==PDF==
+=PDF=
 
 No special methods for this class
 
-===Config Options===
+==Config Options==
 For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
 
-==Word==
+=Word=
 
 No special methods for this class
 
-===Config Options===
+==Config Options==
 For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
 
-==Word 2007==
+=Word 2007=
 
 No special methods for this class
 
-===Config Options===
+==Config Options==
 For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
 
 
-==Excel==
+=Excel=
 
 No special methods for this class
 
-===Config Options===
+==Config Options==
 For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
 
 
-==Json==
+=Json=
 
 No special methods for this class
 
-===Config Options===
+==Config Options==
 For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
 
-==XML==
+=XML=
 
 No special methods for this class
 
-===Config Options===
+==Config Options==
 For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
 
-==Open Flash Chart==
+=Open Flash Chart=
 
-===Setting Chart Type===
+==Setting Chart Type==
 {{{
 $grid->setChartType('pie');
 }}}
 
-====Char Types====
+==Char Types==
  * Pie
  * Line  
  * Bar  
@@ -82,33 +81,33 @@ $grid->setChartType('pie');
  * Bar_3d  
  * !Bar_Filled 
 
-===Column Labels===
+==Column Labels==
 {{{
 $grid->setXLabels('column');//Any column from the query
 }}}
 
 
-===Script Location===
+==Script Location==
 {{{
 $grid->setFilesLocation(array('js'=>'URL','json'=>'URL','flash'=>'URL'))
 }}}
 
-===Chart Dimensions===
+==Chart Dimensions==
 {{{
 $grid->setChartDimensions(X,Y);
 }}}
 
-===Title===
+==Title==
 {{{
 $grid->setTitle('My Title');
 }}}
 
-===Chart Options===
+==Chart Options==
 {{{
 $grid->setChartOptions(array()); //Just a wrapper for original OFC methods.
 }}}
 
-===Values===
+==Values==
 {{{
 $grid->addValues('column',array('options'));
 }}}
@@ -119,19 +118,19 @@ chartType
 }}}
 to define a cart type different from the previous defined 
 
-===Config Options===
+==Config Options==
 For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
 
-==Open Document Format Text==
+=Open Document Format Text=
 
 No special methods for this class
 
-===Config Options===
+==Config Options==
 For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
 
-==Open Document Format Spreadsheet==
+=Open Document Format Spreadsheet=
 
 No special methods for this class
 
-===Config Options===
+==Config Options==
 For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
