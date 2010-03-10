@@ -37,33 +37,33 @@ $grid->setChartType('pie');
  * !Bar_3d  
  * !Bar_Filled 
 
-===Setting Column Labels===
+===Column Labels===
 {{{
 $grid->setXLabels('column');//Any column from the query
 }}}
 
 
-===Setting Script Location===
+===Script Location===
 {{{
 $grid->setFilesLocation(array('js'=>'URL','json'=>'URL','flash'=>'URL'))
 }}}
 
-===Setting Script Dimensions===
+===Chart Dimensions===
 {{{
 $grid->setChartDimensions(X,Y);
 }}}
 
-===Setting Title===
+===Title===
 {{{
 $grid->setTitle('My Title');
 }}}
 
-===Setting Chart Options===
+===Chart Options===
 {{{
 $grid->setChartOptions(array()); //Just a wrapper for original OFC methods.
 }}}
 
-===Setting Values===
+===Values===
 {{{
 $grid->addValues('column',array('options'));
 }}}
