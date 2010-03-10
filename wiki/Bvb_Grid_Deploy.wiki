@@ -1,10 +1,20 @@
-#summary Commands to all deploy classes
+#summary Specific commands for each render class
 
 <wiki:toc max_depth="5" />
 
 =Introduction=
 
+This page lists some methods that only apply to each render class
+
 ==Table==
+{{{
+$grid->setClassCellCondition();
+$grid->addClassCellCondition();
+$grid->setClassRowCondition();
+$grid->setAjax();
+}}
+
+
 ==Print==
 ==PDF==
 ==Word==
