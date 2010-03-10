@@ -13,15 +13,60 @@ $grid->addClassCellCondition();
 $grid->setClassRowCondition();
 $grid->setAjax();
 }}}
-
+===Config Options===
+For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
 
 ==Print==
+
+No special methods for this class
+
+===Config Options===
+For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
+
 ==PDF==
+
+No special methods for this class
+
+===Config Options===
+For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
+
 ==Word==
+
+No special methods for this class
+
+===Config Options===
+For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
+
 ==Word 2007==
+
+No special methods for this class
+
+===Config Options===
+For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
+
+
 ==Excel==
+
+No special methods for this class
+
+===Config Options===
+For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
+
+
 ==Json==
+
+No special methods for this class
+
+===Config Options===
+For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
+
 ==XML==
+
+No special methods for this class
+
+===Config Options===
+For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
+
 ==Open Flash Chart==
 
 ===Setting Chart Type===
@@ -78,4 +123,15 @@ to define a cart type different from the previous defined
 For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
 
 ==Open Document Format Text==
+
+No special methods for this class
+
+===Config Options===
+For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
+
 ==Open Document Format Spreadsheet==
+
+No special methods for this class
+
+===Config Options===
+For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
