@@ -14,3 +14,7 @@
 ||CRUD|| X || - || - || - || - || - || - || - || - || - || - ||
 ||Ajax|| X || - || - || - || - || - || - || X || - || - || - ||
 ||Column Grouping|| X || X || - || X || X || X || X || - || X || X || X ||
+||Decorators|| X || `*` || `*` || `*` || `*` || `*` || `*` || X || `*` || `*` || `*` ||
+
+
+`*`: strip_tags() applied before rendering 
