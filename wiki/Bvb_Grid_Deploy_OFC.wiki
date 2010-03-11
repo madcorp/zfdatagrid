@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Bvb_Grid_deploy_Ofc is a wrapper for the well-known chart library [http://teethgrinder.co.uk/open-flash-chart/ Open Flash Chart]
+!Bvb_Grid_deploy_Ofc is a wrapper for the well-known chart library [http://teethgrinder.co.uk/open-flash-chart/ Open Flash Chart]
 
 In order to work you will need to download the version from this site, instead from the official. The only thing that changes is class naming, to follow the respected from ZF. Download the latest version from the Downloads Tab
 
