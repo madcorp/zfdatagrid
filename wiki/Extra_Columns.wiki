@@ -43,7 +43,7 @@ $grid->addExtraColumns($right, $left);
 ==Full Example==
 
 {{{
-$left = new Bvb_Grid_ExtraColumns();
+$left = new Bvb_Grid_Extra_Column();
 $left->position('left')
 ->name('Left')
 ->format('number')
