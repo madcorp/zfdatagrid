@@ -4,7 +4,7 @@
 
 =Methods=
 
-==View()==
+==View==
 Alters the view used by the ZFDatagrid. The view is used for form elments rendering.
 
 {{{
@@ -12,7 +12,7 @@ $grid->setView(Zend_View_Interface $view);
 $grid->getView();
 }}}
 
-==Char Encoding()==
+==Char Encoding==
 Defines the encoding to be used:
 
 Defaults to utf8
@@ -129,7 +129,7 @@ $grid->getExport();
 }}}
 
 ==Default Filters==
-Defines the default filters to be applied to the grid. Please no the user can remove this filters
+Defines the default filters to be applied to the grid. Please note the user can remove this filters
 {{{
 $grid-SetDefautFiltersValues(array('field'=>'pre-filter','field2'=>'another'));
 }}}
