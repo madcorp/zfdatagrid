@@ -1,136 +1,26 @@
-#summary Specific commands for each render class
+#summary Global Methods
 
 <wiki:toc max_depth="5" />
 
-
-This page lists some methods that only apply to each render class
-
-=Table=
-{{{
-$grid->setClassCellCondition();
-$grid->addClassCellCondition();
-$grid->setClassRowCondition();
-$grid->setAjax();
-}}}
-==Config Options==
-For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
-
-=Print=
-
-No special methods for this class
-
-==Config Options==
-For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
-
-=PDF=
-
-No special methods for this class
-
-==Config Options==
-For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
-
-=Word=
-
-No special methods for this class
-
-==Config Options==
-For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
-
-=Word 2007=
-
-No special methods for this class
-
-==Config Options==
-For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
+=Introduction=
 
 
-=Excel=
+==No special methods==
 
-No special methods for this class
+This list shows the deploy classes that don't accept any particularly method, apart from the __construct() options. Check the available options [Zend_Config_Support at the Zend_Config page] 
 
-==Config Options==
-For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
+ * Print
+ * PDF
+ * Word
+ * Wordx
+ * Excel
+ * OFC (Open Flash Chart)
+ * ODT (Open Document Format Text)
+ * ODS (Open Document Format Spreadsheet)
+ * Json
+ * XML
 
-
-=Json=
-
-No special methods for this class
-
-==Config Options==
-For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
-
-=XML=
-
-No special methods for this class
-
-==Config Options==
-For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
-
-=Open Flash Chart=
-
-==Setting Chart Type==
-{{{
-$grid->setChartType('pie');
-}}}
-
-==Char Types==
- * Pie
- * Line  
- * Bar  
- * !Bar_Glass  
- * Bar_3d  
- * !Bar_Filled 
-
-==Column Labels==
-{{{
-$grid->setXLabels('column');//Any column from the query
-}}}
-
-
-==Script Location==
-{{{
-$grid->setFilesLocation(array('js'=>'URL','json'=>'URL','flash'=>'URL'))
-}}}
-
-==Chart Dimensions==
-{{{
-$grid->setChartDimensions(X,Y);
-}}}
-
-==Title==
-{{{
-$grid->setTitle('My Title');
-}}}
-
-==Chart Options==
-{{{
-$grid->setChartOptions(array()); //Just a wrapper for original OFC methods.
-}}}
-
-==Values==
-{{{
-$grid->addValues('column',array('options'));
-}}}
-
-<font color="red">*NOTE: *</font>The array options is just a wrapper for the available methods from the Open Flash Chart Class. The only custom value it accepts is
-{{{
-chartType
-}}}
-to define a cart type different from the previous defined 
-
-==Config Options==
-For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
-
-=Open Document Format Text=
-
-No special methods for this class
-
-==Config Options==
-For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
-
-=Open Document Format Spreadsheet=
-
-No special methods for this class
-
-==Config Options==
-For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
+==Custom Methods==
+ * [Bvb_Grid_Deploy_Table Table]
+ * [Bvb_Grid_Deploy_OFC OFC]
+ * [Bvb_Grid_Deploy_JqGrid jqGrid]
