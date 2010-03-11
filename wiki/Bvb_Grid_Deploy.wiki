@@ -1,11 +1,130 @@
 #summary Global Methods
 
+=Introduction=
+This page shows global methods that will be applied to any deploy class. 
+
 <wiki:toc max_depth="5" />
 
-=Introduction=
+==Methods==
+
+===View()===
+Alters the view used by the ZFDatagrid. The view is used for form elments rendering.
+
+{{{
+$grid->setView(Zend_View_Interface $view);
+$grid->getView();
+}}}
+
+===CharEncoding()===
+Defines the encoding to be used:
+
+Defaults to utf8
+
+{{{
+$grid->setCharEncoding('encoding');
+$grid->getCharEncoding();
+}}}
 
 
-==No special methods==
+===Params===
+Returns/sets/Removes params to the ZFdatagrid. Usually needed to change URL params 
+{{{
+$grid->setParam('name','value');
+$grid->setParams(array $params);
+
+$grid->getParam('paramName');
+$grid->getParams(array);
+
+$grid->removeParam('param');
+$grid->removeAllParams();
+}}}
+
+===Field(s)===
+Returns information about a field or fields
+
+{{{
+$grid->getField('field');
+$grid->getFields($returnOptions = false);//Set to true to return all fields with options, and not only fields names.
+}}}
+
+
+===Id===
+Method to retrieve grid's id defined in the constructor
+_Note:_ You can't set a new id after grid initialization 
+{{{
+$grid->getGridId();
+}}} 
+
+
+===Source===
+Returns the Source Object in use
+{{{
+$grid->getSource();
+}}}
+
+===Primary Key(s)===
+This method returns a key=>pair array containing fields names and values that are primary key(s). Useful for use in decorators...
+
+{{{
+$grid->getPrimaryKeyFromUrl();//returns array
+}}}
+
+
+===Version===
+Returns the current ZFDatagrid version. If using SVN it will return the latest revision.
+
+{{{
+$grid->getVersion();
+}}}
+
+
+===Total Records===
+Returns the record number. This method can only be called after $grid->deploy();
+
+{{{
+$grid->getTotalRecords();
+}}}
+
+
+===Url===
+Returns the current url. Receives an option argument (string|array) with the elements to remove
+
+{{{
+#assuming url= http:///zfdatagrid.com/grid/basic/order/Name_Asc/start/15
+$grid->getUrl();//Retuns /grid/basic/order/Name_Asc/start/15
+$grid->getUrl('start');// Returns /grid/basic/order/Name_Asc
+$grid->getUrl(array('start','order'));//Returns /grid/basic/
+}}}
+
+
+===Reset Column(s)===
+Use this method to reset all previous options defined for any field.
+
+{{{
+$grid->resetColumn('field');
+$grid->resetColumns(array $fields);
+}}}
+
+
+===Update Column===
+Sets options for a column.
+{{{
+$grid->updateColumn('field',array('title'=>'Some title'));
+}}}
+
+*INFO:* Check this page for a list of all available options [GridOptions Field Options]
+
+
+===Escape Function===
+Sets the escape function to be applied to fields values.
+
+{{{
+$grid->setDefaultEscapeFunction('htmlentities');
+$grid->setDefaultEscapeFunction(array('custom','function'));
+}}}
+
+
+==No custom methods==
 
 This list shows the deploy classes that don't accept any particularly method, apart from the __construct() options. Check the available options [Zend_Config_Support at the Zend_Config page] 
 
@@ -20,7 +139,7 @@ This list shows the deploy classes that don't accept any particularly method, ap
  * Json
  * XML
 
-==Custom Methods==
+==With Custom Methods==
  * [Bvb_Grid_Deploy_Table Table]
  * [Bvb_Grid_Deploy_OFC OFC]
  * [Bvb_Grid_Deploy_JqGrid jqGrid]
