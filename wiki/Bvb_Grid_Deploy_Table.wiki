@@ -1,0 +1,15 @@
+#summary Methods only available for Table render
+
+= Introduction =
+
+=Table=
+{{{
+$grid->setClassCellCondition();
+$grid->addClassCellCondition();
+$grid->setClassRowCondition();
+$grid->setAjax();
+}}}
+
+
+==Config Options==
+For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
