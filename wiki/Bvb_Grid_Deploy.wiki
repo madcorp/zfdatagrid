@@ -45,7 +45,7 @@ $grid->getFields($returnOptions = false);//Set to true to return all fields with
 }}}
 
 
-==Id==
+==gridId==
 Method to retrieve grid's id defined in the constructor
 _Note:_ You can't set a new id after grid initialization 
 {{{
