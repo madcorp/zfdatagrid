@@ -9,7 +9,7 @@ Fortunately there is a way to help you.
 Below are a list of options that can be applied to any !Bvb_Grid_Source`_``*`
 =Available Options=
 
- * helper
+ * elper
  * order
  * title
  * remove
@@ -39,7 +39,7 @@ $grid->updateColumn('field',array('helper'=>array('name'=>'formInput','params'=>
 }}}
 
 
-==Order==
+==order==
 *Possible Values*: true|false
 Use this option if you don't want to give the user the possibility to order this field. One reason may be the use of an expression the build field
 
@@ -58,7 +58,7 @@ $grid->updateColumn('user_email',array('title'=>'Email Address'));
 }}}
 
 
-==Remove==
+==remove==
 This option is used to remove the field from the grid, but not from the query. You may want to use the value of the _id_ field in a decorator, but not to show the id in the grid.
 
 *Possible values*: true|false
@@ -69,7 +69,7 @@ $grid->updateColumn('field',array('remove'=>true));
 
 
 
-==Hidden==
+==hidden==
 This option is similar to the _remove_ option. But while the _remove_ option the made by the Bvb_Grid_Data class, the class responsible for hidding the column is the deploy class.
 
 *Possible values*: true|false
@@ -79,7 +79,7 @@ $grid->updateColumn('field',array('hidden'=>true));
 }}}
 
 
-==Decorator==
+==decorator==
 Use this options to add you own text or html to the field. As the name indicates, it decorates the field.
 
 Usage:
@@ -101,7 +101,7 @@ $grid->updateColumn('field',array('hRow'=>true));
 }}}
 
 
-==Position==
+==position==
 Use this option to specify the position where a column will appear
 
 *Possible Values:* first, last, next, number (not the word. 1, 2,3 ,4 )
