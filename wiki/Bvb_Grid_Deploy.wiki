@@ -57,6 +57,7 @@ $grid->getGridId();
 Returns the Source Object in use
 {{{
 $grid->getSource();
+$grid->setSource(Bvb_Grid_Source_Interface $source);
 }}}
 
 ==Primary Key(s)==
