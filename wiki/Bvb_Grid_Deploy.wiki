@@ -15,7 +15,7 @@ $grid->setView(Zend_View_Interface $view);
 $grid->getView();
 }}}
 
-===CharEncoding()===
+===Char Encoding()===
 Defines the encoding to be used:
 
 Defaults to utf8
@@ -123,6 +123,32 @@ $grid->setDefaultEscapeFunction('htmlentities');
 $grid->setDefaultEscapeFunction(array('custom','function'));
 }}}
 
+===Export===
+Sets the available export options for the grid.
+
+{{{
+$grid->setExport(array('xml','odt','pdf','...'));
+$grid->getExport();
+}}}
+
+===Default Filters===
+Defines the default filters to be applied to the grid. Please no the user can remove this filters
+{{{
+$grid-SetDefautFiltersValues(array('field'=>'pre-filter','field2'=>'another'));
+}}}
+
+
+===Pagination===
+Defines the number of records to be showed per page
+{{{
+$grid->setpagination((int) 20);
+}}}
+
+===Will Show===
+This method will return an array with what will be shown. 
+{{{
+$grid->willShow();//returns: form|form|form&grid
+}}}
 
 ==No custom methods==
 
