@@ -9,7 +9,7 @@ When performing intensive queries or using sources as files, is a good idea to u
 It's really easy.
 
 {{{
-$grid->cache = array('use'=>(0|1),'instance'=>Zend_Cache $cache,'tag'=>'my_tag');
+$grid->cache = array('use'=>array('form'=>'true|false', 'db'=>'true|false'), 'instance'=>Zend_Cache $cache,'tag'=>'my_tag');
 }}}
 
 ==And affects==
