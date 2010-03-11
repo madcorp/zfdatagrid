@@ -4,7 +4,7 @@
 
 ||Feature||Table||PDF||Excel||Word||Word 2007||CSV||Json||Jqgrid||OFC||ODS||ODT||
 ||Conditional Presentation || X || - || - || - || - || - ||- || - || - || - || - ||
-||Multiple Instances|| X || - || - || - || - || - || - || - || - || - || - ||
+||Multiple Instances|| X || - || - || - || - || - || - || X || - || - || - ||
 ||Extra Columns|| X || X || X || X || X || X || X || X || X || X || X ||
 ||Extra Rows|| X || - || - || - || - || - || - || - || - || - || - ||
 ||Auto Pagination|| X || - || - || - || - || - || - || X || - || - || - ||
