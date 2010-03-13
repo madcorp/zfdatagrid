@@ -8,6 +8,7 @@ $grid->setClassCellCondition();
 $grid->addClassCellCondition();
 $grid->setClassRowCondition();
 $grid->setAjax();
+$grid->setImagesUrl();
 }}}
 
 
