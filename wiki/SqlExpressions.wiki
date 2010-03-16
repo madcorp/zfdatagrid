@@ -30,3 +30,8 @@ $this->setSqlExp( array('credit'=>array('functions'=>array('AVG'),'value'=>'cred
 //please define the format option as an empty string
 $this->setSqlExp( array('credit'=>array('functions'=>array('AVG'),'value'=>'credit','format'=>'','class'=>'annual_results')));
 }}}
+
+==Other sources==
+If you are using other source then a DB, you can also use "SQL" expressions.
+
+At this moment six are supported: (min, max, avg, sum, product, count)
