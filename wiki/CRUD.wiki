@@ -68,6 +68,31 @@ And do whatever you want with it.
 $grid->getForm->getElement('my_field')->setValue('value');
 }}}
 
+==Special Features==
+There are a few special methods that may be very, very usefull to a lot o us.
+
+Imagine that you have an ACL based system and that a record with the id 14 can only be removed by an admin.
+
+But I have an id to be removed in the URL. So what stops me to rename the id? Nothing.
+
+We can't prevent this behavior but we can make it useless by forcing some values to be added to the condition.
+{{{
+$form->setOn(Delete|Edit)AddCondition(array('user'=>'12'));
+//This will execut the query:
+//DELETE FROM table where id = '14' AND user='12';
+}}}
+
+Other thing we may need is to force some fields to be filled by values that cannot be set by the user.
+The most common example is the user id.
+We can do achieve that by doing:
+{{{
+$form->on(Add|Edit)Force(array('user_id'=>1));
+}}}
+
+The above code will add another field to the data being submited.
+
+_*IMPORTANT:*_ The values defined with this methods $form->setOn(Delete|Edit)AddCondition(array()) and $form->on(Add|Edit)Force(array()) will override any data submitted by the user.
+
 =Default Decorators=
 To speed things up, default decorators are used and use the table>tr>td layout.
 
