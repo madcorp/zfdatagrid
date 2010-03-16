@@ -11,7 +11,8 @@ All data validation is auto added and forms fields are built based also on field
 You can define you form like this:
 
 {{{
-$form = new Bvb_Grid_Form($class='Zend_Form', $options  =array()); //If you use your custom form class, change Zend_Form for your class. Remember that it needs to be an instance of Zend_From. The second argument is the options that will be passed to the class constructor().
+$form = new Bvb_Grid_Form($class='Zend_Form', $options  =array()); //If you use your custom form class, change Zend_Form for your class. 
+Remember that it needs to be an instance of Zend_From. The second argument is the options that will be passed to the class constructor().
 }}}
 
 
