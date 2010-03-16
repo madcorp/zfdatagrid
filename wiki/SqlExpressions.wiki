@@ -8,13 +8,14 @@ Defining SQL expressions will add an extra row at the bottom of the table with t
 
 ==Examples==
 {{{
-$this->sqlexp = array('credit'=>array('functions'=>array('COUNT'),'value'=>'credit'));
+$this->setSqlExp(array('credit'=>array('functions'=>array('COUNT'),'value'=>'credit')));
+//If no value option is defined the field name will be used.
 }}}
 
 This will count all records from the credit field
 
 {{{
-$this->sqlexp = array('credit'=>array('functions'=>array('AVG'),'value'=>'credit'));
+$this->setSqlExp( array('credit'=>array('functions'=>array('AVG'),'value'=>'credit')));
 }}}
 
 This will make the average from the credit field
@@ -24,5 +25,8 @@ This will make the average from the credit field
 You can also apply a format to the field and add a CSS class
 
 {{{
-$this->sqlexp = array('credit'=>array('functions'=>array('AVG'),'value'=>'credit','format'=>'currency','class'=>'annual_results'));
+$this->setSqlExp( array('credit'=>array('functions'=>array('AVG'),'value'=>'credit','format'=>'currency','class'=>'annual_results')));
+//If this field is already using a format from the grid the same format will be applied here. If you dont' want that
+//please define the format option as an empty string
+$this->setSqlExp( array('credit'=>array('functions'=>array('AVG'),'value'=>'credit','format'=>'','class'=>'annual_results')));
 }}}
