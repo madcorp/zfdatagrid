@@ -17,12 +17,12 @@
  {{{
     $grid>setImagesUrl('/grid/public/images/');//Change this value to match your needs
  }}}
- #Set the source => check this page for detailed [Bvb_Grid_Source info]
+ # Set the source => check this page for detailed [Bvb_Grid_Source info]
  {{{
  $select = $this->getDb()->select->from('table');
  $grid->setSource(new Bvb_Grid_Source_Zend_Select($select));
  }}}
- #deploy it
+ # Deploy it
  {{{
  $this->view->grid = $grid->deploy();
  }}}
@@ -30,3 +30,14 @@
  {{{
  echo $this->grid;
  }}}
+
+
+After setting the source you can customize the fields using the updateColumn() method
+{{{
+$grid->updateColumn('field',array('options'));
+}}}
+
+Check this page for a complete list of options for the [GridOptions fields]
+
+<font color="red">_*ATTENTION:*_</font> The first argument for the updateColumn() method is always the output field and not the field name. If your raw query is something like this: 
+"Select name, age, status as somehting FROM table"; You must use _somehting_ to refer to the _status_ field. 
