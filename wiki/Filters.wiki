@@ -35,6 +35,21 @@ That will result in a SQL query like this:
 SELECT id as key, name as value FROM <table> WHERE <previous conditions>
 }}}
 
+==Transform==
+This option is intended to modify the value provided by the user. In most cases it will be useful for date/time transformation, or currency
+
+{{{
+function my_function ($value)
+{
+   return str_replace("/","-",$value);
+}
+
+$filters = new Bvb_Grid_Filters();
+$filters->addFilter('date',array('transform'=>'my_function'));
+$grid->addFilters($filters);
+
+}}}
+
 =Callback=
 Using a callback will greatly improve you ability to enhance your filtering system
 
