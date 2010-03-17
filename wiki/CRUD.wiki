@@ -17,7 +17,7 @@ $form = new Bvb_Grid_Form($class='Zend_Form', $options  =array()); //If you use 
 //Remember that it needs to be an instance of Zend_From. The second argument is the options that will be passed to the class constructor().
 }}}
 
-You can define which operations are availbale for users:
+You can define which operations are available for users:
 {{{
 $form->setAdd(true|false);
 $form->setEdit(true|false);
@@ -48,7 +48,7 @@ What if you don't want a specific field?
 You can include or exclude fields from the form by setting this:
 {{{
 $form->setAllowedFields(array('times','nexst'));//Only this fields will appear in the form
-$form->setDisallowedFields(array('time','next'));//This fieds won't appear in the form
+$form->setDisallowedFields(array('time','next'));//This fields won't appear in the form
 $form->setFieldsBasedOnQuery(true|false); //Only the fields from the query will be in the form
 }}}
 
@@ -69,8 +69,14 @@ And do whatever you want with it.
 $grid->getForm->getElement('my_field')->setValue('value');
 }}}
 
+===Different Table===
+If you want to manually override the table where values will be inserted, use:
+{{{
+$form->setTable(string $table);
+}}}
+
 ==Special Features==
-There are a few special methods that may be very, very usefull to a lot o us.
+There are a few special methods that may be very, very useful to a lot o us.
 
 Imagine that you have an ACL based system and that a record with the id 14 can only be removed by an admin.
 
@@ -79,7 +85,7 @@ But I have an id to be removed in the URL. So what stops me to rename the id? No
 We can't prevent this behavior but we can make it useless by forcing some values to be added to the condition.
 {{{
 $form->setOn(Delete|Edit)AddCondition(array('user'=>'12'));
-//This will execut the query:
+//This will execute the query:
 //DELETE FROM table where id = '14' AND user='12';
 }}}
 
@@ -90,7 +96,7 @@ We can do achieve that by doing:
 $form->on(Add|Edit)Force(array('user_id'=>1));
 }}}
 
-The above code will add another field to the data being submited.
+The above code will add another field to the data being submitted.
 
 _*IMPORTANT:*_ The values defined with this methods $form->setOn(Delete|Edit)AddCondition(array()) and $form->on(Add|Edit)Force(array()) will override any data submitted by the user.
 
@@ -111,7 +117,7 @@ formDecorator = array('FormElements', array('HtmlTag', array('tag' => 'table', '
 ==Change Decorators==
 
 If you want to change your decorators use the following methods. 
-_*NOTE:*_ You must change the decorators befor adding the form to the grid,
+_*NOTE:*_ You must change the decorators before adding the form to the grid,
 {{{
 $form->(set|get)groupDecorator();
 $form->(set|get)elementDecorator();

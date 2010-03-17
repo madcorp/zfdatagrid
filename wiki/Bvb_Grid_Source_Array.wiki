@@ -6,7 +6,7 @@ If you have an array of results that you want to display all you have to do is:
 {{{
 $grid->setSource(new Bvb_Grid_Source_Array($array));
 }}}
-_The array keys wil be the fields titles_
+_The array keys will be the fields titles_
 
 ==Array format==
 {{{

@@ -26,7 +26,7 @@ You can also apply a format to the field and add a CSS class
 
 {{{
 $this->setSqlExp( array('credit'=>array('functions'=>array('AVG'),'value'=>'credit','format'=>'currency','class'=>'annual_results')));
-//If this field is already using a format from the grid the same format will be applied here. If you dont' want that
+//If this field is already using a format from the grid the same format will be applied here. If you don't want that
 //please define the format option as an empty string
 $this->setSqlExp( array('credit'=>array('functions'=>array('AVG'),'value'=>'credit','format'=>'','class'=>'annual_results')));
 }}}

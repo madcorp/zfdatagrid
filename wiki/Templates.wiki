@@ -81,5 +81,5 @@ $grid->setTemplateParams(array);
 After setting the params you can access them within your template in the options property.
 
 {{{
-$myParams = $htis->options['userDefined];
+$myParams = $this->options['userDefined];
 }}}

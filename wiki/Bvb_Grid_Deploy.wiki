@@ -5,7 +5,7 @@
 =Methods=
 
 ==View==
-Alters the view used by the ZFDatagrid. The view is used for form elments rendering.
+Alters the view used by the ZFDatagrid. The view is used for form elements rendering.
 
 {{{
 $grid->setView(Zend_View_Interface $view);
@@ -139,7 +139,7 @@ $grid-SetDefautFiltersValues(array('field'=>'pre-filter','field2'=>'another'));
 ==Pagination==
 Defines the number of records to be showed per page
 {{{
-$grid->setpagination((int) 20);
+$grid->setPagination((int) 20);
 }}}
 
 ==Will Show==

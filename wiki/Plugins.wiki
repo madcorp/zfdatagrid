@@ -3,7 +3,7 @@
 
 Format is a way to format content using plugins.
 
-This is special useful to formate date, time, bool, currency, and any other content.
+This is special useful to format date, time, bool, currency, and any other content.
 
 You must first register you format whiting the grid:
 

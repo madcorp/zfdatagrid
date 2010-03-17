@@ -17,7 +17,7 @@ $grid->setPagination(0)//Will show all records in one page
 
 <font color="red">*Attention:*</font> Pagination won't take any effect when you explicitly set a limit in your query clause
 
-Examle:
+Example:
 {{{
 $select = new Zend_Db_Select();
 $select->from('table')

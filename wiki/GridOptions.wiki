@@ -9,7 +9,7 @@ Fortunately there is a way to help you.
 Below are a list of options that can be applied to any !Bvb_Grid_Source`_``*`
 =Available Options=
 
- * elper
+ * helper
  * order
  * title
  * remove
@@ -70,7 +70,7 @@ $grid->updateColumn('field',array('remove'=>true));
 
 
 ==hidden==
-This option is similar to the _remove_ option. But while the _remove_ option the made by the Bvb_Grid_Data class, the class responsible for hidding the column is the deploy class.
+This option is similar to the _remove_ option. But while the _remove_ option the made by the Bvb_Grid_Data class, the class responsible for hiding the column is the deploy class.
 
 *Possible values*: true|false
 Usage:
@@ -151,7 +151,7 @@ $grid->updateColumn('field',array('style'=>'text-decoration:underline'));
 
 
 ==search==
-How the search will be performed, or if it will be perfomed.
+How the search will be performed, or if it will be performed.
 
 To not allow search on a particularly field:
 Usage:
