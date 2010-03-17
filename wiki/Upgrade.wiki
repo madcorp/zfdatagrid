@@ -38,7 +38,7 @@ $grid->setCache(array());
 
 ==CRUD Operations==
 
-CRUD operations now use Zend_Form to build the form. No more custom forms.
+CRUD operations now use !Zend_Form to render the form. No more custom forms.
 Please refer to this page for more [CRUD information]
 
 ==Data Sources==
@@ -62,5 +62,5 @@ $grid->query($select);//Can be used only for Zend_Db_Select and Zend_Db_Table_Ab
 
 ==Renamed==
 
- * Bvb_Grid_ExtraColumns have been renamed to Bvb_Grid_Extra_Column
+ * !Bvb_Grid_ExtraColumns have been renamed to !Bvb_Grid_Extra_Column
  
