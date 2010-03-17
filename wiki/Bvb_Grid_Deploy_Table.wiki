@@ -1,5 +1,7 @@
 #summary Methods only available for Table render
 
+<wiki:toc max_depth="4" />
+
 = Introduction =
 
 =Table=
