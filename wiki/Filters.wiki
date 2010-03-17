@@ -35,7 +35,7 @@ That will result in a SQL query like this:
 SELECT id as key, name as value FROM <table> WHERE <previous conditions>
 }}}
 
-==Transform==
+=Transform=
 This option is intended to modify the value provided by the user. In most cases it will be useful for date/time transformation, or currency
 
 {{{
