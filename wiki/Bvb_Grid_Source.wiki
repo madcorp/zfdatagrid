@@ -52,7 +52,7 @@ At this moment ZFDatagrid can read from this sources
  }}}
  
  
-==CSV===
+==CSV==
 {{{
 $grid->setSource(new Bvb_Grid_Source_Csv($file,$fields,$separator));
 }}}
@@ -66,7 +66,7 @@ $separator //The value separator. Default is _,_
 }}}
 
 
-===XML===
+==XML==
 {{{
 $grid->setSource(new Bvb_Grid_Source_Xml($file, $loop,$columns));
 }}}
@@ -79,7 +79,7 @@ $loop //The node where the data you want to fetch is. In RSS feeds is probably: 
 $columns//The fields names. If null the node name will be used
 }}}
 
-===Array=== 
+==Array== 
 {{{
 $grid->setSource(new Bvb_Grid_Source_Array($array));
 }}}
@@ -90,7 +90,7 @@ _The array keys will be the fields titles_
 $array = array(array(1,2,3),array(4,5,6),array(7,8,9));
 }}}
  
-===JSON===
+==JSON==
 {{{
 $grid->setSource(new Bvb_Grid_Source_Json($file, $loop, $columns));
 }}}
@@ -102,3 +102,20 @@ $file//Is the json location: http://zfdatagrid.com/feed/ or string
 $loop //The node where the data you want to fetch.
 $columns//The fields names. If null the node name will be used
 }}}
+
+
+==Excel File (xlsx)==
+You need to have the PHPExcel library installed in your system. You can get it from here: http://www.phpexcel.net
+{{{
+$grid->setSource(new Bvb_Grid_Source_PHPExcel_Reader_Excel2007($file, $sheet));
+}}}
+
+Where 
+
+{{{
+$file//Is the file location
+$sheet//The sheet name
+}}}
+
+
+
