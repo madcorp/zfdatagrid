@@ -84,8 +84,6 @@ $grid->updateColumn('field',array('format'=>'number'));
 $grid->updateColumn('field',array('format'=>array('number',array('param1','param2'))));
 }}}  
 
-Check this page for help with using custom formatters [Formatters Formatters]
-  
 
 ==hidden==
 This option is similar to the _remove_ option. But while the _remove_ option the made by the Bvb_Grid_Data class, the class responsible for hiding the column is the deploy class.
