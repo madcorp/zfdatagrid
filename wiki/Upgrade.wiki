@@ -1,13 +1,66 @@
-#summary One-sentence summary of this page.
+#summary How to Upgrade
 
-= Introduction =
+= 0.5 to 0.6 =
 
-Add your content here.
+==Factory Pattern==
+Now you don't have to instantiate the deploy class.
+Use this:
+{{{
+$grid = Bvb_Grid::factory('table',$options = array(),$gridId = '');
+}}}
 
 
-= Details =
+==Uniformized fields calls==
+Whenever you are, you must cell the field name by it's output and not by name. Tables prefixes are also over.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+If your raw query looks like this:
+
+{{{
+SELECT id, username as name, age, status, online FROM users where id='1';
+}}} 
+
+You must reference to the field _username_ as _name_. 
+If you are using joins and you have two fields with the same name on different tables you must give one of them an alias
+otherwise the first will be overwritten by the last.
+
+==No direct Access==
+You cannot set class attributes directly. You now must use the set*() method.
+
+Instead of 
+
+{{{
+$grid->cache = array();
+}}}
+You now have to do
+{{{
+$grid->setCache(array());
+}}}
+
+==CRUD Operations==
+
+CRUD operations now use Zend_Form to build the form. No more custom forms.
+Please refer to this page for more [CRUD information]
+
+==Data Sources==
+ZFDatagrid now uses a interface to build the grid, so no more calls like this:
+{{{
+$grid->setDataFromArray();
+$grid->setDataFromXml();
+}}}
+
+you must now use
+{{{
+$grid->setSource(new Bvb_Grid_Source_`*`);
+}}}
+
+Check this [!Bvb_Grid_Source page] for detailed information
+
+Changes in the query() method.
+{{{
+$grid->query($select);//Can be used only for Zend_Db_Select and Zend_Db_Table_Abstract Sources
+}}}
+
+==Renamed==
+
+ * Bvb_Grid_ExtraColumns have been renamed to Bvb_Grid_Extra_Column
+ 
