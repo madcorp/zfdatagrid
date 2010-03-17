@@ -4,7 +4,7 @@
 =Your first grid=
 
  # First, download the latest version from the  [_downloads_ http://code.google.com/p/zfdatagrid/downloads/list ] tab
- # Move the Bvb/* folder to your library
+ # Move the Bvb/`*` folder to your library
  # In your controller create a new grid instance: 
  {{{
  $grid = Bvb_Grid::factory('table',Zend_Config $options,$id='');
