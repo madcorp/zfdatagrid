@@ -1,5 +1,7 @@
 #summary You first grid
 
+<wiki:toc max_depth="4" />
+
 
 =Your first grid=
 
@@ -12,7 +14,6 @@
  //The second argument is a Zend_Config instance or an array 
  //The third argument is the grid id. Optional if you don't will use multiple grids per page
  }}}
- Check this page for [Zend_Config_Support More info about Zend_Config options]
  # Set images url (used for sorting, export, etc.). You can download the default [http://code.google.com/p/zfdatagrid/downloads/list here]
  {{{
     $grid>setImagesUrl('/grid/public/images/');//Change this value to match your needs
@@ -37,9 +38,17 @@ After setting the source you can customize the fields using the updateColumn() m
 $grid->updateColumn('field',array('options'));
 }}}
 
-==Complete Options==
+==Don't forget to check==
+
+===Complete Options===
 Check this page for a complete list of options for the [GridOptions fields]
 
+===Zend_Config===
+ Check this page for [Zend_Config_Support More info about Zend_Config options]
+ 
+ ===Grid Methods===
+Methods for interacting with the [Bvb_Grid_Deploy grid]
+ 
 
 
 <font color="red">_*ATTENTION:*_</font> The first argument for the updateColumn() method is always the output field and not the field name. If your raw query is something like this: 
