@@ -168,7 +168,7 @@ This list shows the deploy classes that don't accept any particularly method, ap
  * [Bvb_Grid_Deploy_OFC OFC]
  * [Bvb_Grid_Deploy_JqGrid jqGrid]
  
- =About Exporting=
+=About Exporting=
  Please note that if you are exporting for .docx, .odt or .ods formats and you library folder is not named _library_ you and you don't have defined the _APPLICATION_PATH_ you must set the correct name using the 
  {{{
  $grid->setLibraryDir('/path/to/dir');
