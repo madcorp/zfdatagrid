@@ -9,6 +9,24 @@
  {{{
  $grid = Bvb_Grid::factory('table',Zend_Config $options,$id='');
  //The first argument is the default deploy class. 
- //The second argument is a Zend_Config instance or an array [!Zend_Config_Support More info]
+ //The second argument is a Zend_Config instance or an array 
  //The third argument is the grid id. Optional if you don't will use multiple grids per page
+ }}}
+ Check this page for [!Zend_Config_Support More info about Zend_Config options]
+ # Set images url (used for sorting, export, etc.). You can dowload the default [http://code.google.com/p/zfdatagrid/downloads/list here]
+ {{{
+    $grid>setImagesUrl('/grid/public/images/');//Change this value to match your needs
+ }}}
+ #Set the source => check this page for detailed [Bvb_Grid_Source info]
+ {{{
+ $select = $this->getDb()->select->from('table');
+ $grid->setSource(new Bvb_Grid_Source_Zend_Select($select));
+ }}}
+ #deploy it
+ {{{
+ $this->view->grid = $grid->deploy();
+ }}}
+ and in your view:
+ {{{
+ echo $this->grid;
  }}}
