@@ -2,4 +2,56 @@
 
 = Introduction =
 
-How to use formatters
+Formatters are useful to format field content such number, currency, date, etc, etc.
+
+You can create your own formatters and then use them in the grid.
+
+==Code Sample== 
+{{{
+class My_Formatter_Currency implements Bvb_Grid_Formatter_Interface
+{
+
+    function __construct($options)
+    {
+        
+    } 
+
+    function format($value)
+    {
+        if(!Zend_Registry::isRegistered('Zend_Locale'))
+        {
+            return $value;
+        }
+
+        $currency = new Zend_Currency(Zend_Registry::get('Zend_Locale'));
+        return $currency->toCurrency($value);
+    }
+
+}
+}}}
+
+You must implement the Bvb_Grid_Formatter_Interface.
+
+Your formatter may receive options that will be passed to the constructor
+
+{{{
+//No options
+$grid->updateColumn('amount',array('format'=>'currency'));
+
+//With options
+$grid->updateColumn('amount',array('format'=>array('currency','pt_PT')));//Will pass the pt_PT value to the constructor. 
+$grid->updateColumn('amount',array('format'=>array('currency',array('value1','{{amount}}','somehtingElse')))); //Will pass the array to the constructor
+}}}
+
+==Add You Dir==
+To know where to look for formatters, you must first tell grid where to look for them.
+
+You can accomplish that using the addFormatterDir() method
+
+{{{
+$grid->addFormatterDir('Bvb/Grid/Formatter','Bvb_Grid_Formatter');
+}}}
+
+
+
+
