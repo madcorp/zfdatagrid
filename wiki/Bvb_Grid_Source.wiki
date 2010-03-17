@@ -1,13 +1,22 @@
-#summary One-sentence summary of this page.
+#summary Available Sources
 
 = Introduction =
 
-Add your content here.
+ZFdatagrid has the ability to read from a variety of sources, and at any moment more can be added, even by you.
 
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+At this moment ZFDatagrid can read from this sources
+ * Zend_Db_Select
+ * Zend_Db_Table_Abstract
+ * Doctrine
+ * CSV
+ * XML
+ * Array
+ * Json
+ * Excel Files 
+ 
+ And can auto build forms from this sources:
+ * Zend_Db_Select
+ * Zend_Db_Table_Abstract
+ * CSV
+ 
+ 
