@@ -7,8 +7,8 @@
 ZFdatagrid has the ability to read from a variety of sources, and at any moment more can be added, even by you.
 
 At this moment ZFDatagrid can read from this sources
- * Zend_Db_Select
- * Zend_Db_Table_Abstract
+ * !Zend_Db_Select
+ * !Zend_Db_Table_Abstract
  * Doctrine
  * CSV
  * XML
@@ -16,10 +16,10 @@ At this moment ZFDatagrid can read from this sources
  * Json
  * Excel Files 
  
- And can auto build forms from this sources:
+And can auto build forms from this sources:
  
- * Zend_Db_Select
- * Zend_Db_Table_Abstract
+ * !Zend_Db_Select
+ * !Zend_Db_Table_Abstract
  * CSV
  
 ==Zend_Db_Select==
