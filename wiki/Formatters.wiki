@@ -53,5 +53,43 @@ $grid->addFormatterDir('Bvb/Grid/Formatter','Bvb_Grid_Formatter');
 }}}
 
 
+==Default Formatters==
+ZFDatagrid comes with 3 defaults formatters.
+ *Currency
+ *Date
+ *Image
+ 
+===Currency===
 
+Sample:
+{{{
+$grid->updateColumn('field',array('format'=>'currency'));
+}}}
 
+ZFDatagrid will look for a key in Zend_Registry with the name Zend_Locale and set the locale. 
+
+ Alternately you can set the locale to use:
+ 
+ {{{
+$grid->updateColumn('field',array('format'=>array('currency','pt_PT')));
+ }}}
+
+ ===Date===
+
+  ZFDatagrid will  for a key in Zend_Registry with the name Zend_Locale and use it.
+  
+  You can also pass as argument a instance of Zend_Locale or an array with the following options
+   * locale
+   * date_format
+   * type
+  
+  {{{
+  $grid->updateColumn('field',array('format'=>'date'));
+  }}} 
+  
+ ===Image===
+ This is a simple formatter and will expect the image URL.
+ {{{
+$grid->updateColumn('field',array('format'=>'image'));
+ }}}
+ 
