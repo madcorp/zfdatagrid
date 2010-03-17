@@ -53,7 +53,7 @@ you must now use
 $grid->setSource(new Bvb_Grid_Source_`*`);
 }}}
 
-Check this [!Bvb_Grid_Source page] for detailed information
+Check this [Bvb_Grid_Source page] for detailed information
 
 Changes in the query() method.
 {{{
