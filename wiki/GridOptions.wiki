@@ -83,6 +83,8 @@ Usage:
 $grid->updateColumn('field',array('format'=>'number'));
 $grid->updateColumn('field',array('format'=>array('number',array('param1','param2'))));
 }}}  
+
+Check this page for help with using custom formatters [Formatters Formatters]
   
 
 ==hidden==
