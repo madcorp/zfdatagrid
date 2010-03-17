@@ -1,5 +1,14 @@
 #summary You first grid
 
 
-=Introduction=
+=Your first grid=
 
+ # First, download the latest version from the  [_downloads_ http://code.google.com/p/zfdatagrid/downloads/list ] tab
+ # Move the Bvb/* folder to your library
+ # In your controller create a new grid instance: 
+ {{{
+ $grid = Bvb_Grid::factory('table',Zend_Config $options,$id='');
+ //The first argument is the default deploy class. 
+ //The second argument is a Zend_Config instance or an array [!Zend_Config_Support More info]
+ //The third argument is the grid id. Optional if you don't will use multiple grids per page
+ }}}
