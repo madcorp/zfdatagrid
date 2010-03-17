@@ -47,7 +47,7 @@ And can auto build forms from this sources:
  The only thing you need to do is pass the Doctrine instance to the grid
  Example:
  {{{
- $select = Doctrine_Query::create()->from('Model_Country')->where('code = ?', $id)
+ $select = Doctrine_Query::create()->from('Model')->where('code = ?', $id)
  $grid->setSource($select);
  }}}
  
@@ -116,6 +116,4 @@ Where
 $file//Is the file location
 $sheet//The sheet name
 }}}
-
-
 
