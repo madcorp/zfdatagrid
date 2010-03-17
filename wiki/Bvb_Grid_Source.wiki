@@ -85,12 +85,12 @@ $grid->setSource(new Bvb_Grid_Source_Array($array));
 }}}
 _The array keys will be the fields titles_
 
-====Array format====
+*Array format*
 {{{
 $array = array(array(1,2,3),array(4,5,6),array(7,8,9));
 }}}
  
- ===JSON===
+===JSON===
 {{{
 $grid->setSource(new Bvb_Grid_Source_Json($file, $loop, $columns));
 }}}
