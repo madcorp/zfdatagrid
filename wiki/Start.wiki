@@ -5,7 +5,7 @@
 
 =Your first grid=
 
- # First, download the latest version from the  [_downloads_ http://code.google.com/p/zfdatagrid/downloads/list ] tab
+ # First, download the latest version from the  [http://code.google.com/p/zfdatagrid/downloads/list _Downloads_] tab
  # Move the Bvb/`*` folder to your library
  # In your controller create a new grid instance: 
  {{{
