@@ -86,7 +86,7 @@ $grid->updateColumn('field',array('format'=>array('number',array('param1','param
 
 
 ==hidden==
-This option is similar to the _remove_ option. But while the _remove_ option the made by the Bvb_Grid_Data class, the class responsible for hiding the column is the deploy class.
+This option is similar to the _remove_ option. But while the _remove_ option is made by the Bvb_Grid_Data class, the class responsible for hiding the column is the deploy class.
 
 *Possible values*: true|false
 Usage:
@@ -246,4 +246,3 @@ Usage:
 {{{
 $grid->updateColumn('user_email',array('title'=>'Email Address'));
 }}}
-
