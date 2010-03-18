@@ -47,8 +47,10 @@ function my_function ($value)
 $filters = new Bvb_Grid_Filters();
 $filters->addFilter('date',array('transform'=>'my_function'));
 $grid->addFilters($filters);
-
 }}}
+
+If a user searches for _2010/12/12_ the value passed to your query will be _2010-12-12_
+
 
 =Callback=
 Using a callback will greatly improve you ability to enhance your filtering system
