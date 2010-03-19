@@ -60,6 +60,12 @@ As expected, you can also add a third argument in case the condition is not true
 $grid->addClassCellCondition('Population',"{{Population}} > 200000","red","green");
 }}}
 
+==Default Classes==
+You can set the default CSS classes to be applied to even and odd rows
+
+{{{
+$grid->setRowAltClasses('odd','even');
+}}} 
 
 <font color="red">*ATTENTION*</font> This only applies to Tables.
 
