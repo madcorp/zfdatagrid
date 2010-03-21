@@ -25,13 +25,13 @@ And can auto build forms from this sources:
 ==!Zend_Db_Select==
  The only thing you need to do is pass the object instance to the grid
  {{{
- $grid->setSource(Zend_Db_Select $select);
+ $grid->setSource(new Bvb_Grid_Source_Zend_Select(Zend_Db_Select $select));
  }}}
  
  Example:
  {{{
  $select = $this->getDb->select()->from('table'); 
- $grid->setSource($select);
+ $grid->setSource(new Bvb_Grid_Source_Zend_Select($select));
  }}}
  
   
@@ -39,7 +39,8 @@ And can auto build forms from this sources:
  The only thing you need to do is pass the model to the grid
  Example:
  {{{
- $grid->setSource(new My_Model());
+ $grid->setSource(new Bvb_Grid_Source_Zend_Table(Zend_Db_Table $model));
+ $grid->setSource(new Bvb_Grid_Source_Zend_Table(new Model()));
  }}}
  
  
