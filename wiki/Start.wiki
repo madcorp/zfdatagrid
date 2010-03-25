@@ -20,6 +20,7 @@
  }}}
  # Set the source => check this page for detailed [Bvb_Grid_Source info]
  {{{
+ //$this->getDb() returns the connection
  $select = $this->getDb()->select->from('table');
  $grid->setSource(new Bvb_Grid_Source_Zend_Select($select));
  }}}
