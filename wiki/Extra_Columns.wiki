@@ -13,7 +13,7 @@ $right = new Bvb_Grid_Extra_Column();
 $right->position('right')->name('unique_name')->title('Right')->decorator("<strong>{{Population}}</strong>");
 
 $left = new Bvb_Grid_Extra_Column();
-$left->position('left')->name('unique_name2')->title('Left');decorator("<input  type='checkbox' name='number[]'>");
+$left->position('left')->name('unique_name2')->title('Left')->decorator("<input  type='checkbox' name='number[]'>");
 
 $grid->addExtraColumns($right, $left);
 }}}
