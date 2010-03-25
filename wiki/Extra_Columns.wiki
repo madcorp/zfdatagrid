@@ -22,7 +22,8 @@ $grid->addExtraColumns($right, $left);
 
 || Name || Propose || Expects  ||
 || position|| Define colum position || (left|right) ||
-|| name || The title for the column || any text ||
+|| name || The name for the column || unique_value ||
+|| title || The title for the column || any text ||
 || class || CSS class || A css class to apply ||
 || decorator || Add extra html to the column || HTML|text ||
 || style || CSS style || Style to be applied tot he column ||
