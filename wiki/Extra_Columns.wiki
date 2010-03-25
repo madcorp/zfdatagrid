@@ -10,10 +10,10 @@ You can add extra columns to the grid, placed at right or left.
 
 {{{
 $right = new Bvb_Grid_Extra_Column();
-$right->position('right')->name('Right')->decorator("<strong>{{Population}}</strong>");
+$right->position('right')->name('unique_name')->title('Right')->decorator("<strong>{{Population}}</strong>");
 
 $left = new Bvb_Grid_Extra_Column();
-$left->position('left')->name('Left')->decorator("<input  type='checkbox' name='number[]'>");
+$left->position('left')->name('unique_name2')->title('Left');decorator("<input  type='checkbox' name='number[]'>");
 
 $grid->addExtraColumns($right, $left);
 }}}
@@ -51,6 +51,7 @@ $left->position('left')
 ->decorator("|{{field}}|")
 ->helper(array('formText'=>array('name','value',array())))
 ->class('extraFields')
+->title('MyTitle')
 ->style('text-decoration:underline;');
 
 }}}
