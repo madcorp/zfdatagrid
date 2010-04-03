@@ -20,6 +20,23 @@ $grid->addFilters($filters);
 
 The field will be searched by the key and the user will see the value.
 
+= CSS =
+
+==Class==
+{{{
+$filters = new Bvb_Grid_Filters();        
+$filters->addFilter('username',array('class'=>'my_class'));
+$grid->addFilters($filters);   
+}}}
+ 
+
+==Style==
+{{{
+$filters = new Bvb_Grid_Filters();        
+$filters->addFilter('username',array('style'=>'margin:0px;'));
+$grid->addFilters($filters);   
+}}}
+ 
 
 = Auto Filters=
 
