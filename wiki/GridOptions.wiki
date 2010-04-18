@@ -26,6 +26,7 @@ Below are a list of options that can be applied to any !Bvb_Grid_Source`_``*`
  * searchTypeFixed
  * style
  * title
+ * translate
   
   
 ==callback==
@@ -245,4 +246,12 @@ This is the title for the column the user will see.
 Usage:
 {{{
 $grid->updateColumn('user_email',array('title'=>'Email Address'));
+}}}
+
+==translate==
+Whether to translate fields values. Useful for locale data.
+
+Usage:
+{{{
+$grid->updateColumn('user_email',array('translate'=>true));
 }}}
