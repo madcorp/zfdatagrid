@@ -253,5 +253,5 @@ Whether to translate fields values. Useful for locale data.
 
 Usage:
 {{{
-$grid->updateColumn('user_email',array('translate'=>true));
+$grid->updateColumn('country',array('translate'=>true));
 }}}
