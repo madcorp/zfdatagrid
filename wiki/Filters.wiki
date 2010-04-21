@@ -52,6 +52,14 @@ That will result in a SQL query like this:
 SELECT id as key, name as value FROM <table> WHERE <previous conditions>
 }}}
 
+You can also define the field orintation
+
+{{{
+$filters->addFilter('username'=> array('distinct'=>array( 'field'=>'id' ,  'name'=>'username','order'=>'name ASC')));    
+}}}
+
+*_Note:_* Order param accepts (field|name) (ASC|DESC). The first option is not the field name but the option key. The above code will order by username ASC. 
+
 =Transform=
 This option is intended to modify the value provided by the user. In most cases it will be useful for date/time transformation, or currency
 
