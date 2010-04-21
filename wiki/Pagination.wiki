@@ -25,5 +25,17 @@ $select->limit(19);
 }}}
 Using the above code all 19 records will be shown in one page, without giving the user the ability to remove it
 
+==Changing number of records per page==
+You can give users the ability to change the number of records per page by adding this code
+
+{{{
+$grid->setPaginationInterval(array(10 =>10, 20 => 20, 50 => 50, 100 => 100));
+}}}
+
+Or 
+
+{{{
+$grid->setPaginationInterval(array(10 =>'ten', 20 => 'twenty'));
+}}}
 
 *The default value for pagination is _20_*
