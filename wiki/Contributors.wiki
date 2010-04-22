@@ -1,6 +1,6 @@
 #summary Who contributes with code to ZFDatagrid
 
-=Bento Vilas Boas (Project Lead)=
+==Bento Vilas Boas (Project Lead)==
 Some guy from some country. Who cares...
 
 
