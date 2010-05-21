@@ -24,7 +24,7 @@ The field value will be passed to the format method.
 Alternatively you can pass optional params to the format.
 
 {{{
-$grid->updateColumn('amount', array(format=> array('currency',array('arg'=>1, 'arg'=>'{{amount}}'))));   
+$grid->updateColumn('amount', array('format'=> array('currency',array('arg'=>1, 'arg'=>'{{amount}}'))));   
 }}}  
 
 _Note_ The second argument will be converted in the value for the amount field. You can use {{field}} for any field
