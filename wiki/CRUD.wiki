@@ -92,7 +92,6 @@ Setting up bulk actions it's incredible easy. All you have to do is:
     //Replace the number _2_ for the number of forms you want to display. 
 }}}
 
-_Check the Bvb_Grid_Form class for a list of decorators you can change. Just use (get|set)DecoratorName(array('decorator'))_
 
 ===Different Table===
 If you want to manually override the table where values will be inserted, use:
@@ -129,13 +128,27 @@ _*IMPORTANT:*_ The values defined with this methods $form->setOn(Delete|Edit)Add
 To speed things up, default decorators are used and use the table>tr>td layout.
 
 {{{
-groupDecorator = array('FormElements', array('HtmlTag', array('tag' => 'td', 'colspan' => '2', 'class' => 'buttons')), array(array('row' => 'HtmlTag'), array('tag' => 'tr')));
+    groupDecorator = array('FormElements', array('HtmlTag', array('tag' => 'td', 'colspan' => '2', 'class' => 'buttons')), array(array('row' => 'HtmlTag'), array('tag' => 'tr')));
 
-elementDecorator = array('ViewHelper', 'Description', 'Errors', array(array('data' => 'HtmlTag'), array('tag' => 'td', 'class' => 'element')), array(array('label' => 'Label'), array('tag' => 'td')), array(array('row' => 'HtmlTag'), array('tag' => 'tr')));
+    ubformGroupDecorator = array('FormElements', array('HtmlTag', array('tag' => 'td', 'colspan' => '90', 'class' => 'buttons')), array(array('row' => 'HtmlTag'), array('tag' => 'tr')));
 
-buttonHiddenDecorator = array('ViewHelper');
+   elementDecorator = array('ViewHelper', 'Description', 'Errors', array(array('data' => 'HtmlTag'), array('tag' => 'td', 'class' => 'element')), array(array('label' => 'Label'), array('tag' => 'td')), array(array('row' => 'HtmlTag'), array('tag' => 'tr')));
 
-formDecorator = array('FormElements', array('HtmlTag', array('tag' => 'table', 'style' => 'width:99%', 'class' => 'borders')), 'Form');
+    subformElementDecorator = array('ViewHelper', 'Description', 'Errors', array(array('data' => 'HtmlTag'), array('tag' => 'td', 'class' => 'element')), array(array('label' => 'Label'), array('tag' => 'td','class'=>'elementTitle')), array(array('row' => 'HtmlTag'), array('tag' => 'tr')));
+
+    subformElementTitle = array(array('Label', array('tag' => 'th')));
+
+    subformElementDecoratorVertical = array('ViewHelper', 'Description', 'Errors', array(array('data' => 'HtmlTag'), array('tag' => 'td', 'class' => 'element')));
+
+    fileDecorator = array('File', 'Description', 'Errors', array(array('data' => 'HtmlTag'), array('tag' => 'td', 'class' => 'element')), array(array('label' => 'Label'), array('tag' => 'td')), array(array('row' => 'HtmlTag'), array('tag' => 'tr')));
+
+    buttonHiddenDecorator = array('ViewHelper');
+
+    formDecorator = array('FormElements', array('HtmlTag', array('tag' => 'table', 'style' => 'width:99%')), 'Form');
+
+    subFormDecorator = array('FormElements', array('HtmlTag',array('tag' => 'table', 'style' => 'margin-bottom:5px; width:100%', 'class' => 'borders')));
+
+    subFormDecoratorVertical = array('FormElements', array('HtmlTag', array('tag' => 'tr')));
 
 }}}
 
