@@ -70,6 +70,7 @@ And do whatever you want with it.
 }}}
 
 _Why the number 1 when getting the form instance?_
+
 Because ZFDatagrid now supports bulk actions. every record is now a subForm. 
 
 You can achieve the same result of 
@@ -78,8 +79,20 @@ You can achieve the same result of
     $grid->getForm()->getSubForm(1);
 }}}
 
-Forms a numbered starting in one. 
+Forms are numbered starting in one. 
 
+
+==Bulk Actions==
+Setting up bulk actions it's incredible easy. All you have to do is:
+
+{{{
+    $form = new Bvb_Grid_Form();
+    $form->setBulkAdd(2)->setBulkDelete(true)->setBulkEdit(true)->setAdd(true)->setEdit(true)->setDelete(true)->setAddButton(true);
+    $grid->setForm($form);
+    //Replace the number _2_ for the number of forms you want to display. 
+}}}
+
+_Check the Bvb_Grid_Form class for a list of decorators you can change. Just use (get|set)DecoratorName(array('decorator'))_
 
 ===Different Table===
 If you want to manually override the table where values will be inserted, use:
