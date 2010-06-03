@@ -19,15 +19,15 @@ $form = new Bvb_Grid_Form($class='Zend_Form', $options  =array()); //If you use 
 
 You can define which operations are available for users:
 {{{
-$form->setAdd(true|false);
-$form->setEdit(true|false);
-$form->setDelete(true|false);
+    $form->setAdd(true|false);
+    $form->setEdit(true|false);
+    $form->setDelete(true|false);
 }}}
 
 
 You can optional add a _add_ button to the top of form by doing this:
 {{{
-$form->setAddButton(true|false);
+    $form->setAddButton(true|false);
 }}}
 
 
@@ -35,10 +35,10 @@ One interesting  thing is that you may use Zend_Form just to validating your dat
 You can do that by defining this:
 
 {{{
-$form->setIsPerformCrudAllowed(false);//Won't insert any data to the source when performing any operation
-$form->setIsPerformCrudAllowedForAddition(true|false); //Won't insert any data when adding new data
-$form->setIsPerformCrudAllowedForEdition(true|false); //Won't update any data when editing
-$form->setIsPerformCrudAllowedForDeletion(false); //Won't delete any data when deleting a record
+    $form->setIsPerformCrudAllowed(false);//Won't insert any data to the source when performing any operation
+    $form->setIsPerformCrudAllowedForAddition(true|false); //Won't insert any data when adding new data
+    $form->setIsPerformCrudAllowedForEdition(true|false); //Won't update any data when editing
+    $form->setIsPerformCrudAllowedForDeletion(false); //Won't delete any data when deleting a record
 }}}
 
 Data recording is inside a try{}catch{} block, so you can throw an exception within your callbacks (see below) to make the validation fail.
@@ -47,32 +47,44 @@ What if you don't want a specific field?
 
 You can include or exclude fields from the form by setting this:
 {{{
-$form->setAllowedFields(array('times','nexst'));//Only this fields will appear in the form
-$form->setDisallowedFields(array('time','next'));//This fields won't appear in the form
-$form->setFieldsBasedOnQuery(true|false); //Only the fields from the query will be in the form
+    $form->setAllowedFields(array('times','next'));//Only this fields will appear in the form
+    $form->setDisallowedFields(array('time','next'));//This fields won't appear in the form
+    $form->setFieldsBasedOnQuery(true|false); //Only the fields from the query will be in the form
 }}}
 
 
 And then we need to add the form to our grid
 {{{
-$grid->setForm($form);
+    $grid->setForm($form);
 }}}
 
 
 After adding the form you can get it by doing:
 {{{
-$grid->getForm(); 
+    $grid->getForm(1); 
 }}}
 
 And do whatever you want with it.
 {{{
-$grid->getForm->getElement('my_field')->setValue('value');
+    $grid->getForm(1)->getElement('my_field')->setValue('value');
 }}}
+
+_Why the number 1 when getting the form instance?_
+Because ZFDatagrid now supports bulk actions. every record is now a subForm. 
+
+You can achieve the same result of 
+
+{{{
+    $grid->getForm()->getSubForm(1);
+}}}
+
+Forms a numbered starting in one. 
+
 
 ===Different Table===
 If you want to manually override the table where values will be inserted, use:
 {{{
-$form->setTable(string $table);
+    $form->setTable(string $table);
 }}}
 
 ==Special Features==
