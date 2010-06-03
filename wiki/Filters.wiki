@@ -60,6 +60,18 @@ $filters->addFilter('username'=> array('distinct'=>array( 'field'=>'id' ,  'name
 
 *_Note:_* Order param accepts (field|name) (ASC|DESC). The first option is not the field name but the option key. The above code will order by username ASC. 
 
+=Show Filters in export=
+This option will add the curretn filters at the end of the document (PDF Only)
+{{{
+$grid->setShowFiltersInExport(true); 
+}}}
+Add Your own 
+{{{
+$grid->setShowFiltersInExport(array('My'=>'Filter')); 
+}}}
+A merge with the filters values inserted by user will be made. 
+
+
 =Transform=
 This option is intended to modify the value provided by the user. In most cases it will be useful for date/time transformation, or currency
 
