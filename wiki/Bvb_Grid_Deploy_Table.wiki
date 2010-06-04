@@ -69,6 +69,19 @@ $grid->setRowAltClasses('odd','even');
 
 <font color="red">*ATTENTION*</font> This only applies to Tables.
 
+==Don't Show Order Images==
+You can ommit order arrows, and make them appear only when a columns is sorted.
+
+{{{
+$grid->setAlwaysShowOrderArrows(false);
+}}}
+
+==Change records per page==
+You can let a user choose how many records are showned per page
+
+{{{
+$grid->setPaginationInterval(array(10 => 10, 20 => 20, 50 => 50, 100 => 100));
+}}}
 
 ==Config Options==
 For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
