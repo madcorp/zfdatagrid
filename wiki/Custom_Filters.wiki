@@ -70,4 +70,10 @@ Then you can apply your custom query in this method doing something like this:
 
 Another method that my be useful is the normalize(). This method will be called before querying. It's mostly useful for date/time and to apply the strtotime().
 
+==Adding your Filters to Grid==
+Add dir's containing yours custom filters using this code:
+
+{{{
+$grid->addFiltersRenderDir('My/Custom/Filters/Render', 'My_Custom_Filters_Render');
+}}}
  
