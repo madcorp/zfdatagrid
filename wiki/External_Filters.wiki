@@ -1,5 +1,7 @@
 #summary External Filters
 
+<wiki:toc max_depth="3" />
+
 = Introduction =
 This is very useful if you want to associate an external input to the grid as a filter.
 

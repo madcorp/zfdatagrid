@@ -17,7 +17,7 @@ After this you can start using you format plugins.
 $grid->updateColumn('amount',array('format'=>"currency"));   
 }}}
 
-The ZFDatahrid will look for a class called !My_Grid_Formatter_Currency and for a method called format().
+The ZFDatagrid will look for a class called !My_Grid_Formatter_Currency and for a method called format().
 
 The field value will be passed to the format method.
 

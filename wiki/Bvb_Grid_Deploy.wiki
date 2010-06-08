@@ -52,6 +52,41 @@ _Note:_ You can't set a new id after grid initialization
 $grid->getGridId();
 }}} 
 
+==KeyEvents==
+Use this if you want filters to fire eith event "onChange"
+{{{
+$grid->setUseKeyEventsOnFilters(true);
+}}}
+
+==Filters In Export==
+You can want to show which filters where applied to get the current document (pdf only atm).
+{{{
+$grid->setShowFiltersInExport(true);
+}}}
+
+You can also add custom text to be printed by passing an array 
+
+{{{
+$grid->setShowFiltersInExport(array('User'=>'Portugal'));
+}}}
+
+==Default Filters Values==
+Use this method to pre-filter results. Please note that user can remove this filters
+
+{{{
+$grid->setDefaultFiltersValues(array('filed'=>'value'))
+}}}
+
+
+==Save Params in Session==
+*SVN ONLY*
+With this option set, grid will preserve filters, order, page and records per page.
+
+{{{
+$grid->saveParamsInSession(true);
+}}}
+
+The id is based on grid id. If not set the key action_controller_module will be used.
 
 ==Source==
 Returns the Source Object in use
@@ -171,5 +206,5 @@ This list shows the deploy classes that don't accept any particularly method, ap
 =About Exporting=
  Please note that if you are exporting for .docx, .odt or .ods formats and you library folder is not named _library_ you and you don't have defined the _APPLICATION_PATH_ you must set the correct name using the 
  {{{
- $grid->setLibraryDir('/path/to/dir');
+ $grid->setLibraryDir('/path/to/library');
  }}}

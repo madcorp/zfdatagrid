@@ -1,5 +1,7 @@
 #summary Open Flash Chart Wrapper
 
+<wiki:toc max_depth="3" />
+
 = Introduction =
 
 !Bvb_Grid_deploy_Ofc is a wrapper for the well-known chart library [http://teethgrinder.co.uk/open-flash-chart/ Open Flash Chart]

@@ -1,5 +1,7 @@
 #summary A simple way to render specific fields to specific renders
 
+<wiki:toc max_depth="3" />
+
 = Introduction =
 
 If you render your data in several formats you probably want to render different fields based on format render.
