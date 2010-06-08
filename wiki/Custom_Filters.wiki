@@ -1,5 +1,7 @@
 #summary Build your own filters
 
+<wiki:toc max_depth="3" />
+
 = Introduction =
 The most common practice for this is probably range selection, but not only. ZFDatagrid already ships with range selectors for numbers and dates.
 
