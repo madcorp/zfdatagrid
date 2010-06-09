@@ -1,5 +1,12 @@
 #summary How to Upgrade
 
+= 0.6 to 0.6.5
+
+ * Abstract classes and interfaces where prefixed with the file name. Bvb_Grid_Formatter_Interface => Bvb_Grid_Formatter_FormatterInterface
+
+ * Callbacks in forms are now called using call_user_func_array instead call_user_func
+
+
 = 0.5 to 0.6 =
 
 ==Factory Pattern==
