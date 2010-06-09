@@ -117,7 +117,7 @@ Other thing we may need is to force some fields to be filled by values that cann
 The most common example is the user id.
 We can do achieve that by doing:
 {{{
-$form->on(Add|Edit)Force(array('user_id'=>1));
+$form->setOn(Add|Edit)Force(array('user_id'=>1));
 }}}
 
 The above code will add another field to the data being submitted.
