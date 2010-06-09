@@ -1,11 +1,12 @@
 #summary How to Upgrade
 
-= 0.6 to 0.6.5
+= 0.6 to 0.6.5 =
 
  * Abstract classes and interfaces where prefixed with the file name. Bvb_Grid_Formatter_Interface => Bvb_Grid_Formatter_FormatterInterface
 
  * Callbacks in forms are now called using call_user_func_array instead call_user_func
-
+ 
+ * Forms are now built with subForms. So you will see 1- prefixed in all of your input ids. Input names also changed to arrays. This does not affect any previous PHP code. Just if you are using JS libraries to beautify yours forms. 
 
 = 0.5 to 0.6 =
 
@@ -17,7 +18,7 @@ $grid = Bvb_Grid::factory('table',$options = array(),$gridId = '');
 }}}
 
 
-==Uniformized fields calls==
+==Uniformed fields calls==
 Whenever you are, you must cell the field name by it's output and not by name. Tables prefixes are also over.
 
 If your raw query looks like this:
