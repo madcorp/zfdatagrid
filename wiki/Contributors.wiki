@@ -1,7 +1,9 @@
 #summary Who contributes with code to ZFDatagrid
 
 ==Bento Vilas Boas (Project Lead)==
-Some guy from some country. Who cares...
+Just some guy without any blog or twitter. 
+
+PT: Se consegues ler esta mensagem dá uma vista de olhos neste site [http://www.petala-azul.com Pétala Azul], com o objecto de criar finalmente um CFMS a sério.
 
 
 ==XTmotion.co.uk==
