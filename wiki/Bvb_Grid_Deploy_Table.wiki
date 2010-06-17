@@ -76,6 +76,13 @@ You can ommit order arrows, and make them appear only when a columns is sorted.
 $grid->setAlwaysShowOrderArrows(false);
 }}}
 
+==Never Show Order Images==
+Using this method no images will appear, even when a field is sorted. 
+_SVN Only_
+{{{
+$grid->setShowOrderImages(false);
+}}}
+
 ==Change records per page==
 You can let a user choose how many records are showned per page
 

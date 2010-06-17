@@ -93,7 +93,7 @@ Setting up bulk actions it's incredible easy. All you have to do is:
 }}}
 
 
-===Different Table===
+==Different Table==
 If you want to manually override the table where values will be inserted, use:
 {{{
     $form->setTable(string $table);
@@ -122,7 +122,20 @@ $form->setOn(Add|Edit)Force(array('user_id'=>1));
 
 The above code will add another field to the data being submitted.
 
-_*IMPORTANT:*_ The values defined with this methods $form->setOn(Delete|Edit)AddCondition(array()) and $form->on(Add|Edit)Force(array()) will override any data submitted by the user.
+===Disable CSRF===
+_SVN Only_
+This method won't create a hash element to valid form input. Please use this method wisely. 
+{{{
+$form->setUseCSRF(false);
+}}}
+
+===Define input type===
+_SVN Only_
+You can change de input type created by default by ZFDG using the $form->setInputsType() method
+
+{{{
+$form->setInputsType('bug_description'=>'textarea','user_password'=>'passowrd'); 
+}}}
 
 =Default Decorators=
 To speed things up, default decorators are used and use the table>tr>td layout.
