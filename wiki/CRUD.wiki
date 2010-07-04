@@ -2,6 +2,8 @@
 
 <wiki:toc max_depth="5" />
 
+<font color="red">*IMPORTANT:* Form elements are only built after passing your form instance to the grid with: *$grid->setForm(Bvb_Grid_Form $form)*. Only after this you can manage your form elements with *$grid->getForm(1)->getElement('element')->something()*</font>
+
 = How it works? =
 
 By default the form is built based on table definition.
