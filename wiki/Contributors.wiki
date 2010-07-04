@@ -1,17 +1,26 @@
 #summary Who contributes with code to ZFDatagrid
 
 ==Bento Vilas Boas (Project Lead)==
-Just some guy without any blog or twitter. 
+PHP developer from Portugal
 
-PT: Se consegues ler esta mensagem dá uma vista de olhos neste site [http://www.petala-azul.com Pétala Azul], com o objecto de criar finalmente um CFMS a sério.
+email === 'geral@petala-azul.com'
+
+blog === false
+
+twitter === false
+
+facebook === false
+
+linkedin === false
+
 
 
 ==XTmotion.co.uk==
-Sponsoring the jqGrid implementation. More info here: http://code.google.com/p/zfdatagrid/wiki/Bvb_Grid_Deploy_JqGrid#Licence
+Sponsoring jqGrid implementation. More info here: http://code.google.com/p/zfdatagrid/wiki/Bvb_Grid_Deploy_JqGrid#Licence
 
 [http://www.xtmotion.co.uk/ XTmotion website ]
 
 ==clickbooth.com==
-Sponsoring the Doctrine implementation.
+Sponsoring Doctrine implementation.
 
 [http://clickbooth.com/ Clickbooth Website]
