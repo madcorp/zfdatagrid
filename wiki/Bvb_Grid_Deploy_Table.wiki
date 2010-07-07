@@ -83,6 +83,16 @@ _SVN Only_
 $grid->setShowOrderImages(false);
 }}}
 
+==Disable Order==
+{{{
+$grid->setNoOrder(true);
+}}}
+
+==Disable FIlters==
+{{{
+$grid->setNoFilters(true);
+}}}
+
 ==Change records per page==
 You can let a user choose how many records are showned per page
 
