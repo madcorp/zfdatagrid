@@ -6,9 +6,6 @@
 
 This is documentation for *[http://www.trirand.com/blog/jqgrid/jqgrid.html jqGrid]* front-end implementation for *ZFDatgrid library*. Look at this *[http://www.k2s.sk/grid/jqgrid example]* to see it in action.
 
-This class was already moved from 
-*[http://code.google.com/p/zfdatagrid/source/browse/#svn/branches/jqGrid jqGrid branch] uinto [http://code.google.com/p/zfdatagrid/source/browse/#svn/trunk Trunk].*
-
 == Current plans==
   * keep jqGrid front-end as much as possible compatible with HTML Table front-end
   * allow to pass all configuration options of jqGrid from PHP
