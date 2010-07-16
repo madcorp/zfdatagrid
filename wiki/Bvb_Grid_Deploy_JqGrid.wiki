@@ -157,6 +157,17 @@ $grid->updateColumn('IsBig', array(
 
 <sup>`*` check [http://www.k2s.sk/grid/jqgrid example] *[http://www.k2s.sk/grid/jqgrid/code code]* and [http://www.k2s.sk/gridapi/ API documentation]</sup>
 
+== Setting locale ==
+If you like to set default locale for your project call following for example in bootstrap:
+{{{
+Bvb_Grid_Deploy_JqGrid::$defaultJqgI18n = "sk";
+}}}
+
+To set locale for grid instance call: 
+{{{
+$grid->jqgI18n = "sk";
+}}}
+
 == Publishing results ==
 Results from {{{Bvb_Grid_Deploy_JqGrid}}} object are sent to web browser in situations to display the grid and to provide data to grid.
 
