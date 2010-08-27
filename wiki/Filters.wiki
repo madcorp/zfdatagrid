@@ -6,17 +6,7 @@
 
 By default ZFDatagrid will try to provide the user the best way to filter results. Per example, if you have a _enum_ field in your database, instead a text input, a select menu will be presented to the user. 
 
-== Do more ==
 
-You can enhance filters by specifying them "manually":
-
-
-//Create a dropdown for user selection
-{{{
-$filters = new Bvb_Grid_Filters();        
-$filters->addFilter('username',array('values'=>array('key'=>'pairs','another'=>'value')));
-$grid->addFilters($filters);   
-}}}
 
 The field will be searched by the key and the user will see the value.
 
@@ -44,6 +34,13 @@ $grid->addFilters($filters);
 
 One useful feature can be the distinct fields. Once specified the system will select all distinct values for a given field and then present them to the users as a dropdown menu. Making their life much more easy.
 
+_Note:_ Place the example below between
+{{{
+$filters = new Bvb_Grid_Filters();        
+//Examples below here...
+$grid->addFilters($filters);   
+}}}  
+
 {{{
 $filters->addFilter('username'=> array('distinct'=>array( 'field'=>'id' ,  'name'=>'username')));    
 }}}
@@ -54,7 +51,7 @@ That will result in a SQL query like this:
 SELECT id as key, name as value FROM <table> WHERE <previous conditions>
 }}}
 
-You can also define the field orintation
+You can also define the field orientation
 
 {{{
 $filters->addFilter('username'=> array('distinct'=>array( 'field'=>'id' ,  'name'=>'username','order'=>'name ASC')));    
@@ -65,6 +62,13 @@ $filters->addFilter('username'=> array('distinct'=>array( 'field'=>'id' ,  'name
 This will fetch all values from a secondary table and present them. 
 {{{
 $filters->addFilter('FIELD', array('table' => array('table'=>'TABLE','field' => 'SELECT_VALUE', 'name' => 'SELECT_NAME', 'order' => 'name asc')));
+}}}
+
+
+===Manually (Array)===
+
+{{{
+$filters->addFilter('username',array('values'=>array('key'=>'pairs','another'=>'value')));
 }}}
 
 *_Note:_* Order param accepts (field|name) (ASC|DESC). The first option is not the field name but the option key. The above code will order by username ASC. 
