@@ -40,6 +40,8 @@ $grid->addFilters($filters);
 
 == Auto Filters==
 
+===Distinct===
+
 One useful feature can be the distinct fields. Once specified the system will select all distinct values for a given field and then present them to the users as a dropdown menu. Making their life much more easy.
 
 {{{
@@ -58,6 +60,13 @@ You can also define the field orintation
 $filters->addFilter('username'=> array('distinct'=>array( 'field'=>'id' ,  'name'=>'username','order'=>'name ASC')));    
 }}}
 
+
+===Secondary Table===
+This will fetch all values from a secondary table and present them. 
+{{{
+$filters->addFilter('FIELD', array('table' => array('table'=>'TABLE','field' => 'SELECT_VALUE', 'name' => 'SELECT_NAME', 'order' => 'name asc')));
+}}}
+
 *_Note:_* Order param accepts (field|name) (ASC|DESC). The first option is not the field name but the option key. The above code will order by username ASC. 
 
 =Show Filters in export=
@@ -70,6 +79,7 @@ Add Your own
 $grid->setShowFiltersInExport(array('My'=>'Filter')); 
 }}}
 A merge with the filters values inserted by user will be made. 
+
 
 
 ==Transform==
