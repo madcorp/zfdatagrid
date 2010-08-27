@@ -30,9 +30,6 @@ $grid->addFilters($filters);
 
 == Auto Filters==
 
-===Distinct===
-
-One useful feature can be the distinct fields. Once specified the system will select all distinct values for a given field and then present them to the users as a dropdown menu. Making their life much more easy.
 
 _Note:_ Place the example below between
 {{{
@@ -40,6 +37,12 @@ $filters = new Bvb_Grid_Filters();
 //Examples below here...
 $grid->addFilters($filters);   
 }}}  
+
+
+===Distinct===
+
+One useful feature can be the distinct fields. Once specified the system will select all distinct values for a given field and then present them to the users as a dropdown menu. Making their life much more easy.
+
 
 {{{
 $filters->addFilter('username'=> array('distinct'=>array( 'field'=>'id' ,  'name'=>'username')));    
