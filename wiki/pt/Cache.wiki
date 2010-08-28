@@ -1,19 +1,18 @@
-#summary Using cache
+#summary Utilização de Cache
 <wiki:toc max_depth="3" />
-= Introduction =
-Português
-When performing intensive queries or using sources as files, is a good idea to use cache for performance improvement.
+= Introdução =
+Quando executamos consultas intensivas à base de dados é de bom senso utilizar cache afim de aumentar a performance das páginas
 
-==How?==
+==Como?==
 
-It's really easy.
+Muito Simples.
 
 {{{
 $grid->setCache(array('use'=>array('form'=>'true|false', 'db'=>'true|false'), 'instance'=>Zend_Cache $cache,'tag'=>'my_tag'));
 }}}
 
-==And affects==
+==O que é colocado em cache?==
 
-When using cache all of your queries will be put on cache and they will use the tag provided.
+Quando a cache está activa todas as queries executadas serão colocadas em cache e a tag providenciada será utilizada
 
-After performing CRUD operations all the cache based on the tag will be erased.
+Depois de efectuadas operações CRUD o cache será removido
