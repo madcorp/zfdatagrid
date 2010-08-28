@@ -1,0 +1,59 @@
+#summary You first grid
+
+<wiki:toc max_depth="4" />
+
+
+=Your first grid=
+
+ # First, download the latest version from the  [http://code.google.com/p/zfdatagrid/downloads/list Downloads] tab
+ # Move the *_Bvb_* folder to your library
+ # In your controller create a new grid instance: 
+ {{{
+ $grid = Bvb_Grid::factory('table',array(),$id='');
+ //The first argument is the default deploy class. 
+ //The second argument is a Zend_Config instance or an array 
+ //The third argument is the grid id. Optional if you don't will use multiple grids per page
+ }}}
+ # Set images url (used for sorting, export, etc.). You can download the default [http://code.google.com/p/zfdatagrid/downloads/list here]
+ {{{
+    $grid>setImagesUrl('/grid/public/images/');//Change this value to match your needs
+ }}}
+ # Set the source => check this page for detailed [Bvb_Grid_Source info]
+ {{{
+ //$this->getDb() returns the connection
+ $select = $this->getDb()->select->from('table');
+ $grid->setSource(new Bvb_Grid_Source_Zend_Select($select));
+ }}}
+ # Deploy it
+ {{{
+ $this->view->grid = $grid->deploy();
+ }}}
+ and in your view:
+ {{{
+ echo $this->grid;
+ }}}
+
+
+After setting the source you can customize the fields using the updateColumn() method
+{{{
+$grid->updateColumn('field',array('options'));
+}}}
+
+==Don't forget to check==
+
+===Complete Options===
+Check this page for a complete list of options for the [GridOptions fields]
+
+===!Zend_Config===
+ Check this page for [Zend_Config_Support More info about Zend_Config options]
+ 
+===Grid Methods===
+Methods for interacting with the [Bvb_Grid_Deploy grid]
+ 
+
+
+<font color="red">_*ATTENTION:*_</font> The first argument for the updateColumn() method is always the output field and not the field name. If your raw query is something like this: 
+{{{
+"Select name, age, status as something FROM table"; 
+}}}
+You must use _somehting_ to refer to the _status_ field. If your are using joins is *YOUR* job to properly give fields alias, otherwise if you have two fields from different tables with the same name, the last will override any previous.

@@ -1,0 +1,104 @@
+#summary Métodos apenas disponíveis para o deploy de Tabelas
+
+<wiki:toc max_depth="4" />
+
+=Tabela=
+{{{
+$grid->setAjax();
+$grid->setImagesUrl();
+}}}
+
+==Ajax==
+A utilização de AJAX é simples e de fácil implementação
+Tudo o que necessitas de fazer é o seguinte:
+{{{
+$grid->ajax('id');//Vai ser criada uma <div> com este id
+}}}
+
+Se desejares desactivar o AJAX faz o seguinte:
+{{{
+$grid->ajax(false);
+}}}
+
+_Nota:_ AJAX está off por omissão
+
+== Apresentação Condicional de Campos ==
+Let's imagine you are presenting a report. And as any report it will have a range of values. Some positives and, how knows, some negatives.
+
+ZFDatagrid provides two methods for altering CSS classes based on conditions.
+
+===Per Row===
+
+Lets imagine you want to add a CSS class on every row in which population value is less greater than 20000. 
+
+{{{
+$grid->setClassRowCondition("{{Population}} > 20000","green");
+}}}
+
+The first argument is the condition. As noticed use the {{}} to get fields values.
+
+
+*NOTE:* When comparing strings please remember to include the '' around the field name, so PHP can treat that as a string and not a number.
+
+You can add a third argument, that is also a class that will be applied if the condition is not true.
+
+{{{
+$grid->setClassRowCondition("{{Population}} > 20000","green","orange");
+}}}
+
+=== Per Column===
+
+Is the same behavior as for a Row, but you need to specify the column that the condition will be applied.
+
+{{{
+$grid->addClassCellCondition('Population',"{{Population}} > 200000","red");
+}}}
+
+As expected, you can also add a third argument in case the condition is not true
+
+{{{
+$grid->addClassCellCondition('Population',"{{Population}} > 200000","red","green");
+}}}
+
+==Default Classes==
+You can set the default CSS classes to be applied to even and odd rows
+
+{{{
+$grid->setRowAltClasses('odd','even');
+}}} 
+
+<font color="red">*ATTENTION*</font> This only applies to Tables.
+
+==Don't Show Order Images==
+You can ommit order arrows, and make them appear only when a columns is sorted.
+
+{{{
+$grid->setAlwaysShowOrderArrows(false);
+}}}
+
+==Never Show Order Images==
+Using this method no images will appear, even when a field is sorted. 
+_SVN Only_
+{{{
+$grid->setShowOrderImages(false);
+}}}
+
+==Disable Order==
+{{{
+$grid->setNoOrder(true);
+}}}
+
+==Disable FIlters==
+{{{
+$grid->setNoFilters(true);
+}}}
+
+==Change records per page==
+You can let a user choose how many records are showned per page
+
+{{{
+$grid->setPaginationInterval(array(10 => 10, 20 => 20, 50 => 50, 100 => 100));
+}}}
+
+==Config Options==
+For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
