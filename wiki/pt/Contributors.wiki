@@ -1,7 +1,7 @@
 #summary Quem contribui com código.
 
-==Bento Vilas Boas (Project Lead)==
-PHP programador de Portugal (Vive em Portugal, não programou o país...)
+==Bento Vilas Boas (Autor)==
+Programador PHP de Portugal (Vive em Portugal, não programou o país...)
 
 email === 'geral@petala-azul.com'
 
