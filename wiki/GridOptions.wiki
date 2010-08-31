@@ -58,6 +58,19 @@ $grid->updateColumn('field',array('decorator'=>'This field value is: {{field}}')
 
 Please that you can use {{FIELD_NAME}} to insert the expected field value  
   
+===Special Decorators===
+_SVN Only_
+====Operations====
+You can use the result of a callback, helper and format option in your decorator.
+
+Use one of those options {{format}} {{callback}} {{helper}}.
+
+_Note:_ These special tags will only be available when you make use of the correspondent action
+
+====Crud Links====
+You can also make use of these tags {{addUrl}}  {{editUrl}}  {{deleteUrl}} to create the respective links to the operation.
+
+_Note:_ These tags will only work when you have permissions to perform the respective action
 
 ==escape==
 Escape the field or not, and how...

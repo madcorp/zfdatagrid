@@ -131,6 +131,24 @@ This method won't create a hash element to valid form input. Please use this met
 $form->setUseCSRF(false);
 }}}
 
+===Disable Columns for CRUD operations===
+_SVN Only_
+You may want to remove those extra columns auto created when defining crud operations.
+
+Use to remove the columns and button:
+
+{{{
+$form->setEditColumn(false);
+$form->setDeleteColumn(false);
+$form->setaddButton(false);
+}}}
+
+and then you can use this tags in your decorators
+
+{{addUrl}}  
+{{editUrl}}  
+{{deleteUrl}}
+
 ===Define input type===
 _SVN Only_
 You can change de input type created by default by ZFDG using the $form->setInputsType() method
