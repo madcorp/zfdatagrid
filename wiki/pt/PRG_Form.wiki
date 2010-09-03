@@ -1,5 +1,0 @@
-#summary Form submission
-
-PRG is a method used to avoid forms being submitted more than once.
-
-For more info about PRG check this wikipedia page [http://en.wikipedia.org/wiki/Post/Redirect/Get PRG]
