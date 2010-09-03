@@ -1,1 +1,65 @@
-ss
+Use this package to simplify the process of data displaying.
+
+===*Important:*===
+ If you are using code from SVN please follow this twitter account [http://twitter.com/zfdatagrid zfdatagrid] . New methods and changes that may affect your current code will be posted there. 
+
+----
+
+||Start Here||Upgrade Guide||<font color="red"><strong>Demos</strong></font>||Contributors||
+||[Start How to build your first grid]||[Upgrade From 0.6=>0.6.5 | 0.5=>0.6]||[http://zfdatagrid.com/grid/ Live demos] [http://zfdatagrid.com/grid/default/site/code Controller source code]||[Contributors Check this page]||
+
+
+
+
+
+===Data Sources===
+||[Bvb_Grid_Source Zend_Db_Select]||[Bvb_Grid_Source Zend_Db_Table]||[Bvb_Grid_Source Doctrine]||[Bvb_Grid_Source Array]||[Bvb_Grid_Source XML]||[Bvb_Grid_Source Csv]||[Bvb_Grid_Source Excel 2007]||[Bvb_Grid_Source Json]||
+
+
+===Renders===
+||[Bvb_Grid_Deploy Table]||[Bvb_Grid_Deploy Print]||[Bvb_Grid_Deploy_JqGrid  jqGrid]||[Bvb_Grid_Deploy PDF]||[Bvb_Grid_Deploy Word]||[Bvb_Grid_Deploy Word 2007]||
+||[Bvb_Grid_Deploy Excel]||[Bvb_Grid_Deploy Json]||[Bvb_Grid_Deploy XML]||[Bvb_Grid_Deploy Open Flash Chart]||[Bvb_Grid_Deploy  ODF Text]||[Bvb_Grid_Deploy ODF Spreadsheet]||
+
+===Featuring...===
+||[Zend_Config_Support Zend_Config Support]||[CRUD CRUD Operations && Bulk actions auto-build] <font color="red">*(new)*</font>||
+||[Custom_Filters Custom && External Filters] <font color="red">*(new)*</font>||[Mass_Actions Mass Actions] <font color="red">*(new)*</font>||
+||[Templates Template Based System]||[Extra_Columns Support for Extra Columns]||
+||[Extra_Rows Support for Extra Rows]||[Pagination Auto Pagination]||
+||[SqlExpressions SQL aggregation expressions]||[Cache Cache Support]||
+||[Plugins Plugins for content format]||[Decorators Decorators]||
+||[Filters Auto && Advanced filtering system]||[Fields_Sorting Fields sorting]||
+||[Bvb_Grid_Deploy_Table Conditional Fields Presentation]||[Detailed_View Option for detailed view]||
+||[PRG_Form PRG Form processing]||[Part_Render Render specific parts separately (filters, titles, pagination, etc...)]||
+||[Internationalization Internationalization support]||[GridOptions#Title Configurable field titles]||
+||[GridOptions#hRow Column Grouping]||[Bvb_Grid_Deploy_Table Ajax]||
+||[Conditional_Fields_Rendering Conditional Fields Rendering]||[Multiple_Instances Multiple Instances per page (no conflicts at all...)]||
+
+=====Features Matrix=====
+Please check the [Features_Matrix Features Matrix] to know which options are available for each render class
+
+====Example====
+{{{
+    function simpleAction()
+    {
+        //Zend_Config
+        $config = new Zend_Config_Ini('./application/grids/grid.ini', 'production');
+        
+        //Grid Initialization
+        $grid = Bvb_Grid::factory('Bvb_Grid_Deploy_Table', $config, 'id');
+        
+        //Setting grid source
+        $grid->setSource(new Bvb_Grid_Source_Zend_Table(new Bugs()));
+        
+        //CRUD Configuration
+        $form = new Bvb_Grid_Form();
+        $form->setAdd(true)->setEdit(true)->setDelete(true);
+        $grid->setForm($form);
+        
+        //Pass it to the view
+        $this->view->pages = $grid;
+        $this->render('index');
+    }
+}}}
+
+=Options=
+Click here for a list of options that any field accepts [GridOptions]
