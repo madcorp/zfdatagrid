@@ -105,6 +105,76 @@ $grid->addFilters($filters);
 
 If a user searches for _2010/12/12_ the value passed to your query will be _2010-12-12_
 
+==Render==
+The render option allows you to render a specific type of field. As an example, date or number range selection.
+
+By default you can use date, number, select, text
+
+{{{
+$filters->addFilter('date'=>array('render'=>'date'));
+//This will render a date range selection
+}}}
+
+==Custom Filters==
+
+If you use JS libraries or if you have specific needs, you can build your own render type.
+
+They must implement the Bvb_Grid_Filters_Render_RenderInterface but for commodity you can use the Bvb_Grid_Filters_Render_RenderAbstract class that already implements the interface and builds the common operations.
+
+But you also need to define filters render location with the following code.
+
+{{{
+$grid->addFiltersRenderDir('My/Filters/Render/', 'My_Filters_Render');
+}}}
+
+
+One of the most common use will be to use it with a datePicker implementation.
+
+As an example you can use the following code (assuming you already loaded jquery)
+
+{{{
+class My_Filters_Render_Date extends Bvb_Grid_Filters_Render_Table_Date{
+
+
+public function render()
+{
+return '<span>' . $this->__('From:') . "</span>" .
+                $this->getView()->datePicker(
+                        $this->getFieldName() . '[from]',
+                        "",
+                        array(
+                            'dateFormat' => 'yy-mm-dd',
+                            'defaultDate' => $this->getDefaultValue('from'),
+                        ),
+                        array_merge($this->getAttributes(), array('id' => 'filter_' . $this->getFieldName() . '_from'))
+                    ) .
+                "<br><span>" . $this->__('To:') . "</span>" .
+                $this->getView()->datePicker(
+                        $this->getFieldName() . '[to]',
+                        "",
+                        array(
+                            'dateFormat' => 'yy-mm-dd',
+                            'defaultDate' => $this->getDefaultValue('to'),
+                        ),
+                        array_merge($this->getAttributes(), array('id' => 'filter_' . $this->getFieldName() . '_to'))
+                );
+
+
+}
+
+}
+
+}}}
+
+
+And then in your filter
+
+And then add your filter
+
+{{{
+$filters->addFilter('my_field', array('render' => 'date'));
+}}}
+
 
 ==Callback==
 Using a callback will greatly improve you ability to enhance your filtering system
