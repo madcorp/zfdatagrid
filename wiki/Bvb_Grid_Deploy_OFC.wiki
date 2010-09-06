@@ -1,0 +1,65 @@
+#summary Open Flash Chart Wrapper
+
+<wiki:toc max_depth="3" />
+
+= Introduction =
+
+!Bvb_Grid_deploy_Ofc is a wrapper for the well-known chart library [http://teethgrinder.co.uk/open-flash-chart/ Open Flash Chart]
+
+In order to work you will need to download the version from this site, instead from the official. The only thing that changes is class naming, to follow the respected from ZF. Download the latest version from the Downloads Tab
+
+==Setting Chart Type==
+{{{
+$grid->setChartType('pie');
+}}}
+
+==Char Types==
+ * Pie
+ * Line  
+ * Bar  
+ * !Bar_Glass  
+ * Bar_3d  
+ * !Bar_Filled 
+
+==Column Labels==
+{{{
+$grid->setXLabels('column');//Any column from the query
+}}}
+
+
+==Script Location==
+{{{
+$grid->setFilesLocation(array('js'=>'URL','json'=>'URL','flash'=>'URL'))
+}}}
+
+==Chart Dimensions==
+{{{
+$grid->setChartDimensions(X,Y);
+}}}
+
+==Title==
+{{{
+$grid->setTitle('My Title');
+}}}
+
+==Chart Options==
+{{{
+$grid->setChartOptions(array()); //Just a wrapper for original OFC methods.
+}}}
+
+==Values==
+{{{
+$grid->addValues('column',array('options'));
+}}}
+
+<font color="red">*NOTE: *</font>The array options is just a wrapper for the available methods from the Open Flash Chart Class. The only custom value it accepts is
+{{{
+chartType
+}}}
+to define a cart type different from the previous defined 
+
+==Config Options==
+For the options this class accepts from a Config File check this  [Zend_Config_Support Page]
+
+==Examples==
+Check this live example which fetches random values from a table [http://zfdatagrid.com/grid/site/ofc Click for examples]

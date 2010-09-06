@@ -1,0 +1,85 @@
+#summary Templates
+
+<wiki:toc max_depth="3" />
+
+= Introduction =
+
+It's a very common feature request the ability to customize table designs.
+
+Fortunately ZFDatagrid has support for templates, and make the use easy.
+
+== Who uses templates?==
+At this moment templates are supported by 
+
+ * Tables
+ * PDF
+ * Print
+ * Word
+ * Word 2007
+ * Open Document Text
+ * Open Document Spreadsheet
+
+==How do they work?==
+
+===First Step===
+You template must extend the base template you are creating.
+
+If you are creating a new template for a table you must declare your class like this:
+{{{
+class My_Template_Table_Table extends Bvb_Grid_Template_Table_Table{}
+}}}
+
+===Second Step===
+Register you template in the grid.
+
+{{{
+$grid->addTemplateDir('My/Template/Table','My_Template_Table','table') 
+1. The dir location
+2. The class name
+3. Template type
+}}}
+
+====Templates Types:====
+ * table
+ * print
+ * pdf
+ * ods
+ * odt
+ * word
+ * wordx
+
+===Third Step===
+Define the template:
+This can be as simple as :
+
+{{{
+$grid->setTemplate($templateName,$TemplateType(table, print,pdf));
+}}}
+
+
+===Passing Params to the template==
+Templates are classes without inheritance.
+
+If you want to pass any user defined information to the template you must one of this options:
+
+{{{
+$grid->addTemplateParam('name','value');
+}}}
+
+
+{{{
+$grid->addTemplateParams(array);
+}}}
+
+{{{
+$grid->setTemplateParams(array);
+}}}
+
+*<font color="red">Attention</font>:* Using the set method, all previous params will be removed.
+
+===Getting Params from the Template===
+After setting the params you can access them within your template in the options property.
+
+{{{
+$myParams = $this->options['userDefined];
+}}}

@@ -1,0 +1,30 @@
+#summary Format content like date, numbers, currency, etc, etc
+= Details =
+
+Format is a way to format content using plugins.
+
+This is special useful to format date, time, bool, currency, and any other content.
+
+You must first register you format whiting the grid:
+
+{{{
+$grid->addFormatterDir('My/Grid/Formatter','My_Grid_Formatter');   
+}}}
+
+After this you can start using you format plugins.
+
+{{{
+$grid->updateColumn('amount',array('format'=>"currency"));   
+}}}
+
+The ZFDatagrid will look for a class called !My_Grid_Formatter_Currency and for a method called format().
+
+The field value will be passed to the format method.
+
+Alternatively you can pass optional params to the format.
+
+{{{
+$grid->updateColumn('amount', array('format'=> array('currency',array('arg'=>1, 'arg'=>'{{amount}}'))));   
+}}}  
+
+_Note_ The second argument will be converted in the value for the amount field. You can use {{field}} for any field
