@@ -76,7 +76,7 @@ $filters->addFilter('username',array('values'=>array('key'=>'pairs','another'=>'
 
 *_Note:_* Order param accepts (field|name) (ASC|DESC). The first option is not the field name but the option key. The above code will order by username ASC. 
 
-=Show Filters in export=
+==Show Filters in export==
 This option will add the curretn filters at the end of the document (PDF Only)
 {{{
 $grid->setShowFiltersInExport(true); 
