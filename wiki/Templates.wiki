@@ -4,9 +4,9 @@
 
 = Introduction =
 
-It's a very common feature request the ability to customize table designs.
+The ability to customize table designs is a very common feature request.
 
-Fortunately ZFDatagrid has support for templates, and make the use easy.
+Fortunately, ZFDatagrid has support for templates.
 
 == Who uses templates?==
 At this moment templates are supported by 
@@ -22,18 +22,18 @@ At this moment templates are supported by
 ==How do they work?==
 
 ===First Step===
-You template must extend the base template you are creating.
+Your template must extend the related `Bvb_Grid_Template_*` base template.
 
 If you are creating a new template for a table you must declare your class like this:
 {{{
-class My_Template_Table_Table extends Bvb_Grid_Template_Table_Table{}
+class My_Template_Table extends Bvb_Grid_Template_Table{}
 }}}
 
 ===Second Step===
 Register you template in the grid.
 
 {{{
-$grid->addTemplateDir('My/Template/Table','My_Template_Table','table') 
+$grid->addTemplateDir('My/Template','My_Template','table') 
 1. The dir location
 2. The class name
 3. Template type
@@ -50,22 +50,21 @@ $grid->addTemplateDir('My/Template/Table','My_Template_Table','table')
 
 ===Third Step===
 Define the template:
-This can be as simple as :
+This can be as simple as:
 
 {{{
-$grid->setTemplate($templateName,$TemplateType(table, print,pdf));
+$grid->setTemplate($templateName,$TemplateType(table, print, pdf));
 }}}
 
 
 ===Passing Params to the template==
 Templates are classes without inheritance.
 
-If you want to pass any user defined information to the template you must one of this options:
+User defined information can be passed to the template via the following calls:
 
 {{{
 $grid->addTemplateParam('name','value');
 }}}
-
 
 {{{
 $grid->addTemplateParams(array);
@@ -81,5 +80,5 @@ $grid->setTemplateParams(array);
 After setting the params you can access them within your template in the options property.
 
 {{{
-$myParams = $this->options['userDefined];
+$myParams = $this->options['userDefined'];
 }}}
