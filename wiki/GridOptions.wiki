@@ -73,19 +73,6 @@ $grid->updateColumn('field',array('escape'=>'my_callback_function'));
 }}}  
 
 
-== Field placeholder tags (ex. {{field}}) ==
-
-The value of any field can be accessed in arguments to decorators, format plugins, callbacks, etc. via placeholders in the following format: {{field}}
-
-Note that after a field has been modified by a format plugin, the {{field}} placeholder will be replaced by the modified content, not the original field value.
-
-You can access the original, unmodified field value using placeholders in the following format: {{=field}}
-
-To enable access to unmodified field values in this way, you must set "enableUnmodifiedFieldPlaceholders" option to true in your grid config. Ex. in your grid .ini file:
-
-grid.enableUnmodifiedFieldPlaceholders = 1;
-
-
 ==format==
 Format is a simple way for you to format content (date, time, currency, bool, etc).
 Check this page for more info on [Formatters]
