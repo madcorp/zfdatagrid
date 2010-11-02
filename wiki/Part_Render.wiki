@@ -22,7 +22,6 @@ $this->grid->render('pagination',true);
 ==Available Parts==
  * detail
  * message
- * addButton
  * form
  * start
  * extra
