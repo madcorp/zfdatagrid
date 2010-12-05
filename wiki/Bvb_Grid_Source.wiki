@@ -42,7 +42,8 @@ And can auto build forms from this sources:
  $grid->setSource(new Bvb_Grid_Source_Zend_Table(Zend_Db_Table $model));
  $grid->setSource(new Bvb_Grid_Source_Zend_Table(new Model()));
  }}}
- 
+
+*Note: * http://code.google.com/p/zfdatagrid/issues/detail?id=507
  
 ==Doctrine==
  The only thing you need to do is pass the Doctrine instance to the grid
