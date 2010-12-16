@@ -225,11 +225,11 @@ $grid->updateColumn('field',array('searchType'=>'llike'));
 ==searchSqlExp==
 __SVN only__
 
-Use this to perform a sql expression directly into the query.
+Use this to perform a sql expression.
 
 The {{value}} tag will be quoted and replaced with user's input value
 {{{
-$grid->updateColumn('Name',array('searchType'=>'sqlExp','searchSqlExp'=>'Name !="{{value}}" '));
+$grid->updateColumn('Name',array('searchType'=>'sqlExp','searchSqlExp'=>'Name !={{value}} '));
 }}}  
 
 
