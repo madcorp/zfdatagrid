@@ -201,6 +201,7 @@ $grid->updateColumn('field',array('search'=>array('fulltext'=>true,'extra'=>'que
 The search operand that will be used.
 
 Available operators:
+|| `sqlExp` || 
 || `like` || 
 || `llike` || 
 || rlike || 
@@ -221,6 +222,16 @@ $grid->updateColumn('field',array('searchType'=>'>='));
 $grid->updateColumn('field',array('searchType'=>'llike'));
 }}}  
   
+==searchSqlExp==
+__SVN only__
+
+Use this to perform a sql expression directly into the query.
+
+The {{value}} tag will be quoted and replaced with user's input value
+{{{
+$grid->updateColumn('Name',array('searchType'=>'sqlExp','searchSqlExp'=>'Name !="{{value}}" '));
+}}}  
+
 
 ==searchTypeFixed==
 The user has the ability to alter the search operand by using one of the available options check: [http://code.google.com/p/zfdatagrid/wiki/Faq#Supported_search_operators Faq#Supported_search_operators]
