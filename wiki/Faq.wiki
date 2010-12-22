@@ -8,7 +8,7 @@
 
 === Supported search operators ===
 || Search field || SQL expression || Example || Match ||
-|| (default) stars `like` || `LIKE '%value%'` || `*`art`*` || art, star, start||
+|| (default) starts `like` || `LIKE '%value%'` || `*`art`*` || art, star, start||
 || starts `llike` || `LIKE '%value'` || `*`art || art, smart, start||
 || starts rlike || `LIKE 'value%'` || art`*` || artifact, art||
 || starts `equal`, `=` || `= value` || =art|| art||
