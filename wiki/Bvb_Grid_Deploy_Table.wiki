@@ -78,7 +78,6 @@ $grid->setAlwaysShowOrderArrows(false);
 
 ==Never Show Order Images==
 Using this method no images will appear, even when a field is sorted. 
-_SVN Only_
 {{{
 $grid->setShowOrderImages(false);
 }}}

@@ -44,7 +44,6 @@ $grid->updateColumn('field',array('decorator'=>'This field value is: {{field}}')
 Please that you can use {{FIELD_NAME}} to insert the expected field value  
   
 ===Special Decorators===
-_SVN Only_
 ====Operations====
 You can use the result of a callback, helper and format option in your decorator.
 
@@ -223,7 +222,6 @@ $grid->updateColumn('field',array('searchType'=>'llike'));
 }}}  
   
 ==searchSqlExp==
-__SVN only__
 
 Use this to perform a sql expression.
 
