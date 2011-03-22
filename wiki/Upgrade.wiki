@@ -36,12 +36,12 @@ function My_Callback($event)
 
 
 Full list for crud operations:
-* crud.before_insert
-* crud.before_update
-* crud.before_delete
-* crud.after_insert
-* crud.after_update
-* crud.after_delete
+  * crud.before_insert
+  * crud.before_update
+  * crud.before_delete
+  * crud.after_insert
+  * crud.after_update
+  * crud.after_delete
 
 *These names can change before version release*
 
