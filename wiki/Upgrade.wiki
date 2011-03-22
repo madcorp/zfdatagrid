@@ -36,19 +36,25 @@ They have their own class now. Changes:
 
 OLD:
 {{{
-$grid->setMassActions(array(array('url' => $grid->getUrl(), 'caption' => 'Remove
-(Nothing will happen)', 'confirm' => 'Are you sure?'), array('url' =>
-$grid->getUrl() . '/nothing/happens', 'caption' => 'Some other action',
-'confirm' => 'Another confirmation message?')));
+$actions->setMassActions(array(array('url' => $grid->getUrl(), 
+                                     'caption' => 'Remove (Nothing will happen)', 
+                                     'confirm' => 'Are you sure?'), 
+                               array('url' => $grid->getUrl() . '/nothing/happens', 
+                                     'caption' => 'Some other action', 
+                                     'confirm' => 'Another confirmation message?')));
+
 }}}
 
 NEW:
 {{{
 $actions = new Bvb_Grid_Mass_Actions();
-$actions->setMassActions(array(array('url' => $grid->getUrl(), 'caption' =>
-'Remove (Nothing will happen)', 'confirm' => 'Are you sure?'), array('url' =>
-$grid->getUrl() . '/nothing/happens', 'caption' => 'Some other action',
-'confirm' => 'Another confirmation message?')));
+$actions->setMassActions(array(array('url' => $grid->getUrl(), 
+                                     'caption' => 'Remove (Nothing will happen)', 
+                                     'confirm' => 'Are you sure?'), 
+                               array('url' => $grid->getUrl() . '/nothing/happens', 
+                                     'caption' => 'Some other action', 
+                                     'confirm' => 'Another confirmation message?')));
+
 $grid->setMassActions($actions);
 }}}
 
