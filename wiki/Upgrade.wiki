@@ -12,7 +12,7 @@ $event->connect('crud.before_update', $callback);
 $grid->setEventDispatcher($event);
 }}}
 
-Your callback will receive on arg, a Bvb_Grid_Event instance
+Your callback will receive one arg, a Bvb_Grid_Event instance
 {{{
 function My_Callback($event)
 {
