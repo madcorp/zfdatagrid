@@ -1,5 +1,61 @@
 #summary How to Upgrade
 
+=0.7 to 0.8=
+
+==Callbacks/Events==
+
+Callbacks where removed in favor of events. A list of available events will be available soon. But for crud operations something like this can be done
+
+{{{
+$event = new Bvb_Grid_Event_Dispatcher();
+$event->connect('crud.before_update', $callback);
+$grid->setEventDispatcher($event);
+}}}
+
+Your callback will receive on arg, a Bvb_Grid_Event instance
+{{{
+function My_Callback($event)
+{
+   $args = $event->getArgs();
+}
+}}}
+
+
+Full list for crud operations:
+* crud.before_insert
+* crud.before_update
+* crud.before_delete
+* crud.after_insert
+* crud.after_update
+* crud.after_delete
+
+*These names can change before version release*
+
+==Mass actions==
+They have their own class now. Changes: 
+
+OLD:
+{{{
+$grid->setMassActions(array(array('url' => $grid->getUrl(), 'caption' => 'Remove
+(Nothing will happen)', 'confirm' => 'Are you sure?'), array('url' =>
+$grid->getUrl() . '/nothing/happens', 'caption' => 'Some other action',
+'confirm' => 'Another confirmation message?')));
+}}}
+
+NEW:
+{{{
+$actions = new Bvb_Grid_Mass_Actions();
+$actions->setMassActions(array(array('url' => $grid->getUrl(), 'caption' =>
+'Remove (Nothing will happen)', 'confirm' => 'Are you sure?'), array('url' =>
+$grid->getUrl() . '/nothing/happens', 'caption' => 'Some other action',
+'confirm' => 'Another confirmation message?')));
+$grid->setMassActions($actions);
+}}}
+
+= 06.5. to 0.7 =
+
+* Defining  grid columns - Until now when setting grid columns, extra columns where always there. From now on, when defining grid columns you must also specify any extra column you want to see. Use the column name.
+
 = 0.6 to 0.6.5 =
 
  * Abstract classes and interfaces where prefixed with the file name. Bvb_Grid_Formatter_Interface => Bvb_Grid_Formatter_FormatterInterface
