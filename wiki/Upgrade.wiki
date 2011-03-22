@@ -1,6 +1,6 @@
 #summary How to Upgrade
 
-=0.7 to 0.8=
+=0.7 to trunk (0.8)=
 
 ==Callbacks/Events==
 
