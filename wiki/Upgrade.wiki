@@ -2,6 +2,20 @@
 
 =0.7 to trunk (0.8)=
 
+==Cache==
+Cache 'use' param, has been renamed to 'enable'
+
+New
+{{{
+$grid->setCache(array('enable' => array('form'=>false,'db'=>false), 'instance' => $cache, 'tag' => 'grid'));
+}}}
+
+OLD
+{{{
+$grid->setCache(array('use' => array('form'=>false,'db'=>false), 'instance' => $cache, 'tag' => 'grid'));
+}}}     
+
+
 ==Callbacks/Events==
 
 Callbacks where removed in favor of events. A list of available events will be available soon. But for crud operations something like this can be done
