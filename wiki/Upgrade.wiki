@@ -30,7 +30,10 @@ Your callback will receive one arg, a Bvb_Grid_Event instance
 {{{
 function My_Callback($event)
 {
-   $args = $event->getArgs();
+   $params = $event->getParams();
+   $param = $event->getParam($param);
+   $name = $event->getName();
+   $object = $event->getObject();
 }
 }}}
 
