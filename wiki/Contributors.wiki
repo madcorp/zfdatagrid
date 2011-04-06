@@ -14,3 +14,8 @@ Sponsoring jqGrid implementation. More info here: http://code.google.com/p/zfdat
 Sponsoring Doctrine implementation.
 
 [http://clickbooth.com/ Clickbooth Website]
+
+==Martin Parsiegla==
+Sponsoring Doctrine2 implementation.
+
+[http://speanet.info HomePage]
