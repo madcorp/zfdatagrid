@@ -7,7 +7,7 @@ Cache 'use' param, has been renamed to 'enable'
 
 New
 {{{
-$grid->setCache(array('enable' => array('form'=>false,'db'=>false), 'instance' => $cache, 'tag' => 'grid'));
+$grid->setCache(array('enable' => true|false, 'instance' => $cache, 'tag' => 'grid'));
 }}}
 
 OLD
@@ -21,9 +21,7 @@ $grid->setCache(array('use' => array('form'=>false,'db'=>false), 'instance' => $
 Callbacks where removed in favor of events. A list of available events will be available soon. But for crud operations something like this can be done
 
 {{{
-$event = new Bvb_Grid_Event_Dispatcher();
-$event->connect('crud.before_update', $callback);
-$grid->setEventDispatcher($event);
+$grid->listenEvent(crud.before_update', $callback);
 }}}
 
 Your callback will receive one arg, a Bvb_Grid_Event instance
