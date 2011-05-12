@@ -21,7 +21,7 @@ $grid->setCache(array('use' => array('form'=>false,'db'=>false), 'instance' => $
 Callbacks where removed in favor of events. A list of available events will be available soon. But for crud operations something like this can be done
 
 {{{
-$grid->listenEvent(crud.before_update', $callback);
+$grid->listenEvent('crud.before_update', $callback);
 }}}
 
 Your callback will receive one arg, a Bvb_Grid_Event instance
