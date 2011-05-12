@@ -13,7 +13,7 @@ Use this package to simplify the process of data displaying.
 
 
 ===Data Sources===
-||[Bvb_Grid_Source Zend_Db_Select]||[Bvb_Grid_Source Zend_Db_Table]||[Bvb_Grid_Source Doctrine]||[Bvb_Grid_Source Array]||[Bvb_Grid_Source XML]||[Bvb_Grid_Source Csv]||[Bvb_Grid_Source Excel 2007]||[Bvb_Grid_Source Json]||
+||[Bvb_Grid_Source Zend_Db_Select]||[Bvb_Grid_Source Zend_Db_Table]||[Bvb_Grid_Source Doctrine]||[Bvb_Grid_Source Array]||[Bvb_Grid_Source XML]||[Bvb_Grid_Source Csv]||[Bvb_Grid_Source Json]||
 
 
 ===Renders===
