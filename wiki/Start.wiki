@@ -5,8 +5,8 @@ Use this package to simplify the process of data displaying.
 
 ----
 
-||Start Here||Upgrade Guide||<font color="red"><strong>Demos</strong></font>||Contributors||
-||[Start How to build your first grid]||[Upgrade From 0.6=>0.6.5 | 0.5=>0.6]||[http://zfdatagrid.com/grid/ Live demos] [http://zfdatagrid.com/grid/default/site/code Controller source code]||[Contributors Check this page]||
+||Start Here||<font color="red"><strong>Demos</strong></font>||Contributors||
+||[Start How to build your first grid]||[http://zfdatagrid.com/grid/ Live demos] [http://zfdatagrid.com/grid/default/site/code Controller source code]||[Contributors Check this page]||
 
 
 
