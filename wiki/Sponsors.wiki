@@ -3,6 +3,6 @@
 = Project Sponsors =
 
  
-== [http://licentiacommerce.eu Licentia] ==
+== [http://licentia.pt Licentia] ==
 
 Licentia is a company dedicated to system integrations and ecommerce solutions
