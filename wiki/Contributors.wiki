@@ -1,9 +1,9 @@
 #summary Who contributes with code to ZFDatagrid
 
 ==Bento Vilas Boas (Project Lead)==
-PHP developer from Portugal
+CEO of Licentia. A company dedicated to system integrations and ecommerce solutions.
 
-[http://www.petala-azul.com HomePage]
+[http://www.licentia.pt HomePage]
 
 ==XTmotion.co.uk==
 Sponsoring jqGrid implementation. More info here: http://code.google.com/p/zfdatagrid/wiki/Bvb_Grid_Deploy_JqGrid#Licence
