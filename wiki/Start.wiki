@@ -5,8 +5,8 @@ Use this package to simplify the process of data displaying.
 
 ----
 
-||<font color="red"><strong>Demos</strong></font>||*Sponsors*||Contributors||
-||[http://zfdatagrid.com/grid/ Live demos] [http://zfdatagrid.com/grid/default/site/code Controller source code]||[http://licentia.pt http://licentia.pt/wp-content/uploads/2012/01/logo.png]||[Contributors Check this page]||
+||<font color="red"><strong>Demos</strong></font>||Contributors||
+||[http://zfdatagrid.com/grid/ Live demos] [http://zfdatagrid.com/grid/default/site/code Controller source code]||[Contributors Check this page]||
 
 
 
