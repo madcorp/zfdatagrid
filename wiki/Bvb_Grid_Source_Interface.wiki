@@ -1,3 +1,5 @@
+= Note: This project has been moved to [https://github.com/zfdatagrid/ zfdatagrid on GitHub]. =
+
 #summary The data source interface
 
 = Use this interface to build your own data source =

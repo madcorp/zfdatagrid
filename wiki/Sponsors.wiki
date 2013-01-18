@@ -1,3 +1,5 @@
+= Note: This project has been moved to [https://github.com/zfdatagrid/ zfdatagrid on GitHub]. =
+
 #summary One-sentence summary of this page.
 
 = Project Sponsors =

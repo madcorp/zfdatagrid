@@ -1,3 +1,5 @@
+= Note: This project has been moved to [https://github.com/zfdatagrid/ zfdatagrid on GitHub]. =
+
 #summary Documentation for Bvb_Grid_Deploy_JqGrid class
 
 <wiki:toc max_depth="3" />

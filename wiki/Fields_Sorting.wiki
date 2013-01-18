@@ -1,3 +1,5 @@
+= Note: This project has been moved to [https://github.com/zfdatagrid/ zfdatagrid on GitHub]. =
+
 #summary Sort fields by order, asc or desc
 
 = Introduction =

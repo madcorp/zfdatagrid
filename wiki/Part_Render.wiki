@@ -1,3 +1,5 @@
+= Note: This project has been moved to [https://github.com/zfdatagrid/ zfdatagrid on GitHub]. =
+
 #summary Render filters, titles, pagination at any location...
 <wiki:toc max_depth="5" />
 = Introduction =

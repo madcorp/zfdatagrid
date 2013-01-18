@@ -1,3 +1,5 @@
+= Note: This project has been moved to [https://github.com/zfdatagrid/ zfdatagrid on GitHub]. =
+
 #summary A simple way to render specific fields to specific renders
 
 <wiki:toc max_depth="3" />

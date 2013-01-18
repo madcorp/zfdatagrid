@@ -1,3 +1,5 @@
+= Note: This project has been moved to [https://github.com/zfdatagrid/ zfdatagrid on GitHub]. =
+
 #summary All the options available for fields customization
 
 <wiki:toc max_depth="4" />
